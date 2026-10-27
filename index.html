@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Active & Passive Voice: Cyber Portal</title>
+    <title>Русский Язык Орфоэпические Нормы: Cyber Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -378,7 +378,7 @@
 
     <div class="main-wrapper">
         <div class="header">
-            <h1 class="main-title">Active & Passive Voice</h1>
+            <h1 class="main-title">Русский Язык Орфоэпические Нормы</h1>
             <p>Cyber Portal: 9th Grade Grammar Challenge</p>
         </div>
 
@@ -634,53 +634,548 @@
         const planetPositions = getPlanetPositions();
 
         // === РАСШИРЕННЫЙ БАНК ВОПРОСОВ (45 шт, разные времена) ===
-        const verbDatabase = [
-            { v1: "build", v2: "built", v3: "was built", sentence1: "They _____ a new school last year. (build)", sentence2: "A new school _____ last year. (build)", sentence2Type: "passive", hasPassive: true },
-            { v1: "write", v2: "wrote", v3: "was written", sentence1: "Shakespeare _____ this play in 1600. (write)", sentence2: "This play _____ by Shakespeare in 1600. (write)", sentence2Type: "passive", hasPassive: true },
-            { v1: "clean", v2: "cleans", v3: "is cleaned", sentence1: "She _____ her room every day. (clean)", sentence2: "Her room _____ every day. (clean)", sentence2Type: "passive", hasPassive: true },
-            { v1: "invite", v2: "invited", v3: "were invited", sentence1: "They _____ us to the party. (invite)", sentence2: "We _____ to the party. (invite)", sentence2Type: "passive", hasPassive: true },
-            { v1: "make", v2: "makes", v3: "is made", sentence1: "This factory _____ cars. (make)", sentence2: "Cars _____ in this factory. (make)", sentence2Type: "passive", hasPassive: true },
-            { v1: "speak", v2: "speaks", v3: "is spoken", sentence1: "He _____ English fluently. (speak)", sentence2: "English _____ fluently by him. (speak)", sentence2Type: "passive", hasPassive: true },
-            { v1: "steal", v2: "stole", v3: "was stolen", sentence1: "Someone _____ my bicycle yesterday. (steal)", sentence2: "My bicycle _____ yesterday. (steal)", sentence2Type: "passive", hasPassive: true },
-            { v1: "teach", v2: "teaches", v3: "is taught", sentence1: "Mr. Smith _____ math at our school. (teach)", sentence2: "Math _____ by Mr. Smith at our school. (teach)", sentence2Type: "passive", hasPassive: true },
-            { v1: "break", v2: "broke", v3: "was broken", sentence1: "The boy _____ the window. (break)", sentence2: "The window _____ by the boy. (break)", sentence2Type: "passive", hasPassive: true },
-            { v1: "send", v2: "sent", v3: "was sent", sentence1: "The company _____ the package last week. (send)", sentence2: "The package _____ last week. (send)", sentence2Type: "passive", hasPassive: true },
-            { v1: "paint", v2: "painted", v3: "was painted", sentence1: "Van Gogh _____ this picture. (paint)", sentence2: "This picture _____ by Van Gogh. (paint)", sentence2Type: "passive", hasPassive: true },
-            { v1: "grow", v2: "grows", v3: "is grown", sentence1: "Farmers _____ wheat in this region. (grow)", sentence2: "Wheat _____ in this region. (grow)", sentence2Type: "passive", hasPassive: true },
-            { v1: "discover", v2: "discovered", v3: "was discovered", sentence1: "Columbus _____ America in 1492. (discover)", sentence2: "America _____ by Columbus in 1492. (discover)", sentence2Type: "passive", hasPassive: true },
-            { v1: "sell", v2: "sold", v3: "was sold", sentence1: "They _____ the house last month. (sell)", sentence2: "The house _____ last month. (sell)", sentence2Type: "passive", hasPassive: true },
-            { v1: "translate", v2: "has translated", v3: "has been translated", sentence1: "She _____ the article recently. (translate)", sentence2: "The article _____ recently. (translate)", sentence2Type: "perfect", hasPassive: true },
-            { v1: "repair", v2: "is repairing", v3: "is being repaired", sentence1: "The mechanic _____ the car right now. (repair)", sentence2: "The car _____ right now. (repair)", sentence2Type: "passive", hasPassive: true },
-            { v1: "finish", v2: "will finish", v3: "will be finished", sentence1: "They _____ the project tomorrow. (finish)", sentence2: "The project _____ tomorrow. (finish)", sentence2Type: "passive", hasPassive: true },
-            { v1: "damage", v2: "damaged", v3: "was damaged", sentence1: "The storm _____ the roof. (damage)", sentence2: "The roof _____ by the storm. (damage)", sentence2Type: "passive", hasPassive: true },
-            { v1: "award", v2: "awarded", v3: "was awarded", sentence1: "The jury _____ him the first prize. (award)", sentence2: "He _____ the first prize. (award)", sentence2Type: "passive", hasPassive: true },
-            { v1: "publish", v2: "published", v3: "was published", sentence1: "The author _____ the book in 2020. (publish)", sentence2: "The book _____ in 2020. (publish)", sentence2Type: "passive", hasPassive: true },
-            { v1: "cancel", v2: "cancelled", v3: "was cancelled", sentence1: "They _____ the flight due to rain. (cancel)", sentence2: "The flight _____ due to rain. (cancel)", sentence2Type: "passive", hasPassive: true },
-            { v1: "produce", v2: "produces", v3: "is produced", sentence1: "This country _____ a lot of oil. (produce)", sentence2: "A lot of oil _____ in this country. (produce)", sentence2Type: "passive", hasPassive: true },
-            { v1: "arrest", v2: "arrested", v3: "was arrested", sentence1: "The police _____ the thief. (arrest)", sentence2: "The thief _____ by the police. (arrest)", sentence2Type: "passive", hasPassive: true },
-            { v1: "design", v2: "designed", v3: "was designed", sentence1: "A famous architect _____ this building. (design)", sentence2: "This building _____ by a famous architect. (design)", sentence2Type: "passive", hasPassive: true },
-            { v1: "destroy", v2: "destroyed", v3: "was destroyed", sentence1: "The fire _____ the old barn. (destroy)", sentence2: "The old barn _____ by the fire. (destroy)", sentence2Type: "passive", hasPassive: true },
-            { v1: "forbid", v2: "forbids", v3: "is forbidden", sentence1: "The law _____ smoking here. (forbid)", sentence2: "Smoking _____ here by law. (forbid)", sentence2Type: "passive", hasPassive: true },
-            { v1: "solve", v2: "has solved", v3: "has been solved", sentence1: "Scientists _____ the mystery recently. (solve)", sentence2: "The mystery _____ recently. (solve)", sentence2Type: "perfect", hasPassive: true },
-            { v1: "inform", v2: "informed", v3: "was informed", sentence1: "The manager _____ the staff about the changes. (inform)", sentence2: "The staff _____ about the changes. (inform)", sentence2Type: "passive", hasPassive: true },
-            { v1: "elect", v2: "elected", v3: "was elected", sentence1: "The people _____ him president. (elect)", sentence2: "He _____ president by the people. (elect)", sentence2Type: "passive", hasPassive: true },
-            { v1: "deliver", v2: "will deliver", v3: "will be delivered", sentence1: "The postman _____ the letters tomorrow. (deliver)", sentence2: "The letters _____ tomorrow. (deliver)", sentence2Type: "passive", hasPassive: true },
-            { v1: "examine", v2: "examined", v3: "was examined", sentence1: "The doctor _____ the patient carefully. (examine)", sentence2: "The patient _____ carefully by the doctor. (examine)", sentence2Type: "passive", hasPassive: true },
-            { v1: "construct", v2: "is constructing", v3: "is being constructed", sentence1: "They _____ a new bridge now. (construct)", sentence2: "A new bridge _____ now. (construct)", sentence2Type: "passive", hasPassive: true },
-            { v1: "mention", v2: "mentioned", v3: "was mentioned", sentence1: "She _____ this fact in her report. (mention)", sentence2: "This fact _____ in her report. (mention)", sentence2Type: "passive", hasPassive: true },
-            { v1: "replace", v2: "has replaced", v3: "has been replaced", sentence1: "They _____ the old computers. (replace)", sentence2: "The old computers _____. (replace)", sentence2Type: "perfect", hasPassive: true },
-            { v1: "surround", v2: "surrounds", v3: "is surrounded", sentence1: "A high fence _____ the property. (surround)", sentence2: "The property _____ by a high fence. (surround)", sentence2Type: "passive", hasPassive: true },
-            { v1: "punish", v2: "punished", v3: "was punished", sentence1: "The teacher _____ the student for cheating. (punish)", sentence2: "The student _____ for cheating. (punish)", sentence2Type: "passive", hasPassive: true },
-            { v1: "record", v2: "recorded", v3: "was recorded", sentence1: "The camera _____ the whole incident. (record)", sentence2: "The whole incident _____ by the camera. (record)", sentence2Type: "passive", hasPassive: true },
-            { v1: "postpone", v2: "postponed", v3: "was postponed", sentence1: "They _____ the meeting until Friday. (postpone)", sentence2: "The meeting _____ until Friday. (postpone)", sentence2Type: "passive", hasPassive: true },
-            { v1: "ban", v2: "banned", v3: "was banned", sentence1: "The government _____ plastic bags. (ban)", sentence2: "Plastic bags _____ by the government. (ban)", sentence2Type: "passive", hasPassive: true },
-            { v1: "announce", v2: "announced", v3: "was announced", sentence1: "The director _____ the new policy. (announce)", sentence2: "The new policy _____ by the director. (announce)", sentence2Type: "passive", hasPassive: true },
-            { v1: "complete", v2: "has completed", v3: "has been completed", sentence1: "The team _____ the task successfully. (complete)", sentence2: "The task _____ successfully. (complete)", sentence2Type: "perfect", hasPassive: true },
-            { v1: "read", v2: "was reading", v3: "was being read", sentence1: "He _____ the book at 5 PM. (read)", sentence2: "The book _____ by him at 5 PM. (read)", sentence2Type: "passive", hasPassive: true },
-            { v1: "wash", v2: "is washing", v3: "is being washed", sentence1: "She _____ the car right now. (wash)", sentence2: "The car _____ right now. (wash)", sentence2Type: "passive", hasPassive: true },
-            { v1: "discuss", v2: "are discussing", v3: "are being discussed", sentence1: "They _____ the project now. (discuss)", sentence2: "The project _____ now. (discuss)", sentence2Type: "passive", hasPassive: true },
-            { v1: "invite", v2: "will invite", v3: "will be invited", sentence1: "We _____ them tomorrow. (invite)", sentence2: "They _____ by us tomorrow. (invite)", sentence2Type: "passive", hasPassive: true }
-        ];
+       const verbDatabase = [
+    { 
+        v1: "звонить",
+        v2: "звонИть",
+        v3: "звОнить",
+        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
+        sentence2: "В глаголе 'звонить' ударение всегда падает на окончание во всех личных формах.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "баловать",
+        v2: "баловАть",
+        v3: "бАловать",
+        sentence1: "Выберите правильное ударение в глаголе несовершенного вида.",
+        sentence2: "Ударение в глаголе 'баловать' фиксированное и всегда падает на суффикс -ова-.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "торты",
+        v2: "тОрты",
+        v3: "тортЫ",
+        sentence1: "Где правильно ставить ударение во множественном числе существительного?",
+        sentence2: "В слове 'торты' ударение всегда падает на первый слог, форма с ударением на окончание является грубой ошибкой.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "каталог",
+        v2: "каталОг",
+        v3: "кАталог",
+        sentence1: "Определите верное ударение в заимствованном существительном.",
+        sentence2: "В слове 'каталог' ударение фиксировано на последнем слоге во всех падежных формах.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "кухонный",
+        v2: "кУхонный",
+        v3: "кухОнный",
+        sentence1: "В каком варианте правильно ударение в прилагательном?",
+        sentence2: "Прилагательное 'кухонный' образовано от слова 'кУхня', поэтому ударение сохраняется на корне.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "красивее",
+        v2: "красИвее",
+        v3: "красивЕе",
+        sentence1: "Выберите правильную форму сравнительной степени прилагательного.",
+        sentence2: "В сравнительной степени 'красивее' ударение всегда падает на тот же слог, что и в полной форме 'красИвый'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "свёкла",
+        v2: "свЁкла",
+        v3: "свеклА",
+        sentence1: "Где правильно ставить ударение в названии овоща?",
+        sentence2: "Слово 'свёкла' имеет фиксированное ударение на первом слоге, вариант с ударением на окончание считается недопустимым.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "щавель",
+        v2: "щавЕль",
+        v3: "щАвель",
+        sentence1: "Определите верное ударение в существительном мужского рода.",
+        sentence2: "В слове 'щавель' ударение всегда падает на второй слог, на букву 'е'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "жалюзи",
+        v2: "жалюзИ",
+        v3: "жАлюзи",
+        sentence1: "В каком варианте правильно поставлено ударение в несклоняемом существительном?",
+        sentence2: "Французское заимствование 'жалюзи' имеет фиксированное ударение на последнем слоге.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "диспансер",
+        v2: "диспансЕр",
+        v3: "диспАнсер",
+        sentence1: "Выберите правильное ударение в медицинском термине.",
+        sentence2: "В слове 'диспансер' ударение всегда падает на последний слог во всех формах.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "мусоропровод",
+        v2: "мусоропровОд",
+        v3: "мусОропровод",
+        sentence1: "Где правильно ставить ударение в сложном существительном?",
+        sentence2: "В сложных существительных с частью '-провод' ударение падает на корень 'провОд'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "новостей",
+        v2: "нОвостей",
+        v3: "новостЕй",
+        sentence1: "Определите верное ударение в родительном падеже множественного числа.",
+        sentence2: "В слове 'новостей' ударение фиксировано на первом слоге, как и в именительном падеже 'нОвости'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "средства",
+        v2: "срЕдства",
+        v3: "средствА",
+        sentence1: "Выберите правильную форму ударения во множественном числе.",
+        sentence2: "Слово 'средства' сохраняет ударение на первом слоге во всех формах множественного числа.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "договор",
+        v2: "дОговор",
+        v3: "договОр",
+        sentence1: "В каком варианте правильно поставлено ударение в юридическом термине?",
+        sentence2: "В слове 'договор' ударение всегда падает на первый слог, вариант с ударением на последний слог является разговорным.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "банты",
+        v2: "бАнты",
+        v3: "бантЫ",
+        sentence1: "Где правильно ставить ударение во множественном числе существительного?",
+        sentence2: "Множественное число слова 'бант' имеет ударение на первом слоге: 'бАнты'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "шарфы",
+        v2: "шАрфы",
+        v3: "шарфЫ",
+        sentence1: "Определите верное ударение в форме множественного числа.",
+        sentence2: "Слово 'шарфы' имеет фиксированное ударение на первом слоге, форма с ударением на окончание неверна.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "цепочка",
+        v2: "цЕпочка",
+        v3: "цепОчка",
+        sentence1: "Выберите правильное ударение в существительном с суффиксом.",
+        sentence2: "В слове 'цепочка' ударение падает на корень, как и в исходном слове 'цепь'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "черпать",
+        v2: "чЕрпать",
+        v3: "черпАть",
+        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
+        sentence2: "Глагол 'черпать' имеет фиксированное ударение на первом слоге во всех личных формах.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "эксперт",
+        v2: "экспЕрт",
+        v3: "Эксперт",
+        sentence1: "Найдите слово, в котором ударение падает на второй слог.",
+        sentence2: "В слове 'эксперт' ударение всегда падает на второй слог, на букву 'е'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "опошлить",
+        v2: "опОшлить",
+        v3: "опошлИть",
+        sentence1: "Определите верное ударение в глаголе совершенного вида.",
+        sentence2: "В глаголе 'опошлить' ударение фиксировано на корне, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "обогнать",
+        v2: "обогнАть",
+        v3: "обОгнать",
+        sentence1: "Вставьте слово с правильным ударением: Он смог ___ всех соперников.",
+        sentence2: "В глаголе 'обогнать' ударение всегда падает на последний слог, включая форму прошедшего времени женского рода 'обогналА'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "включить",
+        v2: "включИть",
+        v3: "вклЮчить",
+        sentence1: "Выберите правильную форму глагола с верным ударением.",
+        sentence2: "Глагол 'включить' имеет фиксированное ударение на окончании во всех личных формах (включИшь, включИт).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "предвосхитить",
+        v2: "предвосхИтить",
+        v3: "предвосхитИть",
+        sentence1: "Где правильно ставить ударение в глаголе с приставкой?",
+        sentence2: "В глаголе 'предвосхитить' ударение падает на корень, на букву 'и', и не смещается при спряжении.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "обеспечить",
+        v2: "обеспЕчить",
+        v3: "обеспечИть",
+        sentence1: "Определите верное ударение в глаголе совершенного вида.",
+        sentence2: "В глаголе 'обеспечить' и существительном 'обеспЕчение' ударение всегда падает на корень 'пЕч'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "корысть",
+        v2: "кОрысть",
+        v3: "корЫсть",
+        sentence1: "В каком варианте правильно поставлено ударение в существительном?",
+        sentence2: "Слово 'корысть' имеет фиксированное ударение на первом слоге во всех падежах.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "сливовый",
+        v2: "слИвовый",
+        v3: "сливОвый",
+        sentence1: "Выберите правильное ударение в прилагательном, образованном от существительного.",
+        sentence2: "Прилагательное 'сливовый' сохраняет ударение на корне, как и в слове 'слИва'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "вероисповедание",
+        v2: "вероисповЕдание",
+        v3: "вероисповедАние",
+        sentence1: "Где правильно ставить ударение в сложном религиозном термине?",
+        sentence2: "В слове 'вероисповедание' ударение падает на корень 'вЕд', как и в глаголе 'вЕдать'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "фетиш",
+        v2: "фетИш",
+        v3: "фЕтиш",
+        sentence1: "Определите верное ударение в заимствованном существительном.",
+        sentence2: "В слове 'фетиш' ударение всегда падает на второй слог, на букву 'и'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "флюгер",
+        v2: "флюгЕр",
+        v3: "флЮгер",
+        sentence1: "В каком варианте правильно поставлено ударение в названии прибора?",
+        sentence2: "В слове 'флюгер' ударение фиксировано на втором слоге, на букву 'е'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "таможня",
+        v2: "тамОжня",
+        v3: "тАможня",
+        sentence1: "Выберите правильную форму ударения в существительном.",
+        sentence2: "В слове 'таможня' ударение всегда падает на второй слог, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "дефис",
+        v2: "дЕфис",
+        v3: "дефИс",
+        sentence1: "Найдите слово, в котором ударение падает на первый слог.",
+        sentence2: "В слове 'дефис' ударение фиксировано на первом слоге, на букву 'е'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "досуг",
+        v2: "досУг",
+        v3: "дОсуг",
+        sentence1: "Где правильно ставить ударение в существительном мужского рода?",
+        sentence2: "В слове 'досуг' ударение всегда падает на второй слог, на букву 'у'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "молящий",
+        v2: "мОлящий",
+        v3: "молящИй",
+        sentence1: "Определите верное ударение в причастии настоящего времени.",
+        sentence2: "В причастии 'молящий' ударение сохраняется на том же слоге, что и в инфинитиве 'мОлить'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "некролог",
+        v2: "некролОг",
+        v3: "нЕкролог",
+        sentence1: "В каком варианте правильно поставлено ударение в термине?",
+        sentence2: "В слове 'некролог' ударение фиксировано на последнем слоге, как и в слове 'каталОг'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "новобрачный",
+        v2: "нОвобрачный",
+        v3: "новобрАчный",
+        sentence1: "Выберите правильное ударение в прилагательном-существительном.",
+        sentence2: "В слове 'новобрачный' ударение падает на первый слог, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "обескровить",
+        v2: "обескрОвить",
+        v3: "обескровИть",
+        sentence1: "Где правильно ставить ударение в глаголе совершенного вида?",
+        sentence2: "В глаголе 'обескровить' ударение падает на корень 'крОв', как и в слове 'крОвь'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "одновременно",
+        v2: "одноврЕменно",
+        v3: "одновременнО",
+        sentence1: "Определите верное ударение в наречии.",
+        sentence2: "В наречии 'одновременно' ударение падает на третий слог, на букву 'е'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "озлобить",
+        v2: "озлОбить",
+        v3: "озлобИть",
+        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
+        sentence2: "В глаголе 'озлобить' ударение фиксировано на корне, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "округ",
+        v2: "Округ",
+        v3: "окрУг",
+        sentence1: "Найдите слово, в котором ударение падает на первый слог.",
+        sentence2: "В слове 'округ' ударение всегда падает на первый слог, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "оптовый",
+        v2: "оптОвый",
+        v3: "Оптовый",
+        sentence1: "Выберите правильную форму ударения в прилагательном.",
+        sentence2: "В прилагательном 'оптовый' ударение падает на второй слог, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "осужденный",
+        v2: "осуждЁнный",
+        v3: "осУжденный",
+        sentence1: "Где правильно ставить ударение в страдательном причастии?",
+        sentence2: "В причастии 'осуждённый' ударение всегда падает на суффикс, на букву 'ё'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "откупорить",
+        v2: "откУпорить",
+        v3: "откупОрить",
+        sentence1: "Определите верное ударение в глаголе совершенного вида.",
+        sentence2: "В глаголе 'откупорить' ударение фиксировано на корне, на букву 'у'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "памятуя",
+        v2: "пАмятуя",
+        v3: "памятУя",
+        sentence1: "В каком варианте правильно поставлено ударение в деепричастии?",
+        sentence2: "В деепричастии 'памятуя' ударение падает на первый слог, как и в глаголе 'пАмятовать'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "партер",
+        v2: "партЕр",
+        v3: "пАртер",
+        sentence1: "Выберите правильное ударение в театральном термине.",
+        sentence2: "В слове 'партер' ударение всегда падает на последний слог, на букву 'е'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "первичный",
+        v2: "пЕрвичный",
+        v3: "первИчный",
+        sentence1: "Где правильно ставить ударение в прилагательном?",
+        sentence2: "В прилагательном 'первичный' ударение сохраняется на корне, как и в слове 'пЕрвый'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "перелив",
+        v2: "перелИв",
+        v3: "пЕрелив",
+        sentence1: "Определите верное ударение в существительном мужского рода.",
+        sentence2: "В слове 'перелив' ударение падает на второй слог, на букву 'и'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "петля",
+        v2: "петлЯ",
+        v3: "пЕтля",
+        sentence1: "В каком варианте правильно поставлено ударение в существительном?",
+        sentence2: "В слове 'петля' ударение всегда падает на окончание, на букву 'я'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "пломбировать",
+        v2: "пломбировАть",
+        v3: "пломбИровать",
+        sentence1: "Выберите правильную форму ударения в глаголе.",
+        sentence2: "В глаголе 'пломбировать' ударение фиксировано на суффиксе -ова-, на букву 'а'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "повторить",
+        v2: "повторИть",
+        v3: "пОвторить",
+        sentence1: "Где правильно ставить ударение в глаголе совершенного вида?",
+        sentence2: "В глаголе 'повторить' ударение всегда падает на окончание, на букву 'и' (повторИт, повторИшь).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "поднять",
+        v2: "поднЯть",
+        v3: "поднЯть",
+        sentence1: "Найдите слово, в котором ударение падает на второй слог.",
+        sentence2: "В глаголе 'поднять' ударение падает на второй слог, на букву 'я' (поднялА, поднЯли).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "полить",
+        v2: "полИть",
+        v3: "пОлить",
+        sentence1: "Определите верное ударение в глаголе, означающем орошение водой.",
+        sentence2: "В глаголе 'полить' (цветы) ударение всегда падает на окончание, на букву 'и'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "положить",
+        v2: "положИть",
+        v3: "пОложить",
+        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
+        sentence2: "В глаголе 'положить' ударение фиксировано на окончании во всех личных формах (положИшь, положИт).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "порвать",
+        v2: "порвАть",
+        v3: "пОрвать",
+        sentence1: "Выберите правильное ударение в глаголе совершенного вида.",
+        sentence2: "В глаголе 'порвать' ударение всегда падает на второй слог, на букву 'а' (порвАл, порвАла).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "послать",
+        v2: "послАть",
+        v3: "пОслать",
+        sentence1: "Где правильно ставить ударение в глаголе?",
+        sentence2: "В глаголе 'послать' ударение фиксировано на втором слоге, на букву 'а' (послАл, послАла).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "прибыть",
+        v2: "прибЫть",
+        v3: "прИбыть",
+        sentence1: "Определите верное ударение в глаголе совершенного вида.",
+        sentence2: "В глаголе 'прибыть' ударение всегда падает на второй слог, на букву 'ы' (прибЫл, прибЫла).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "привезенный",
+        v2: "привезЁнный",
+        v3: "прИвезенный",
+        sentence1: "В каком варианте правильно поставлено ударение в страдательном причастии?",
+        sentence2: "В причастии 'привезённый' ударение всегда падает на суффикс, на букву 'ё'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "приданое",
+        v2: "придАное",
+        v3: "прИданое",
+        sentence1: "Выберите правильную форму ударения в существительном.",
+        sentence2: "В слове 'приданое' ударение фиксировано на втором слоге, на букву 'а'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "призывать",
+        v2: "призывАть",
+        v3: "прИзывать",
+        sentence1: "Где правильно ставить ударение в глаголе несовершенного вида?",
+        sentence2: "В глаголе 'призывать' ударение всегда падает на суффикс -ыва-, на букву 'а'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "принудить",
+        v2: "принУдить",
+        v3: "принудИть",
+        sentence1: "Определите верное ударение в глаголе совершенного вида.",
+        sentence2: "В глаголе 'принудить' ударение падает на корень, на букву 'у' (принУдит, принУдишь).",
+        sentence2Type: "passive",
+        hasPassive: true 
+    },
+    { 
+        v1: "творог",
+        v2: "твОрог",
+        v3: "творОг",
+        sentence1: "В каком варианте правильно поставлено ударение в названии продукта?",
+        sentence2: "В слове 'творог' нормативным является ударение на первом слоге, на букву 'о'.",
+        sentence2Type: "passive",
+        hasPassive: true 
+    }
+];
 
         let studentName = '', selectedCharacter = null, currentQuestions = [], currentIndex = 0, score = 0;
         let startTime = null, timerInterval = null, selectedV2 = null, selectedV3 = null, currentPlanetIndex = 0;
@@ -937,7 +1432,7 @@
             let errorsText = errorsList.length > 0 ? errorsList.map((e, idx) => `${idx + 1}. ${e.question}: student wrote "${e.studentAnswer}", correct is "${e.correctAnswer}"`).join('\n') : 'No errors! Perfect performance!';
             const payload = { 
                 student_name: studentName, score: `${score}/${currentQuestions.length}`, percentage: `${percentage}%`, 
-                time: new Date().toLocaleString(), exercise_name: "Active & Passive Voice: Cyber Portal", time_spent: timeSpent, 
+                time: new Date().toLocaleString(), exercise_name: "Русский Язык Орфоэпические Нормы: Cyber Portal", time_spent: timeSpent, 
                 tab_switches: tabSwitchCount === 0 ? '0 (no switches)' : `${tabSwitchCount} switch(es) detected`,
                 selected_bonus: bonusNames[selectedBonus] || 'No bonus selected', bonus_type: selectedBonus,
                 level_reached: currentLevel === 2 ? 'Level 2 (Type Mode)' : 'Level 1 (Selection Mode)',
