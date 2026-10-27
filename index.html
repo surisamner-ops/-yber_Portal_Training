@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Русский Язык Орфоэпические Нормы: Cyber Portal</title>
+    <title>Средства выразительности речи: Кибер-портал</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,16 +24,8 @@
             position: relative;
         }
 
-        .stars-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0;
-            background: radial-gradient(ellipse at bottom, #1b2735 0%, #0a0a0f 100%);
-        }
-        .star {
-            position: absolute; background: white; border-radius: 50%;
-            animation: twinkle var(--duration) ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(255,255,255,0.8);
-        }
+        .stars-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; background: radial-gradient(ellipse at bottom, #1b2735 0%, #0a0a0f 100%); }
+        .star { position: absolute; background: white; border-radius: 50%; animation: twinkle var(--duration) ease-in-out infinite; box-shadow: 0 0 10px rgba(255,255,255,0.8); }
         @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
@@ -56,61 +48,28 @@
 
         .main-wrapper { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; padding: 10px; }
         .header { text-align: center; margin-bottom: 15px; animation: fadeInUp 1s ease-out; text-transform: uppercase; letter-spacing: 3px; }
-        .main-title {
-            font-family: 'Orbitron', monospace; font-size: 2em; font-weight: 900;
-            background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue), var(--neon-pink), var(--neon-purple));
-            background-size: 300% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: shimmer 5s linear infinite; margin-bottom: 5px;
-        }
+        .main-title { font-family: 'Orbitron', monospace; font-size: 2em; font-weight: 900; background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue), var(--neon-pink), var(--neon-purple)); background-size: 300% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 5s linear infinite; margin-bottom: 5px; }
         .header p { font-size: 0.9em; color: var(--neon-blue); font-weight: 600; letter-spacing: 2px; }
 
         .screen { display: none; animation: fadeInUp 0.6s ease-out; }
         .screen.active { display: block; }
 
-        .card {
-            background: var(--panel-bg); backdrop-filter: blur(20px); border: 2px solid var(--neon-purple);
-            border-radius: 20px; padding: 25px; text-align: center; max-width: 800px; margin: 0 auto 15px;
-            box-shadow: 0 0 40px rgba(176, 38, 255, 0.3);
-        }
-
-        .name-input {
-            width: 100%; max-width: 350px; padding: 12px 20px; background: rgba(0, 0, 0, 0.6);
-            border: 2px solid var(--neon-blue); border-radius: 12px; color: var(--neon-blue); font-size: 1em;
-            text-align: center; margin-bottom: 15px; font-family: 'Rajdhani', sans-serif; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s;
-        }
+        .card { background: var(--panel-bg); backdrop-filter: blur(20px); border: 2px solid var(--neon-purple); border-radius: 20px; padding: 25px; text-align: center; max-width: 800px; margin: 0 auto 15px; box-shadow: 0 0 40px rgba(176, 38, 255, 0.3); }
+        .name-input { width: 100%; max-width: 350px; padding: 12px 20px; background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-blue); border-radius: 12px; color: var(--neon-blue); font-size: 1em; text-align: center; margin-bottom: 15px; font-family: 'Rajdhani', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; }
         .name-input:focus { outline: none; border-color: var(--neon-purple); box-shadow: 0 0 30px rgba(176, 38, 255, 0.6); }
-
-        .btn {
-            padding: 12px 35px; background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%);
-            color: white; border: none; border-radius: 50px; font-family: 'Orbitron', monospace; font-size: 0.95em;
-            font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 0 25px rgba(176, 38, 255, 0.5);
-            margin: 8px; text-transform: uppercase; letter-spacing: 2px;
-        }
+        .btn { padding: 12px 35px; background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%); color: white; border: none; border-radius: 50px; font-family: 'Orbitron', monospace; font-size: 0.95em; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 0 25px rgba(176, 38, 255, 0.5); margin: 8px; text-transform: uppercase; letter-spacing: 2px; }
         .btn:hover:not(:disabled) { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 40px rgba(176, 38, 255, 0.8); }
         .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
         .character-select { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 15px 0; }
-        .character-card {
-            background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple);
-            border-radius: 16px; padding: 10px; cursor: pointer; transition: all 0.3s;
-        }
+        .character-card { background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 16px; padding: 10px; cursor: pointer; transition: all 0.3s; }
         .character-card:hover { background: rgba(176, 38, 255, 0.2); border-color: var(--neon-blue); transform: scale(1.05); box-shadow: 0 0 30px rgba(176, 38, 255, 0.4); }
         .character-card.selected { background: rgba(57, 255, 20, 0.2); border-color: var(--neon-green); box-shadow: 0 0 40px rgba(57, 255, 20, 0.6); }
         .character-card svg { width: 80px; height: 80px; margin: 0 auto 8px; display: block; animation: bounce 2s ease-in-out infinite; }
         .character-card h3 { font-family: 'Orbitron', monospace; color: var(--neon-blue); font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; }
 
-        .game-scene {
-            position: relative; height: 350px; margin-bottom: 10px; overflow: visible;
-            background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.1) 0%, transparent 70%);
-            border: 2px solid rgba(176, 38, 255, 0.3); border-radius: 20px;
-        }
-
-        .planet-svg {
-            position: absolute; animation: planetFloat 4s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px rgba(176, 38, 255, 0.6)) drop-shadow(0 0 30px rgba(0, 243, 255, 0.3));
-            animation: planetGlow 3s ease-in-out infinite;
-        }
+        .game-scene { position: relative; height: 350px; margin-bottom: 10px; overflow: visible; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.1) 0%, transparent 70%); border: 2px solid rgba(176, 38, 255, 0.3); border-radius: 20px; }
+        .planet-svg { position: absolute; animation: planetFloat 4s ease-in-out infinite; filter: drop-shadow(0 0 15px rgba(176, 38, 255, 0.6)) drop-shadow(0 0 30px rgba(0, 243, 255, 0.3)); animation: planetGlow 3s ease-in-out infinite; }
         .planet-mercury { left: 5%; bottom: 140px; width: 50px; height: 50px; animation-delay: 0s; }
         .planet-venus { left: 18%; bottom: 170px; width: 65px; height: 65px; animation-delay: 0.5s; }
         .planet-earth { left: 32%; bottom: 120px; width: 70px; height: 70px; animation-delay: 1s; }
@@ -120,193 +79,89 @@
         .planet-uranus { left: 86%; bottom: 190px; width: 75px; height: 75px; animation-delay: 3s; }
         .planet-neptune { left: 95%; bottom: 130px; width: 70px; height: 70px; animation-delay: 3.5s; }
 
-        .portal {
-            position: absolute; right: 15px; bottom: 100px; width: 65px; height: 100px;
-            border-radius: 45px; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.8) 0%, rgba(0, 243, 255, 0.5) 50%, transparent 70%);
-            border: 3px solid var(--neon-purple); animation: portalGlow 2s ease-in-out infinite; z-index: 2;
-        }
-        .portal::before {
-            content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px;
-            border-radius: 37px; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.9) 0%, transparent 70%);
-            animation: portalSpin 3s linear infinite;
-        }
-        .portal.repaired {
-            background: radial-gradient(ellipse at center, rgba(57, 255, 20, 0.8) 0%, rgba(0, 243, 255, 0.6) 50%, transparent 70%);
-            border-color: var(--neon-green);
-        }
+        .portal { position: absolute; right: 15px; bottom: 100px; width: 65px; height: 100px; border-radius: 45px; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.8) 0%, rgba(0, 243, 255, 0.5) 50%, transparent 70%); border: 3px solid var(--neon-purple); animation: portalGlow 2s ease-in-out infinite; z-index: 2; }
+        .portal::before { content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px; border-radius: 37px; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.9) 0%, transparent 70%); animation: portalSpin 3s linear infinite; }
+        .portal.repaired { background: radial-gradient(ellipse at center, rgba(57, 255, 20, 0.8) 0%, rgba(0, 243, 255, 0.6) 50%, transparent 70%); border-color: var(--neon-green); }
 
-        .player-character {
-            position: absolute; bottom: 80px; left: 5%; width: 200px; height: 200px; z-index: 3;
-            transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1), bottom 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: visible !important;
-        }
-        .player-character svg { 
-            width: 100%; height: 100%; overflow: visible !important;
-            animation: glow 2s ease-in-out infinite, breathe 3s ease-in-out infinite;
-        }
+        .player-character { position: absolute; bottom: 80px; left: 5%; width: 200px; height: 200px; z-index: 3; transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1), bottom 1.2s cubic-bezier(0.4, 0, 0.2, 1); overflow: visible !important; }
+        .player-character svg { width: 100%; height: 100%; overflow: visible !important; animation: glow 2s ease-in-out infinite, breathe 3s ease-in-out infinite; }
         .player-character.flying { animation: characterFly 1s ease-in-out infinite; }
         .player-character.landing { animation: characterLand 0.6s ease-out; }
 
-        .rocket-particle {
-            position: absolute; width: 8px; height: 8px;
-            background: radial-gradient(circle, var(--neon-green), var(--neon-blue));
-            border-radius: 50%; pointer-events: none; animation: rocketTrail 0.8s ease-out forwards;
-            z-index: 2; box-shadow: 0 0 15px var(--neon-green);
-        }
-        .confetti {
-            position: absolute; width: 8px; height: 8px; pointer-events: none;
-            animation: confetti 1.5s ease-out forwards;
-        }
-        .floating-message {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, rgba(176, 38, 255, 0.95), rgba(0, 243, 255, 0.95));
-            border: 3px solid var(--neon-blue); border-radius: 20px; padding: 20px 40px;
-            font-family: 'Orbitron', monospace; font-size: 1.8em; font-weight: 900; color: white;
-            text-shadow: 0 0 30px rgba(0, 243, 255, 1); box-shadow: 0 0 60px rgba(176, 38, 255, 1);
-            z-index: 1000; animation: floatMessage 2s ease-out forwards; pointer-events: none;
-            text-transform: uppercase; letter-spacing: 3px;
-        }
-        .star-burst {
-            position: fixed; width: 30px; height: 30px;
-            background: radial-gradient(circle, var(--neon-blue), var(--neon-purple));
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation: starBurst 1s ease-out forwards; pointer-events: none; z-index: 999;
-            box-shadow: 0 0 30px var(--neon-blue);
-        }
+        .rocket-particle { position: absolute; width: 8px; height: 8px; background: radial-gradient(circle, var(--neon-green), var(--neon-blue)); border-radius: 50%; pointer-events: none; animation: rocketTrail 0.8s ease-out forwards; z-index: 2; box-shadow: 0 0 15px var(--neon-green); }
+        .confetti { position: absolute; width: 8px; height: 8px; pointer-events: none; animation: confetti 1.5s ease-out forwards; }
+        .floating-message { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, rgba(176, 38, 255, 0.95), rgba(0, 243, 255, 0.95)); border: 3px solid var(--neon-blue); border-radius: 20px; padding: 20px 40px; font-family: 'Orbitron', monospace; font-size: 1.8em; font-weight: 900; color: white; text-shadow: 0 0 30px rgba(0, 243, 255, 1); box-shadow: 0 0 60px rgba(176, 38, 255, 1); z-index: 1000; animation: floatMessage 2s ease-out forwards; pointer-events: none; text-transform: uppercase; letter-spacing: 3px; }
+        .star-burst { position: fixed; width: 30px; height: 30px; background: radial-gradient(circle, var(--neon-blue), var(--neon-purple)); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); animation: starBurst 1s ease-out forwards; pointer-events: none; z-index: 999; box-shadow: 0 0 30px var(--neon-blue); }
 
-        .task-card {
-            background: var(--panel-bg); backdrop-filter: blur(20px); border: 2px solid var(--neon-purple);
-            border-radius: 20px; padding: 20px; box-shadow: 0 0 40px rgba(176, 38, 255, 0.3);
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-        }
+        .task-card { background: var(--panel-bg); backdrop-filter: blur(20px); border: 2px solid var(--neon-purple); border-radius: 20px; padding: 20px; box-shadow: 0 0 40px rgba(176, 38, 255, 0.3); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .task-left { display: flex; flex-direction: column; gap: 12px; }
         .task-right { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 
         .verb-display { text-align: center; margin: 8px 0; }
-        .verb-v1 { font-family: 'Orbitron', monospace; font-size: 2em; color: var(--neon-pink); font-weight: 900; text-shadow: 0 0 30px var(--neon-pink); letter-spacing: 3px; }
-        .sentence-box { background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-blue); border-radius: 12px; padding: 12px 15px; text-align: left; transition: all 0.3s; }
+        .verb-v1 { font-family: 'Orbitron', monospace; font-size: 1.8em; color: var(--neon-pink); font-weight: 900; text-shadow: 0 0 30px var(--neon-pink); letter-spacing: 2px; }
+        .sentence-box { background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-blue); border-radius: 12px; padding: 15px; text-align: left; transition: all 0.3s; min-height: 80px; display: flex; flex-direction: column; justify-content: center; }
         .sentence-box:hover { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); }
-        .sentence-context { font-size: 1em; color: #e2e8f0; font-style: italic; font-family: 'Rajdhani', sans-serif; font-weight: 600; }
-        .grammar-label { font-family: 'Orbitron', monospace; font-size: 0.75em; font-weight: 700; margin-bottom: 6px; display: inline-block; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .sentence-context { font-size: 1.1em; color: #e2e8f0; font-family: 'Rajdhani', sans-serif; font-weight: 600; line-height: 1.4; }
+        .grammar-label { font-family: 'Orbitron', monospace; font-size: 0.75em; font-weight: 700; margin-bottom: 8px; display: inline-block; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .grammar-label.active { color: var(--neon-blue); background: rgba(0, 243, 255, 0.15); border: 1px solid var(--neon-blue); box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); }
-        .grammar-label.passive { color: var(--neon-purple); background: rgba(176, 38, 255, 0.15); border: 1px solid var(--neon-purple); box-shadow: 0 0 15px rgba(176, 38, 255, 0.3); }
-        .grammar-label.perfect { color: var(--neon-green); background: rgba(57, 255, 20, 0.15); border: 1px solid var(--neon-green); box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); }
-        .no-passive-note { font-size: 0.75em; color: var(--neon-pink); margin-top: 6px; font-style: italic; font-weight: 600; }
+        .grammar-label.explanation { color: var(--neon-green); background: rgba(57, 255, 20, 0.15); border: 1px solid var(--neon-green); box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); }
 
         .slots-container { display: flex; justify-content: center; gap: 15px; margin: 12px 0; }
-        .verb-slot {
-            min-width: 130px; height: 45px; background: rgba(0, 0, 0, 0.6); border: 2px dashed var(--neon-blue);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-family: 'Orbitron', monospace; font-weight: 700; color: var(--neon-blue); font-size: 0.9em;
-            cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px;
-        }
+        .verb-slot { min-width: 160px; height: 45px; background: rgba(0, 0, 0, 0.6); border: 2px dashed var(--neon-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Orbitron', monospace; font-weight: 700; color: var(--neon-blue); font-size: 0.9em; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .verb-slot.filled { border-style: solid; border-color: var(--neon-blue); background: rgba(0, 243, 255, 0.15); box-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
         .verb-slot.correct { border-color: var(--neon-green); background: rgba(57, 255, 20, 0.2); color: var(--neon-green); animation: pulse 0.5s ease; box-shadow: 0 0 30px rgba(57, 255, 20, 0.6); }
         .verb-slot.wrong { border-color: var(--neon-pink); background: rgba(255, 0, 255, 0.2); color: var(--neon-pink); animation: shake 0.4s ease; box-shadow: 0 0 30px rgba(255, 0, 255, 0.6); }
 
-        .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; width: 100%; }
-        .option-btn {
-            background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 12px;
-            padding: 12px; color: var(--neon-blue); font-family: 'Orbitron', monospace; font-size: 0.85em;
-            font-weight: 700; cursor: pointer; transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px;
-        }
-        .option-btn:hover:not(:disabled) { background: rgba(176, 38, 255, 0.3); border-color: var(--neon-blue); transform: translateY(-3px); box-shadow: 0 0 25px rgba(176, 38, 255, 0.6); }
-        .option-btn.selected-v2 { background: var(--neon-blue); color: var(--dark-bg); border-color: var(--neon-blue); box-shadow: 0 0 30px var(--neon-blue); }
-        .option-btn.selected-v3 { background: var(--neon-purple); color: white; border-color: var(--neon-purple); box-shadow: 0 0 30px var(--neon-purple); }
+        .options-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 12px 0; width: 100%; }
+        .option-btn { background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 12px; padding: 14px; color: var(--neon-blue); font-family: 'Rajdhani', sans-serif; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: all 0.2s; text-align: left; }
+        .option-btn:hover:not(:disabled) { background: rgba(176, 38, 255, 0.3); border-color: var(--neon-blue); transform: translateX(5px); box-shadow: 0 0 25px rgba(176, 38, 255, 0.6); }
+        .option-btn.selected { background: var(--neon-blue); color: var(--dark-bg); border-color: var(--neon-blue); box-shadow: 0 0 30px var(--neon-blue); }
         .option-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-        .type-input {
-            width: 100%; padding: 12px 15px; background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-blue);
-            border-radius: 12px; color: var(--neon-blue); font-family: 'Orbitron', monospace; font-size: 1em;
-            font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s;
-        }
+        .type-input { width: 100%; padding: 14px 15px; background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-blue); border-radius: 12px; color: var(--neon-blue); font-family: 'Orbitron', monospace; font-size: 1.1em; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; }
         .type-input:focus { outline: none; border-color: var(--neon-purple); box-shadow: 0 0 30px rgba(176, 38, 255, 0.6); }
-        .type-input::placeholder { color: rgba(0, 243, 255, 0.5); }
+        .type-input::placeholder { color: rgba(0, 243, 255, 0.5); text-transform: none; letter-spacing: 1px; font-size: 0.9em; }
         .type-input.correct-answer { border-color: var(--neon-green) !important; color: var(--neon-green) !important; box-shadow: 0 0 30px var(--neon-green) !important; }
 
-        .feedback-msg { margin-top: 12px; padding: 10px; border-radius: 12px; font-size: 1em; display: none; animation: pop 0.4s ease-out; font-family: 'Orbitron', monospace; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+        .feedback-msg { margin-top: 12px; padding: 12px; border-radius: 12px; font-size: 1em; display: none; animation: pop 0.4s ease-out; font-family: 'Rajdhani', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
         .feedback-msg.success { background: rgba(57, 255, 20, 0.2); border: 2px solid var(--neon-green); color: var(--neon-green); display: block; box-shadow: 0 0 30px rgba(57, 255, 20, 0.4); }
         .feedback-msg.hint { background: rgba(255, 0, 255, 0.2); border: 2px solid var(--neon-pink); color: var(--neon-pink); display: block; box-shadow: 0 0 30px rgba(255, 0, 255, 0.4); }
 
-        .timer-bar {
-            position: sticky; top: 10px; z-index: 100; background: rgba(10, 10, 20, 0.95);
-            border: 2px solid var(--neon-blue); border-radius: 50px; padding: 8px 20px;
-            text-align: center; margin-bottom: 10px; font-family: 'Orbitron', monospace;
-            color: var(--neon-blue); backdrop-filter: blur(12px); display: none; align-items: center;
-            justify-content: center; gap: 12px; font-size: 1em; box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
-            text-transform: uppercase; letter-spacing: 2px;
-        }
+        .timer-bar { position: sticky; top: 10px; z-index: 100; background: rgba(10, 10, 20, 0.95); border: 2px solid var(--neon-blue); border-radius: 50px; padding: 8px 20px; text-align: center; margin-bottom: 10px; font-family: 'Orbitron', monospace; color: var(--neon-blue); backdrop-filter: blur(12px); display: none; align-items: center; justify-content: center; gap: 12px; font-size: 1em; box-shadow: 0 0 30px rgba(0, 243, 255, 0.4); text-transform: uppercase; letter-spacing: 2px; }
         .timer-bar.show { display: flex; }
 
-        .progress-container {
-            position: sticky; top: 60px; z-index: 99; background: var(--panel-bg);
-            border: 2px solid var(--neon-purple); border-radius: 15px; padding: 12px 15px;
-            margin-bottom: 10px; backdrop-filter: blur(12px); box-shadow: 0 0 30px rgba(176, 38, 255, 0.3);
-        }
+        .progress-container { position: sticky; top: 60px; z-index: 99; background: var(--panel-bg); border: 2px solid var(--neon-purple); border-radius: 15px; padding: 12px 15px; margin-bottom: 10px; backdrop-filter: blur(12px); box-shadow: 0 0 30px rgba(176, 38, 255, 0.3); }
         .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-family: 'Orbitron', monospace; color: var(--neon-blue); font-size: 0.9em; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
         .progress-bar-bg { width: 100%; height: 8px; background: rgba(0, 0, 0, 0.6); border-radius: 10px; overflow: hidden; border: 1px solid var(--neon-purple); }
         .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--neon-purple) 0%, var(--neon-blue) 50%, var(--neon-green) 100%); border-radius: 10px; transition: width 0.5s ease-out; box-shadow: 0 0 20px var(--neon-purple); }
 
-        .back-to-main {
-            position: fixed; top: 15px; left: 15px; width: 45px; height: 45px;
-            background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue)); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;
-            box-shadow: 0 0 30px rgba(176, 38, 255, 0.6); transition: all 0.3s; z-index: 100; font-size: 1.3em; border: 2px solid var(--neon-blue);
-        }
+        .back-to-main { position: fixed; top: 15px; left: 15px; width: 45px; height: 45px; background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; box-shadow: 0 0 30px rgba(176, 38, 255, 0.6); transition: all 0.3s; z-index: 100; font-size: 1.3em; border: 2px solid var(--neon-blue); }
         .back-to-main:hover { transform: scale(1.15); box-shadow: 0 0 40px rgba(176, 38, 255, 0.9); }
 
-        .tab-switch-warning {
-            position: fixed; top: 70px; right: 15px; background: rgba(255, 0, 255, 0.9);
-            border: 2px solid var(--neon-pink); border-radius: 50px; padding: 8px 15px;
-            font-family: 'Orbitron', monospace; font-size: 0.8em; font-weight: 700; color: white;
-            text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 30px var(--neon-pink);
-            z-index: 100; display: none; animation: pulse 1s infinite;
-        }
+        .tab-switch-warning { position: fixed; top: 70px; right: 15px; background: rgba(255, 0, 255, 0.9); border: 2px solid var(--neon-pink); border-radius: 50px; padding: 8px 15px; font-family: 'Orbitron', monospace; font-size: 0.8em; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 30px var(--neon-pink); z-index: 100; display: none; animation: pulse 1s infinite; }
         .tab-switch-warning.show { display: block; }
 
-        .music-control {
-            position: fixed; bottom: 15px; right: 15px;
-            background: rgba(176, 38, 255, 0.2); border: 2px solid var(--neon-purple);
-            border-radius: 50px; padding: 8px 15px;
-            display: flex; align-items: center; gap: 8px; z-index: 100;
-            backdrop-filter: blur(10px); box-shadow: 0 0 25px rgba(176, 38, 255, 0.4);
-        }
-        .music-btn {
-            background: none; border: none; color: var(--neon-blue);
-            font-size: 1.5em; cursor: pointer; transition: all 0.3s;
-        }
+        .music-control { position: fixed; bottom: 15px; right: 15px; background: rgba(176, 38, 255, 0.2); border: 2px solid var(--neon-purple); border-radius: 50px; padding: 8px 15px; display: flex; align-items: center; gap: 8px; z-index: 100; backdrop-filter: blur(10px); box-shadow: 0 0 25px rgba(176, 38, 255, 0.4); }
+        .music-btn { background: none; border: none; color: var(--neon-blue); font-size: 1.5em; cursor: pointer; transition: all 0.3s; }
         .music-btn:hover { transform: scale(1.3); }
 
-        .level-badge {
-            position: fixed; top: 70px; right: 15px;
-            background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
-            border: 2px solid var(--neon-green); border-radius: 50px; padding: 8px 20px;
-            font-family: 'Orbitron', monospace; font-size: 0.9em; font-weight: 900; color: white;
-            text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 0 30px var(--neon-green);
-            z-index: 100; display: none; animation: pulse 2s infinite;
-        }
+        .level-badge { position: fixed; top: 70px; right: 15px; background: linear-gradient(135deg, var(--neon-green), var(--neon-blue)); border: 2px solid var(--neon-green); border-radius: 50px; padding: 8px 20px; font-family: 'Orbitron', monospace; font-size: 0.9em; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 0 30px var(--neon-green); z-index: 100; display: none; animation: pulse 2s infinite; }
         .level-badge.show { display: block; }
 
         .bonus-section { margin-top: 15px; padding: 15px; background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 16px; }
         .bonus-title { font-family: 'Orbitron', monospace; color: var(--neon-blue); font-size: 1em; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 2px; }
         .bonus-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-        .bonus-option {
-            background: rgba(0, 0, 0, 0.4); border: 2px solid var(--neon-purple); border-radius: 12px;
-            padding: 12px; cursor: pointer; transition: all 0.3s; font-family: 'Rajdhani', sans-serif;
-            font-size: 0.9em; color: var(--neon-blue); font-weight: 600;
-        }
+        .bonus-option { background: rgba(0, 0, 0, 0.4); border: 2px solid var(--neon-purple); border-radius: 12px; padding: 12px; cursor: pointer; transition: all 0.3s; font-family: 'Rajdhani', sans-serif; font-size: 0.9em; color: var(--neon-blue); font-weight: 600; }
         .bonus-option:hover { background: rgba(176, 38, 255, 0.2); border-color: var(--neon-blue); transform: translateY(-2px); box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); }
         .bonus-option.selected { background: rgba(57, 255, 20, 0.2); border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.5); }
         .bonus-emoji { font-size: 1.3em; display: block; margin-bottom: 4px; }
 
         @media (max-width: 768px) {
             .main-wrapper { padding: 5px; }
-            .main-title { font-size: 1.1em; margin-bottom: 3px; }
-            .header p { font-size: 0.7em; margin-bottom: 8px; }
-            .header { margin-bottom: 8px; }
+            .main-title { font-size: 1.3em; margin-bottom: 3px; }
+            .header p { font-size: 0.8em; margin-bottom: 8px; }
             .character-select { grid-template-columns: repeat(2, 1fr); }
             .character-card svg { width: 60px; height: 60px; }
-            .options-grid { grid-template-columns: repeat(2, 1fr); }
             .game-scene { height: 220px; margin-bottom: 8px; }
             .player-character { width: 120px; height: 120px; bottom: 20px; left: 3%; z-index: 10; overflow: visible !important; }
             .player-character svg { width: 100%; height: 100%; overflow: visible !important; }
@@ -321,18 +176,18 @@
             .portal { width: 40px; height: 65px; bottom: 70px; }
             .task-card { grid-template-columns: 1fr; padding: 12px; gap: 10px; }
             .verb-v1 { font-size: 1.4em; }
-            .sentence-box { padding: 8px 10px; }
-            .sentence-context { font-size: 0.9em; }
-            .grammar-label { font-size: 0.7em; padding: 2px 8px; }
+            .sentence-box { padding: 10px; min-height: 60px; }
+            .sentence-context { font-size: 1em; }
+            .grammar-label { font-size: 0.7em; padding: 3px 10px; }
             .bonus-options { grid-template-columns: 1fr; }
             .timer-bar { top: 5px; padding: 5px 12px; font-size: 0.85em; margin-bottom: 5px; }
             .progress-container { top: 5px; padding: 8px 10px; margin-bottom: 5px; }
             .progress-info { font-size: 0.8em; }
             .btn { padding: 8px 20px; font-size: 0.8em; margin: 5px; }
-            .verb-slot { min-width: 110px; height: 40px; font-size: 0.8em; }
-            .type-input { font-size: 0.9em; padding: 8px 10px; }
-            .option-btn { padding: 8px; font-size: 0.8em; }
-            .feedback-msg { font-size: 0.9em; padding: 8px; }
+            .verb-slot { min-width: 140px; height: 40px; font-size: 0.85em; }
+            .type-input { font-size: 1em; padding: 10px; }
+            .option-btn { padding: 12px; font-size: 1em; }
+            .feedback-msg { font-size: 0.9em; padding: 10px; }
             .back-to-main { width: 40px; height: 40px; top: 10px; left: 10px; font-size: 1.1em; }
             .music-control { bottom: 10px; right: 10px; padding: 6px 12px; }
             .level-badge { top: 60px; right: 10px; font-size: 0.8em; padding: 6px 15px; }
@@ -340,9 +195,8 @@
         }
 
         @media (max-width: 480px) {
-            .main-wrapper { padding: 5px; }
-            .main-title { font-size: 1em; }
-            .header p { font-size: 0.65em; }
+            .main-title { font-size: 1.1em; }
+            .header p { font-size: 0.7em; }
             .game-scene { height: 180px; }
             .player-character { width: 90px; height: 90px; bottom: 15px; left: 3%; z-index: 10; overflow: visible !important; }
             .planet-mercury { width: 25px; height: 25px; bottom: 80px; }
@@ -355,19 +209,18 @@
             .planet-neptune { width: 35px; height: 35px; bottom: 75px; }
             .portal { width: 35px; height: 55px; bottom: 60px; }
             .verb-v1 { font-size: 1.2em; }
-            .verb-slot { min-width: 90px; height: 36px; font-size: 0.75em; }
-            .type-input { font-size: 0.85em; padding: 6px 8px; }
-            .option-btn { padding: 6px; font-size: 0.75em; }
-            .sentence-context { font-size: 0.85em; }
-            .sentence-box { padding: 6px 8px; }
+            .verb-slot { min-width: 120px; height: 36px; font-size: 0.8em; }
+            .type-input { font-size: 0.9em; padding: 8px; }
+            .option-btn { padding: 10px; font-size: 0.95em; }
+            .sentence-context { font-size: 0.95em; }
         }
     </style>
 </head>
 <body>
     <div class="stars-bg" id="starsContainer"></div>
     <a href="../index.html" class="back-to-main" title="Back to main page">←</a>
-    <div class="level-badge" id="levelBadge">Level 2: Type Mode</div>
-    <div class="tab-switch-warning" id="tabWarning">Tab Switches: <span id="tabSwitchCount">0</span></div>
+    <div class="level-badge" id="levelBadge">Уровень 2: Ввод ответа</div>
+    <div class="tab-switch-warning" id="tabWarning">Смены вкладок: <span id="tabSwitchCount">0</span></div>
 
     <audio id="bgMusic" loop autoplay>
         <source src="background-music.mp3" type="audio/mpeg">
@@ -378,73 +231,72 @@
 
     <div class="main-wrapper">
         <div class="header">
-            <h1 class="main-title">Русский Язык Орфоэпические Нормы</h1>
-            <p>Cyber Portal: 9th Grade Grammar Challenge</p>
+            <h1 class="main-title">Кибер-портал</h1>
+            <p>Универсальная игра для подготовки к экзаменам</p>
         </div>
 
         <div class="screen active" id="screen-name">
             <div class="card">
-                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 3px;">Enter Your Name</h2>
-                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 1em;">Begin your cosmic journey</p>
-                <input type="text" class="name-input" id="studentName" placeholder="COMMANDER NAME">
+                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 3px;">Введите имя</h2>
+                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 1em;">Начните свое космическое путешествие</p>
+                <input type="text" class="name-input" id="studentName" placeholder="ИМЯ КОМАНДИРА">
                 <br>
-                <button class="btn" onclick="goToCharacterSelect()">Initialize</button>
+                <button class="btn" onclick="goToCharacterSelect()">Начать</button>
             </div>
         </div>
 
         <div class="screen" id="screen-character">
             <div class="card">
-                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Choose Your Hero</h2>
-                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9em;">Select your space companion</p>
+                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Выберите героя</h2>
+                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9em;">Ваш космический напарник</p>
                 
                 <div class="character-select">
                     <div class="character-card" onclick="selectCharacter('astronaut', this)">
                         <svg viewBox="0 0 200 200"><circle cx="100" cy="80" r="45" fill="#e9d5ff"/><circle cx="85" cy="70" r="8" fill="#1e293b"/><circle cx="115" cy="70" r="8" fill="#1e293b"/><circle cx="87" cy="68" r="3" fill="#fff"/><circle cx="117" cy="68" r="3" fill="#fff"/><path d="M 92 90 Q 100 96 108 90" stroke="#1e293b" stroke-width="2" fill="none"/><ellipse cx="100" cy="130" rx="35" ry="40" fill="#c084fc"/><circle cx="100" cy="50" r="8" fill="#fbbf24"/><line x1="100" y1="50" x2="100" y2="35" stroke="#c084fc" stroke-width="3"/><ellipse cx="70" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(-20 70 120)"/><ellipse cx="130" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(20 130 120)"/><ellipse cx="85" cy="170" rx="12" ry="8" fill="#a855f7"/><ellipse cx="115" cy="170" rx="12" ry="8" fill="#a855f7"/></svg>
-                        <h3>Astro Cat</h3>
+                        <h3>Астро-Кот</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('robot', this)">
                         <svg viewBox="0 0 200 200"><rect x="70" y="50" width="60" height="50" rx="10" fill="#bfdbfe"/><rect x="75" y="55" width="50" height="30" rx="8" fill="#0f172a"/><circle cx="88" cy="70" r="6" fill="#4ade80"/><circle cx="112" cy="70" r="6" fill="#4ade80"/><rect x="85" y="90" width="30" height="4" rx="2" fill="#4ade80"/><line x1="100" y1="50" x2="100" y2="35" stroke="#60a5fa" stroke-width="3"/><circle cx="100" cy="30" r="5" fill="#f87171"/><rect x="75" y="110" width="50" height="55" rx="8" fill="#60a5fa"/><rect x="55" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="130" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="80" y="165" width="15" height="15" rx="5" fill="#3b82f6"/><rect x="105" y="165" width="15" height="15" rx="5" fill="#3b82f6"/></svg>
-                        <h3>Robo Friend</h3>
+                        <h3>Робо-Друг</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('alien', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="40" ry="50" fill="#4ade80"/><ellipse cx="100" cy="75" rx="50" ry="55" fill="#22c55e"/><ellipse cx="80" cy="70" rx="15" ry="20" fill="#0f172a"/><ellipse cx="120" cy="70" rx="15" ry="20" fill="#0f172a"/><circle cx="82" cy="72" r="8" fill="#fbbf24"/><circle cx="122" cy="72" r="8" fill="#fbbf24"/><circle cx="84" cy="70" r="3" fill="#fff"/><circle cx="124" cy="70" r="3" fill="#fff"/><ellipse cx="100" cy="100" rx="10" ry="6" fill="#0f172a"/><path d="M 60 130 Q 40 140 35 160" stroke="#22c55e" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 140 130 Q 160 140 165 160" stroke="#22c55e" stroke-width="10" fill="none" stroke-linecap="round"/><ellipse cx="80" cy="180" rx="12" ry="8" fill="#16a34a"/><ellipse cx="120" cy="180" rx="12" ry="8" fill="#16a34a"/></svg>
-                        <h3>Space Alien</h3>
+                        <h3>Инопланетянин</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('ninja', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="38" ry="50" fill="#1e293b"/><circle cx="100" cy="75" r="42" fill="#0f172a"/><rect x="58" y="65" width="84" height="14" rx="6" fill="#f87171"/><circle cx="85" cy="72" r="6" fill="#fff"/><circle cx="115" cy="72" r="6" fill="#fff"/><circle cx="85" cy="72" r="3" fill="#0f172a"/><circle cx="115" cy="72" r="3" fill="#0f172a"/><path d="M 142 72 Q 160 65 170 75" stroke="#f87171" stroke-width="5" fill="none"/><ellipse cx="62" cy="130" rx="10" ry="20" fill="#1e293b" transform="rotate(-15 62 130)"/><ellipse cx="138" cy="130" rx="10" ry="20" fill="#1e293b" transform="rotate(15 138 130)"/><line x1="145" y1="125" x2="170" y2="95" stroke="#94a3b8" stroke-width="3"/><ellipse cx="82" cy="180" rx="12" ry="10" fill="#0f172a"/><ellipse cx="118" cy="180" rx="12" ry="10" fill="#0f172a"/></svg>
-                        <h3>Space Ninja</h3>
+                        <h3>Космо-Ниндзя</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('dragon', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="42" ry="50" fill="#dc2626"/><ellipse cx="100" cy="75" rx="48" ry="52" fill="#fecaca"/><path d="M 65 45 Q 55 25 75 35" fill="#f87171"/><path d="M 135 45 Q 145 25 125 35" fill="#f87171"/><circle cx="82" cy="70" r="10" fill="#fbbf24"/><circle cx="118" cy="70" r="10" fill="#fbbf24"/><circle cx="82" cy="70" r="6" fill="#0f172a"/><circle cx="118" cy="70" r="6" fill="#0f172a"/><circle cx="84" cy="68" r="2" fill="#fff"/><circle cx="120" cy="68" r="2" fill="#fff"/><path d="M 92 95 Q 100 102 108 95" stroke="#0f172a" stroke-width="2" fill="none"/><path d="M 55 120 Q 30 110 35 140" stroke="#dc2626" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 145 120 Q 170 110 165 140" stroke="#dc2626" stroke-width="10" fill="none" stroke-linecap="round"/><ellipse cx="80" cy="180" rx="14" ry="10" fill="#b91c1c"/><ellipse cx="120" cy="180" rx="14" ry="10" fill="#b91c1c"/></svg>
-                        <h3>Fire Dragon</h3>
+                        <h3>Огненный Дракон</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('pirate', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="40" ry="50" fill="#92400e"/><circle cx="100" cy="75" r="45" fill="#fbbf24"/><path d="M 55 55 Q 100 35 145 55 L 140 68 Q 100 55 60 68 Z" fill="#0f172a"/><circle cx="82" cy="78" r="8" fill="#fff"/><circle cx="118" cy="78" r="8" fill="#fff"/><circle cx="82" cy="78" r="5" fill="#0f172a"/><circle cx="118" cy="78" r="5" fill="#0f172a"/><path d="M 90 95 Q 100 103 110 95" stroke="#0f172a" stroke-width="2" fill="none"/><path d="M 58 130 Q 35 140 30 160" stroke="#92400e" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 142 130 Q 165 140 170 160" stroke="#92400e" stroke-width="10" fill="none" stroke-linecap="round"/><line x1="165" y1="155" x2="180" y2="135" stroke="#94a3b8" stroke-width="3"/><ellipse cx="82" cy="180" rx="14" ry="10" fill="#78350f"/><ellipse cx="118" cy="180" rx="14" ry="10" fill="#78350f"/></svg>
-                        <h3>Space Pirate</h3>
+                        <h3>Космический Пират</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('phoenix', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="40" ry="50" fill="#ea580c"/><ellipse cx="100" cy="75" rx="45" ry="50" fill="#f97316"/><circle cx="82" cy="70" r="10" fill="#fbbf24"/><circle cx="118" cy="70" r="10" fill="#fbbf24"/><circle cx="82" cy="70" r="6" fill="#0f172a"/><circle cx="118" cy="70" r="6" fill="#0f172a"/><circle cx="84" cy="68" r="2" fill="#fff"/><circle cx="120" cy="68" r="2" fill="#fff"/><path d="M 95 92 L 100 100 L 105 92 Z" fill="#f97316"/><path d="M 55 55 Q 30 35 45 25 Q 65 45 75 55" fill="#f97316"/><path d="M 145 55 Q 170 35 155 25 Q 135 45 125 55" fill="#f97316"/><path d="M 50 130 Q 25 140 20 165" stroke="#f97316" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 150 130 Q 175 140 180 165" stroke="#f97316" stroke-width="10" fill="none" stroke-linecap="round"/><ellipse cx="82" cy="180" rx="12" ry="10" fill="#c2410c"/><ellipse cx="118" cy="180" rx="12" ry="10" fill="#c2410c"/></svg>
-                        <h3>Phoenix</h3>
+                        <h3>Феникс</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('hero', this)">
                         <svg viewBox="0 0 200 200"><path d="M 55 85 Q 30 130 40 180 L 65 170 Q 60 130 70 95 Z" fill="#dc2626"/><path d="M 145 85 Q 170 130 160 180 L 135 170 Q 140 130 130 95 Z" fill="#dc2626"/><ellipse cx="100" cy="130" rx="38" ry="50" fill="#2563eb"/><polygon points="100,115 103,125 113,125 105,131 108,141 100,135 92,141 95,131 87,125 97,125" fill="#fbbf24"/><circle cx="100" cy="75" r="45" fill="#dbeafe"/><path d="M 60 60 Q 100 45 140 60 L 140 78 Q 100 68 60 78 Z" fill="#1e293b"/><circle cx="83" cy="70" r="7" fill="#fff"/><circle cx="117" cy="70" r="7" fill="#fff"/><circle cx="83" cy="70" r="4" fill="#0f172a"/><circle cx="117" cy="70" r="4" fill="#0f172a"/><path d="M 90 90 Q 100 97 110 90" stroke="#0f172a" stroke-width="2" fill="none"/><ellipse cx="60" cy="130" rx="10" ry="20" fill="#3b82f6" transform="rotate(-15 60 130)"/><ellipse cx="140" cy="130" rx="10" ry="20" fill="#3b82f6" transform="rotate(15 140 130)"/><ellipse cx="82" cy="180" rx="14" ry="10" fill="#1d4ed8"/><ellipse cx="118" cy="180" rx="14" ry="10" fill="#1d4ed8"/></svg>
-                        <h3>Super Hero</h3>
+                        <h3>Супергерой</h3>
                     </div>
                 </div>
-
-                <button class="btn" id="startGameBtn" onclick="startGame()" disabled>Initialize Mission</button>
+                <button class="btn" id="startGameBtn" onclick="startGame()" disabled>Начать миссию</button>
             </div>
         </div>
 
         <div class="screen" id="screen-game">
             <div class="timer-bar show" id="timerBar">
-                <span>TIME</span>
+                <span>ВРЕМЯ</span>
                 <span id="timerDisplay">00:00</span>
             </div>
 
             <div class="progress-container">
                 <div class="progress-info">
-                    <span>Portal Progress</span>
+                    <span>Прогресс портала</span>
                     <span id="progressText">1 / 20</span>
                 </div>
                 <div class="progress-bar-bg">
@@ -467,32 +319,25 @@
 
             <div class="task-card">
                 <div class="task-left">
-                    <div class="verb-display"><div class="verb-v1" id="verbV1">build</div></div>
+                    <div class="verb-display"><div class="verb-v1" id="keywordDisplay">ТЕМА</div></div>
                     <div class="sentence-box">
-                        <span class="grammar-label active">Sentence 1 - Active Voice</span>
-                        <div class="sentence-context" id="sentence1">They _____ a new school last year. (build)</div>
-                    </div>
-                    <div class="sentence-box">
-                        <span class="grammar-label passive" id="sentence2Label">Sentence 2 - Passive Voice</span>
-                        <div class="sentence-context" id="sentence2">A new school _____ last year. (build)</div>
-                        <div class="no-passive-note" id="noPassiveNote"></div>
+                        <span class="grammar-label active">Вопрос</span>
+                        <div class="sentence-context" id="questionText">Текст вопроса появится здесь...</div>
                     </div>
                 </div>
                 <div class="task-right">
                     <div id="level1Content">
                         <div class="slots-container">
-                            <div class="verb-slot" id="slotV2" onclick="clearSlot('v2')">Active: ?</div>
-                            <div class="verb-slot" id="slotV3" onclick="clearSlot('v3')">Passive: ?</div>
+                            <div class="verb-slot" id="answerSlot" onclick="clearAnswer()">Ваш ответ: ?</div>
                         </div>
                         <div class="options-grid" id="optionsGrid"></div>
                     </div>
                     <div id="level2Content" style="display: none; width: 100%;">
-                        <input type="text" class="type-input" id="typeInput" placeholder="Type Active Passive (e.g., built was built)" autocomplete="off">
-                        <div style="font-size: 0.8em; color: var(--neon-blue); margin-top: 8px; font-family: 'Orbitron', monospace;">TYPE BOTH FORMS SEPARATED BY SPACE</div>
-                        <div id="correctAnswerDisplay" style="display: none; margin-top: 8px; padding: 8px; background: rgba(57, 255, 20, 0.1); border: 2px solid var(--neon-green); border-radius: 10px; color: var(--neon-green); font-family: 'Orbitron', monospace; font-weight: 700; font-size: 1em;"></div>
+                        <input type="text" class="type-input" id="typeInput" placeholder="Введите ответ..." autocomplete="off">
+                        <div id="correctAnswerDisplay" style="display: none; margin-top: 8px; padding: 8px; background: rgba(57, 255, 20, 0.1); border: 2px solid var(--neon-green); border-radius: 10px; color: var(--neon-green); font-family: 'Orbitron', monospace; font-weight: 700; font-size: 0.9em;"></div>
                     </div>
-                    <button class="btn" id="checkBtn" onclick="checkAnswer()" style="display: none;">Check Portal</button>
-                    <button class="btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">Continue Flying</button>
+                    <button class="btn" id="checkBtn" onclick="checkAnswer()" style="display: none;">Проверить</button>
+                    <button class="btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">Далее</button>
                     <div class="feedback-msg" id="feedbackMsg"></div>
                 </div>
             </div>
@@ -501,20 +346,19 @@
         <div class="screen" id="screen-result">
             <div class="card">
                 <div id="resultCharacter" style="margin-bottom: 10px;"></div>
-                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Mission Complete!</h2>
+                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Миссия выполнена!</h2>
                 <p id="finalScore" style="font-size: 1.1em; color: #e2e8f0; margin-bottom: 10px;"></p>
                 <div class="bonus-section" id="bonusSection">
-                    <div class="bonus-title">Choose Your Reward Bonus</div>
-                    <p style="color: #94a3b8; margin-bottom: 8px; font-size: 0.9em;">Select one bonus for your next test:</p>
+                    <div class="bonus-title">Выберите бонус</div>
+                    <p style="color: #94a3b8; margin-bottom: 8px; font-size: 0.9em;">Один бонус на следующую проверку:</p>
                     <div class="bonus-options">
-                        <div class="bonus-option" onclick="selectBonus(this, 'hint_irregular')"><span class="bonus-emoji">💡</span>Hint on Irregular Verbs Test</div>
-                        <div class="bonus-option" onclick="selectBonus(this, 'hint_final')"><span class="bonus-emoji">🎯</span>Hint on Final Module Test</div>
-                        <div class="bonus-option" onclick="selectBonus(this, 'no_homework')"><span class="bonus-emoji">🎫</span>Ticket: No Homework</div>
-                        <div class="bonus-option" onclick="selectBonus(this, 'extra_point')"><span class="bonus-emoji">⭐</span>Ticket: +1 Extra Point (non-transferable)</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'hint')"><span class="bonus-emoji">💡</span>Подсказка на контрольной</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'no_hw')"><span class="bonus-emoji">🎫</span>Анти-двойка / Без ДЗ</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'extra_point')"><span class="bonus-emoji">⭐</span>+1 доп. балл</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'music')"><span class="bonus-emoji">🎵</span>Музыка на перемене</div>
                     </div>
-                    <p id="bonusNote" style="color: var(--neon-pink); font-size: 0.8em; margin-top: 8px; display: none;">Note: Extra Point ticket is personal and cannot be transferred to other students.</p>
                 </div>
-                <button class="btn" id="finishBtn" onclick="finishAndSend()" disabled>Finish & Send Results</button>
+                <button class="btn" id="finishBtn" onclick="finishAndSend()" disabled>Завершить и отправить</button>
                 <div class="feedback-msg" id="sendingStatus" style="margin-top: 8px;"></div>
             </div>
         </div>
@@ -609,6 +453,7 @@
             }
         }
 
+        // === ВСЕ 8 ПЕРСОНАЖЕЙ НА МЕСТЕ! ===
         const heroSVGs = {
             astronaut: `<svg viewBox="0 0 200 200"><circle cx="100" cy="80" r="45" fill="#e9d5ff"/><circle cx="85" cy="70" r="8" fill="#1e293b"/><circle cx="115" cy="70" r="8" fill="#1e293b"/><circle cx="87" cy="68" r="3" fill="#fff"/><circle cx="117" cy="68" r="3" fill="#fff"/><path d="M 92 90 Q 100 96 108 90" stroke="#1e293b" stroke-width="2" fill="none"/><ellipse cx="100" cy="130" rx="35" ry="40" fill="#c084fc"/><circle cx="100" cy="50" r="8" fill="#fbbf24"/><line x1="100" y1="50" x2="100" y2="35" stroke="#c084fc" stroke-width="3"/><ellipse cx="70" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(-20 70 120)"/><ellipse cx="130" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(20 130 120)"/><ellipse cx="85" cy="170" rx="12" ry="8" fill="#a855f7"/><ellipse cx="115" cy="170" rx="12" ry="8" fill="#a855f7"/></svg>`,
             robot: `<svg viewBox="0 0 200 200"><rect x="70" y="50" width="60" height="50" rx="10" fill="#bfdbfe"/><rect x="75" y="55" width="50" height="30" rx="8" fill="#0f172a"/><circle cx="88" cy="70" r="6" fill="#4ade80"/><circle cx="112" cy="70" r="6" fill="#4ade80"/><rect x="85" y="90" width="30" height="4" rx="2" fill="#4ade80"/><line x1="100" y1="50" x2="100" y2="35" stroke="#60a5fa" stroke-width="3"/><circle cx="100" cy="30" r="5" fill="#f87171"/><rect x="75" y="110" width="50" height="55" rx="8" fill="#60a5fa"/><rect x="55" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="130" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="80" y="165" width="15" height="15" rx="5" fill="#3b82f6"/><rect x="105" y="165" width="15" height="15" rx="5" fill="#3b82f6"/></svg>`,
@@ -633,554 +478,416 @@
         function getPlanetPositions() { return window.innerWidth <= 768 ? planetPositionsMobile : planetPositionsDesktop; }
         const planetPositions = getPlanetPositions();
 
-        // === РАСШИРЕННЫЙ БАНК ВОПРОСОВ (45 шт, разные времена) ===
-       const verbDatabase = [
-    { 
-        v1: "звонить",
-        v2: "звонИть",
-        v3: "звОнить",
-        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
-        sentence2: "В глаголе 'звонить' ударение всегда падает на окончание во всех личных формах.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "баловать",
-        v2: "баловАть",
-        v3: "бАловать",
-        sentence1: "Выберите правильное ударение в глаголе несовершенного вида.",
-        sentence2: "Ударение в глаголе 'баловать' фиксированное и всегда падает на суффикс -ова-.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "торты",
-        v2: "тОрты",
-        v3: "тортЫ",
-        sentence1: "Где правильно ставить ударение во множественном числе существительного?",
-        sentence2: "В слове 'торты' ударение всегда падает на первый слог, форма с ударением на окончание является грубой ошибкой.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "каталог",
-        v2: "каталОг",
-        v3: "кАталог",
-        sentence1: "Определите верное ударение в заимствованном существительном.",
-        sentence2: "В слове 'каталог' ударение фиксировано на последнем слоге во всех падежных формах.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "кухонный",
-        v2: "кУхонный",
-        v3: "кухОнный",
-        sentence1: "В каком варианте правильно ударение в прилагательном?",
-        sentence2: "Прилагательное 'кухонный' образовано от слова 'кУхня', поэтому ударение сохраняется на корне.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "красивее",
-        v2: "красИвее",
-        v3: "красивЕе",
-        sentence1: "Выберите правильную форму сравнительной степени прилагательного.",
-        sentence2: "В сравнительной степени 'красивее' ударение всегда падает на тот же слог, что и в полной форме 'красИвый'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "свёкла",
-        v2: "свЁкла",
-        v3: "свеклА",
-        sentence1: "Где правильно ставить ударение в названии овоща?",
-        sentence2: "Слово 'свёкла' имеет фиксированное ударение на первом слоге, вариант с ударением на окончание считается недопустимым.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "щавель",
-        v2: "щавЕль",
-        v3: "щАвель",
-        sentence1: "Определите верное ударение в существительном мужского рода.",
-        sentence2: "В слове 'щавель' ударение всегда падает на второй слог, на букву 'е'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "жалюзи",
-        v2: "жалюзИ",
-        v3: "жАлюзи",
-        sentence1: "В каком варианте правильно поставлено ударение в несклоняемом существительном?",
-        sentence2: "Французское заимствование 'жалюзи' имеет фиксированное ударение на последнем слоге.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "диспансер",
-        v2: "диспансЕр",
-        v3: "диспАнсер",
-        sentence1: "Выберите правильное ударение в медицинском термине.",
-        sentence2: "В слове 'диспансер' ударение всегда падает на последний слог во всех формах.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "мусоропровод",
-        v2: "мусоропровОд",
-        v3: "мусОропровод",
-        sentence1: "Где правильно ставить ударение в сложном существительном?",
-        sentence2: "В сложных существительных с частью '-провод' ударение падает на корень 'провОд'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "новостей",
-        v2: "нОвостей",
-        v3: "новостЕй",
-        sentence1: "Определите верное ударение в родительном падеже множественного числа.",
-        sentence2: "В слове 'новостей' ударение фиксировано на первом слоге, как и в именительном падеже 'нОвости'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "средства",
-        v2: "срЕдства",
-        v3: "средствА",
-        sentence1: "Выберите правильную форму ударения во множественном числе.",
-        sentence2: "Слово 'средства' сохраняет ударение на первом слоге во всех формах множественного числа.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "договор",
-        v2: "дОговор",
-        v3: "договОр",
-        sentence1: "В каком варианте правильно поставлено ударение в юридическом термине?",
-        sentence2: "В слове 'договор' ударение всегда падает на первый слог, вариант с ударением на последний слог является разговорным.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "банты",
-        v2: "бАнты",
-        v3: "бантЫ",
-        sentence1: "Где правильно ставить ударение во множественном числе существительного?",
-        sentence2: "Множественное число слова 'бант' имеет ударение на первом слоге: 'бАнты'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "шарфы",
-        v2: "шАрфы",
-        v3: "шарфЫ",
-        sentence1: "Определите верное ударение в форме множественного числа.",
-        sentence2: "Слово 'шарфы' имеет фиксированное ударение на первом слоге, форма с ударением на окончание неверна.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "цепочка",
-        v2: "цЕпочка",
-        v3: "цепОчка",
-        sentence1: "Выберите правильное ударение в существительном с суффиксом.",
-        sentence2: "В слове 'цепочка' ударение падает на корень, как и в исходном слове 'цепь'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "черпать",
-        v2: "чЕрпать",
-        v3: "черпАть",
-        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
-        sentence2: "Глагол 'черпать' имеет фиксированное ударение на первом слоге во всех личных формах.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "эксперт",
-        v2: "экспЕрт",
-        v3: "Эксперт",
-        sentence1: "Найдите слово, в котором ударение падает на второй слог.",
-        sentence2: "В слове 'эксперт' ударение всегда падает на второй слог, на букву 'е'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "опошлить",
-        v2: "опОшлить",
-        v3: "опошлИть",
-        sentence1: "Определите верное ударение в глаголе совершенного вида.",
-        sentence2: "В глаголе 'опошлить' ударение фиксировано на корне, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "обогнать",
-        v2: "обогнАть",
-        v3: "обОгнать",
-        sentence1: "Вставьте слово с правильным ударением: Он смог ___ всех соперников.",
-        sentence2: "В глаголе 'обогнать' ударение всегда падает на последний слог, включая форму прошедшего времени женского рода 'обогналА'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "включить",
-        v2: "включИть",
-        v3: "вклЮчить",
-        sentence1: "Выберите правильную форму глагола с верным ударением.",
-        sentence2: "Глагол 'включить' имеет фиксированное ударение на окончании во всех личных формах (включИшь, включИт).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "предвосхитить",
-        v2: "предвосхИтить",
-        v3: "предвосхитИть",
-        sentence1: "Где правильно ставить ударение в глаголе с приставкой?",
-        sentence2: "В глаголе 'предвосхитить' ударение падает на корень, на букву 'и', и не смещается при спряжении.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "обеспечить",
-        v2: "обеспЕчить",
-        v3: "обеспечИть",
-        sentence1: "Определите верное ударение в глаголе совершенного вида.",
-        sentence2: "В глаголе 'обеспечить' и существительном 'обеспЕчение' ударение всегда падает на корень 'пЕч'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "корысть",
-        v2: "кОрысть",
-        v3: "корЫсть",
-        sentence1: "В каком варианте правильно поставлено ударение в существительном?",
-        sentence2: "Слово 'корысть' имеет фиксированное ударение на первом слоге во всех падежах.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "сливовый",
-        v2: "слИвовый",
-        v3: "сливОвый",
-        sentence1: "Выберите правильное ударение в прилагательном, образованном от существительного.",
-        sentence2: "Прилагательное 'сливовый' сохраняет ударение на корне, как и в слове 'слИва'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "вероисповедание",
-        v2: "вероисповЕдание",
-        v3: "вероисповедАние",
-        sentence1: "Где правильно ставить ударение в сложном религиозном термине?",
-        sentence2: "В слове 'вероисповедание' ударение падает на корень 'вЕд', как и в глаголе 'вЕдать'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "фетиш",
-        v2: "фетИш",
-        v3: "фЕтиш",
-        sentence1: "Определите верное ударение в заимствованном существительном.",
-        sentence2: "В слове 'фетиш' ударение всегда падает на второй слог, на букву 'и'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "флюгер",
-        v2: "флюгЕр",
-        v3: "флЮгер",
-        sentence1: "В каком варианте правильно поставлено ударение в названии прибора?",
-        sentence2: "В слове 'флюгер' ударение фиксировано на втором слоге, на букву 'е'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "таможня",
-        v2: "тамОжня",
-        v3: "тАможня",
-        sentence1: "Выберите правильную форму ударения в существительном.",
-        sentence2: "В слове 'таможня' ударение всегда падает на второй слог, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "дефис",
-        v2: "дЕфис",
-        v3: "дефИс",
-        sentence1: "Найдите слово, в котором ударение падает на первый слог.",
-        sentence2: "В слове 'дефис' ударение фиксировано на первом слоге, на букву 'е'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "досуг",
-        v2: "досУг",
-        v3: "дОсуг",
-        sentence1: "Где правильно ставить ударение в существительном мужского рода?",
-        sentence2: "В слове 'досуг' ударение всегда падает на второй слог, на букву 'у'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "молящий",
-        v2: "мОлящий",
-        v3: "молящИй",
-        sentence1: "Определите верное ударение в причастии настоящего времени.",
-        sentence2: "В причастии 'молящий' ударение сохраняется на том же слоге, что и в инфинитиве 'мОлить'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "некролог",
-        v2: "некролОг",
-        v3: "нЕкролог",
-        sentence1: "В каком варианте правильно поставлено ударение в термине?",
-        sentence2: "В слове 'некролог' ударение фиксировано на последнем слоге, как и в слове 'каталОг'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "новобрачный",
-        v2: "нОвобрачный",
-        v3: "новобрАчный",
-        sentence1: "Выберите правильное ударение в прилагательном-существительном.",
-        sentence2: "В слове 'новобрачный' ударение падает на первый слог, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "обескровить",
-        v2: "обескрОвить",
-        v3: "обескровИть",
-        sentence1: "Где правильно ставить ударение в глаголе совершенного вида?",
-        sentence2: "В глаголе 'обескровить' ударение падает на корень 'крОв', как и в слове 'крОвь'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "одновременно",
-        v2: "одноврЕменно",
-        v3: "одновременнО",
-        sentence1: "Определите верное ударение в наречии.",
-        sentence2: "В наречии 'одновременно' ударение падает на третий слог, на букву 'е'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "озлобить",
-        v2: "озлОбить",
-        v3: "озлобИть",
-        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
-        sentence2: "В глаголе 'озлобить' ударение фиксировано на корне, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "округ",
-        v2: "Округ",
-        v3: "окрУг",
-        sentence1: "Найдите слово, в котором ударение падает на первый слог.",
-        sentence2: "В слове 'округ' ударение всегда падает на первый слог, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "оптовый",
-        v2: "оптОвый",
-        v3: "Оптовый",
-        sentence1: "Выберите правильную форму ударения в прилагательном.",
-        sentence2: "В прилагательном 'оптовый' ударение падает на второй слог, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "осужденный",
-        v2: "осуждЁнный",
-        v3: "осУжденный",
-        sentence1: "Где правильно ставить ударение в страдательном причастии?",
-        sentence2: "В причастии 'осуждённый' ударение всегда падает на суффикс, на букву 'ё'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "откупорить",
-        v2: "откУпорить",
-        v3: "откупОрить",
-        sentence1: "Определите верное ударение в глаголе совершенного вида.",
-        sentence2: "В глаголе 'откупорить' ударение фиксировано на корне, на букву 'у'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "памятуя",
-        v2: "пАмятуя",
-        v3: "памятУя",
-        sentence1: "В каком варианте правильно поставлено ударение в деепричастии?",
-        sentence2: "В деепричастии 'памятуя' ударение падает на первый слог, как и в глаголе 'пАмятовать'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "партер",
-        v2: "партЕр",
-        v3: "пАртер",
-        sentence1: "Выберите правильное ударение в театральном термине.",
-        sentence2: "В слове 'партер' ударение всегда падает на последний слог, на букву 'е'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "первичный",
-        v2: "пЕрвичный",
-        v3: "первИчный",
-        sentence1: "Где правильно ставить ударение в прилагательном?",
-        sentence2: "В прилагательном 'первичный' ударение сохраняется на корне, как и в слове 'пЕрвый'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "перелив",
-        v2: "перелИв",
-        v3: "пЕрелив",
-        sentence1: "Определите верное ударение в существительном мужского рода.",
-        sentence2: "В слове 'перелив' ударение падает на второй слог, на букву 'и'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "петля",
-        v2: "петлЯ",
-        v3: "пЕтля",
-        sentence1: "В каком варианте правильно поставлено ударение в существительном?",
-        sentence2: "В слове 'петля' ударение всегда падает на окончание, на букву 'я'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "пломбировать",
-        v2: "пломбировАть",
-        v3: "пломбИровать",
-        sentence1: "Выберите правильную форму ударения в глаголе.",
-        sentence2: "В глаголе 'пломбировать' ударение фиксировано на суффиксе -ова-, на букву 'а'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "повторить",
-        v2: "повторИть",
-        v3: "пОвторить",
-        sentence1: "Где правильно ставить ударение в глаголе совершенного вида?",
-        sentence2: "В глаголе 'повторить' ударение всегда падает на окончание, на букву 'и' (повторИт, повторИшь).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "поднять",
-        v2: "поднЯть",
-        v3: "поднЯть",
-        sentence1: "Найдите слово, в котором ударение падает на второй слог.",
-        sentence2: "В глаголе 'поднять' ударение падает на второй слог, на букву 'я' (поднялА, поднЯли).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "полить",
-        v2: "полИть",
-        v3: "пОлить",
-        sentence1: "Определите верное ударение в глаголе, означающем орошение водой.",
-        sentence2: "В глаголе 'полить' (цветы) ударение всегда падает на окончание, на букву 'и'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "положить",
-        v2: "положИть",
-        v3: "пОложить",
-        sentence1: "В каком варианте правильно поставлено ударение в глаголе?",
-        sentence2: "В глаголе 'положить' ударение фиксировано на окончании во всех личных формах (положИшь, положИт).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "порвать",
-        v2: "порвАть",
-        v3: "пОрвать",
-        sentence1: "Выберите правильное ударение в глаголе совершенного вида.",
-        sentence2: "В глаголе 'порвать' ударение всегда падает на второй слог, на букву 'а' (порвАл, порвАла).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "послать",
-        v2: "послАть",
-        v3: "пОслать",
-        sentence1: "Где правильно ставить ударение в глаголе?",
-        sentence2: "В глаголе 'послать' ударение фиксировано на втором слоге, на букву 'а' (послАл, послАла).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "прибыть",
-        v2: "прибЫть",
-        v3: "прИбыть",
-        sentence1: "Определите верное ударение в глаголе совершенного вида.",
-        sentence2: "В глаголе 'прибыть' ударение всегда падает на второй слог, на букву 'ы' (прибЫл, прибЫла).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "привезенный",
-        v2: "привезЁнный",
-        v3: "прИвезенный",
-        sentence1: "В каком варианте правильно поставлено ударение в страдательном причастии?",
-        sentence2: "В причастии 'привезённый' ударение всегда падает на суффикс, на букву 'ё'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "приданое",
-        v2: "придАное",
-        v3: "прИданое",
-        sentence1: "Выберите правильную форму ударения в существительном.",
-        sentence2: "В слове 'приданое' ударение фиксировано на втором слоге, на букву 'а'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "призывать",
-        v2: "призывАть",
-        v3: "прИзывать",
-        sentence1: "Где правильно ставить ударение в глаголе несовершенного вида?",
-        sentence2: "В глаголе 'призывать' ударение всегда падает на суффикс -ыва-, на букву 'а'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "принудить",
-        v2: "принУдить",
-        v3: "принудИть",
-        sentence1: "Определите верное ударение в глаголе совершенного вида.",
-        sentence2: "В глаголе 'принудить' ударение падает на корень, на букву 'у' (принУдит, принУдишь).",
-        sentence2Type: "passive",
-        hasPassive: true 
-    },
-    { 
-        v1: "творог",
-        v2: "твОрог",
-        v3: "творОг",
-        sentence1: "В каком варианте правильно поставлено ударение в названии продукта?",
-        sentence2: "В слове 'творог' нормативным является ударение на первом слоге, на букву 'о'.",
-        sentence2Type: "passive",
-        hasPassive: true 
-    }
+        // ========================================================================
+        // === УНИВЕРСАЛЬНАЯ БАЗА ВОПРОСОВ (КОЛЛЕГИ МЕНЯЮТ ТОЛЬКО ЭТОТ БЛОК) ===
+        // ========================================================================
+       const questionDatabase = [
+{
+    keyword: "Эпитет",
+    question: "Какое средство выразительности использовано в словосочетании «грустная ива»?",
+    correct: "Эпитет",
+    wrong1: "Метафора",
+    wrong2: "Олицетворение",
+    explanation: "Это художественное определение, эмоционально окрашивающее предмет."
+},
+{
+    keyword: "Метафора",
+    question: "Какое средство выразительности скрыто сравнивает два предмета на основе их сходства: «море огня»?",
+    correct: "Метафора",
+    wrong1: "Сравнение",
+    wrong2: "Метонимия",
+    explanation: "Метафора — это перенос названия с одного предмета на другой по сходству."
+},
+{
+    keyword: "Олицетворение",
+    question: "Какое средство выразительности приписывает неодушевлённым предметам свойства живых существ: «ветер воет»?",
+    correct: "Олицетворение",
+    wrong1: "Метафора",
+    wrong2: "Эпитет",
+    explanation: "Олицетворение наделяет природу или предметы человеческими действиями или чувствами."
+},
+{
+    keyword: "Сравнение",
+    question: "Какое средство выразительности используется в фразе «белый, как снег»?",
+    correct: "Сравнение",
+    wrong1: "Метафора",
+    wrong2: "Эпитет",
+    explanation: "Здесь есть явное сопоставление двух предметов с помощью союза «как»."
+},
+{
+    keyword: "Гипербола",
+    question: "Как называется художественное преувеличение: «я говорил это тысячу раз»?",
+    correct: "Гипербола",
+    wrong1: "Литота",
+    wrong2: "Градация",
+    explanation: "Гипербола намеренно преувеличивает размеры, силу или значение явления."
+},
+{
+    keyword: "Литота",
+    question: "Как называется художественное преуменьшение: «мальчик с пальчик»?",
+    correct: "Литота",
+    wrong1: "Гипербола",
+    wrong2: "Метафора",
+    explanation: "Литота — это образное преуменьшение величины, силы или значения предмета."
+},
+{
+    keyword: "Метонимия",
+    question: "Какое средство выразительности использовано в фразе «я съел три тарелки»?",
+    correct: "Метонимия",
+    wrong1: "Синекдоха",
+    wrong2: "Метафора",
+    explanation: "Здесь содержание (еда) заменяется названием посуды, в которой оно находится."
+},
+{
+    keyword: "Синекдоха",
+    question: "Какое средство выразительности использовано: «и слышно было до рассвета, как ликовал француз»?",
+    correct: "Синекдоха",
+    wrong1: "Метонимия",
+    wrong2: "Метафора",
+    explanation: "Здесь часть (отдельный француз) используется для обозначения целого (французской армии)."
+},
+{
+    keyword: "Оксюморон",
+    question: "Как называется сочетание несочетаемого: «живой труп»?",
+    correct: "Оксюморон",
+    wrong1: "Антитеза",
+    wrong2: "Парадокс",
+    explanation: "Оксюморон соединяет противоположные по смыслу слова в одном выражении."
+},
+{
+    keyword: "Антитеза",
+    question: "Какое средство выразительности основано на резком противопоставлении: «ты богат, я очень беден»?",
+    correct: "Антитеза",
+    wrong1: "Оксюморон",
+    wrong2: "Сравнение",
+    explanation: "Антитеза строится на противопоставлении понятий, образов или состояний."
+},
+{
+    keyword: "Градация",
+    question: "Как называется расположение слов по возрастанию или убыванию значимости: «пришёл, увидел, победил»?",
+    correct: "Градация",
+    wrong1: "Антитеза",
+    wrong2: "Параллелизм",
+    explanation: "Градация создаёт эмоциональное нарастание или спад в высказывании."
+},
+{
+    keyword: "Риторический вопрос",
+    question: "Какое средство выразительности использовано: «Кто же не любит свободы?»?",
+    correct: "Риторический вопрос",
+    wrong1: "Риторическое восклицание",
+    wrong2: "Вопросно-ответная форма",
+    explanation: "Риторический вопрос не требует ответа, а утверждает что-либо или выражает эмоцию."
+},
+{
+    keyword: "Риторическое обращение",
+    question: "Какое средство выразительности использовано: «О Русь! Взмахни крылами»?",
+    correct: "Риторическое обращение",
+    wrong1: "Риторический вопрос",
+    wrong2: "Олицетворение",
+    explanation: "Обращение к неодушевлённому предмету или абстрактному понятию с целью усиления эмоции."
+},
+{
+    keyword: "Риторическое восклицание",
+    question: "Какое средство выразительности использовано: «Какое лето, что за лето!»?",
+    correct: "Риторическое восклицание",
+    wrong1: "Риторический вопрос",
+    wrong2: "Градация",
+    explanation: "Восклицательное предложение выражает сильные чувства и не требует ответа."
+},
+{
+    keyword: "Анафора",
+    question: "Как называется единоначатие, повторение слов в начале строк: «Жди меня, и я вернусь. Жди, когда наводят грусть»?",
+    correct: "Анафора",
+    wrong1: "Эпифора",
+    wrong2: "Лексический повтор",
+    explanation: "Анафора — это повторение звуков, слов или фраз в начале смежных строк или предложений."
+},
+{
+    keyword: "Эпифора",
+    question: "Как называется повторение слов в конце строк или предложений?",
+    correct: "Эпифора",
+    wrong1: "Анафора",
+    wrong2: "Синтаксический параллелизм",
+    explanation: "Эпифора создаёт ритмическую организацию и акцентирует внимание на последних словах."
+},
+{
+    keyword: "Параллелизм",
+    question: "Какое средство выразительности использовано: «В синем море волны плещут, в синем небе звёзды блещут»?",
+    correct: "Параллелизм",
+    wrong1: "Анафора",
+    wrong2: "Эпифора",
+    explanation: "Одинаковое синтаксическое построение соседних предложений создаёт ритм и выразительность."
+},
+{
+    keyword: "Лексический повтор",
+    question: "Какое средство выразительности использовано для усиления эмоции в фразе: «Час от часу не легче»?",
+    correct: "Лексический повтор",
+    wrong1: "Тавтология",
+    wrong2: "Плеоназм",
+    explanation: "Повторение одного и того же слова усиливает эмоциональное воздействие на читателя."
+},
+{
+    keyword: "Ирония",
+    question: "Как называется употребление слова в смысле, обратном буквальному: «Отлично ты потрудился!» (о плохой работе)?",
+    correct: "Ирония",
+    wrong1: "Сарказм",
+    wrong2: "Гипербола",
+    explanation: "Ирония — это тонкая насмешка, где истинный смысл противоположен сказанному."
+},
+{
+    keyword: "Аллегория",
+    question: "Как называется иносказание, где абстрактное понятие изображается через конкретный образ (лиса — хитрость)?",
+    correct: "Аллегория",
+    wrong1: "Метафора",
+    wrong2: "Символ",
+    explanation: "Аллегория выражает отвлечённую идею через конкретный художественный образ."
+},
+{
+    keyword: "Перифраз",
+    question: "Как называется замена названия предмета описательным выражением: «царь зверей» вместо «лев»?",
+    correct: "Перифраз",
+    wrong1: "Эпитет",
+    wrong2: "Метонимия",
+    explanation: "Перифраз позволяет избежать повтора и добавить образу выразительности."
+},
+{
+    keyword: "Фразеологизм",
+    question: "Какое средство выразительности использовано в устойчивом сочетании: «бить баклуши»?",
+    correct: "Фразеологизм",
+    wrong1: "Метафора",
+    wrong2: "Диалектизм",
+    explanation: "Это устойчивое сочетание слов с переносным значением, воспроизводимое в речи в готовом виде."
+},
+{
+    keyword: "Диалектизм",
+    question: "Как называется слово, употребляемое жителями определённой местности: «кочет» (петух)?",
+    correct: "Диалектизм",
+    wrong1: "Жаргонизм",
+    wrong2: "Архаизм",
+    explanation: "Диалектизмы характерны для речи жителей конкретных территорий."
+},
+{
+    keyword: "Профессионализм",
+    question: "Как называется слово, используемое людьми одной профессии: «штурвал» у лётчиков?",
+    correct: "Профессионализм",
+    wrong1: "Жаргонизм",
+    wrong2: "Термин",
+    explanation: "Профессионализмы — это неофициальные названия предметов или действий в какой-либо сфере."
+},
+{
+    keyword: "Жаргонизм",
+    question: "Как называется слово, характерное для речи определённой социальной группы: «хайп»?",
+    correct: "Жаргонизм",
+    wrong1: "Неологизм",
+    wrong2: "Профессионализм",
+    explanation: "Жаргонизмы служат для обособления группы и эмоциональной окраски речи."
+},
+{
+    keyword: "Неологизм",
+    question: "Как называется недавно созданное слово или выражение для нового понятия: «селфи»?",
+    correct: "Неологизм",
+    wrong1: "Архаизм",
+    wrong2: "Жаргонизм",
+    explanation: "Неологизмы появляются в языке для обозначения новых понятий или явлений."
+},
+{
+    keyword: "Архаизм",
+    question: "Как называется устаревшее слово, имеющее современный синоним: «очи» (глаза)?",
+    correct: "Архаизм",
+    wrong1: "Историзм",
+    wrong2: "Диалектизм",
+    explanation: "Архаизмы — это устаревшие слова, которые были заменены другими современными словами."
+},
+{
+    keyword: "Историзм",
+    question: "Как называется слово, обозначающее исчезнувший из жизни предмет: «кафтан»?",
+    correct: "Историзм",
+    wrong1: "Архаизм",
+    wrong2: "Диалектизм",
+    explanation: "Историзмы называют предметы или явления, которые исчезли из современной жизни."
+},
+{
+    keyword: "Высокая лексика",
+    question: "Как называется лексика, использующая слова вроде «взор», «перст», «отчизна»?",
+    correct: "Высокая лексика",
+    wrong1: "Книжная лексика",
+    wrong2: "Поэтизм",
+    explanation: "Высокая лексика придаёт речи торжественность и возвышенность."
+},
+{
+    keyword: "Книжная лексика",
+    question: "Как называется лексика, используемая в официальной и научной речи: «гипотеза»?",
+    correct: "Книжная лексика",
+    wrong1: "Научный стиль",
+    wrong2: "Высокая лексика",
+    explanation: "Книжная лексика характерна для письменной речи и строгих стилей общения."
+},
+{
+    keyword: "Контекстные синонимы",
+    question: "Как называются слова, близкие по значению только в данном тексте: «мгновение, миг, секунда»?",
+    correct: "Контекстные синонимы",
+    wrong1: "Языковые синонимы",
+    wrong2: "Омонимы",
+    explanation: "Контекстные синонимы сближаются по смыслу только в условиях конкретного текста."
+},
+{
+    keyword: "Контекстные антонимы",
+    question: "Как называются слова, противопоставленные по смыслу только в данном тексте?",
+    correct: "Контекстные антонимы",
+    wrong1: "Языковые антонимы",
+    wrong2: "Паронимы",
+    explanation: "Контекстные антонимы приобретают противоположное значение благодаря авторскому замыслу."
+},
+{
+    keyword: "Многосоюзие",
+    question: "Как называется намеренное увеличение союзов в предложении: «и горы, и долины, и реки»?",
+    correct: "Многосоюзие",
+    wrong1: "Бессоюзие",
+    wrong2: "Парцелляция",
+    explanation: "Многосоюзие замедляет речь, подчёркивая равноправие перечисляемых элементов."
+},
+{
+    keyword: "Бессоюзие",
+    question: "Как называется намеренный пропуск союзов для динамичности: «Пришёл, увидел, победил»?",
+    correct: "Бессоюзие",
+    wrong1: "Многосоюзие",
+    wrong2: "Эллипсис",
+    explanation: "Бессоюзие делает речь стремительной, энергичной и лаконичной."
+},
+{
+    keyword: "Парцелляция",
+    question: "Как называется намеренное дробление предложения на части: «Он пришёл. Усталый. Голодный.»?",
+    correct: "Парцелляция",
+    wrong1: "Эллипсис",
+    wrong2: "Инверсия",
+    explanation: "Парцелляция создаёт эффект прерывистой речи и акцентирует внимание на каждой части."
+},
+{
+    keyword: "Инверсия",
+    question: "Как называется нарушение прямого порядка слов: «Швед, русский — колет, рубит, режет»?",
+    correct: "Инверсия",
+    wrong1: "Парцелляция",
+    wrong2: "Эллипсис",
+    explanation: "Инверсия меняет привычный порядок слов для выделения главного члена предложения."
+},
+{
+    keyword: "Эллипсис",
+    question: "Как называется пропуск члена предложения, легко восстанавливаемого из контекста: «Ты за мной, я вперёд»?",
+    correct: "Эллипсис",
+    wrong1: "Парцелляция",
+    wrong2: "Бессоюзие",
+    explanation: "Эллипсис делает высказывание более энергичным и динамичным."
+},
+{
+    keyword: "Восходящая градация",
+    question: "Как называется градация с усилением значения: «он удивил, потом потряс, наконец, ошеломил всех»?",
+    correct: "Восходящая градация",
+    wrong1: "Нисходящая градация",
+    wrong2: "Антитеза",
+    explanation: "Восходящая градация последовательно усиливает эмоциональное или смысловое значение."
+},
+{
+    keyword: "Нисходящая градация",
+    question: "Как называется градация с ослаблением значения: «он был гений, талант, просто умный человек»?",
+    correct: "Нисходящая градация",
+    wrong1: "Восходящая градация",
+    wrong2: "Антитеза",
+    explanation: "Нисходящая градация последовательно снижает значимость или эмоциональный накал."
+},
+{
+    keyword: "Развёрнутая метафора",
+    question: "Как называется метафора, распространённая на всё предложение или целый текст?",
+    correct: "Развёрнутая метафора",
+    wrong1: "Олицетворение",
+    wrong2: "Аллегория",
+    explanation: "Развёрнутая метафора создаёт целостный художественный образ на протяжении нескольких фраз."
+},
+{
+    keyword: "Цитирование",
+    question: "Как называется включение в речь чужих слов для подтверждения собственной мысли?",
+    correct: "Цитирование",
+    wrong1: "Аллюзия",
+    wrong2: "Эпиграф",
+    explanation: "Цитирование придаёт высказыванию авторитетность и смысловую точность."
+},
+{
+    keyword: "Вводные слова",
+    question: "Какое средство связи использовано в словах: «во-первых, конечно, безусловно»?",
+    correct: "Вводные слова",
+    wrong1: "Вставные конструкции",
+    wrong2: "Союзы",
+    explanation: "Вводные слова выражают отношение говорящего к высказыванию и связывают части текста."
+},
+{
+    keyword: "Присоединение",
+    question: "Как называется синтаксическое средство, добавляющее уточнение после основной фразы: «Он опоздал. Снова.»?",
+    correct: "Присоединение",
+    wrong1: "Парцелляция",
+    wrong2: "Эллипсис",
+    explanation: "Присоединительные конструкции добавляют важную уточняющую информацию после завершения основной мысли."
+},
+{
+    keyword: "Вопросно-ответная форма",
+    question: "Как называется приём, когда автор сам ставит вопрос и сам на него отвечает?",
+    correct: "Вопросно-ответная форма",
+    wrong1: "Риторический вопрос",
+    wrong2: "Диалог",
+    explanation: "Этот приём привлекает внимание читателя и логически структурирует текст."
+},
+{
+    keyword: "Сравнительный оборот",
+    question: "Какое средство выразительности использовано: «лёгкий, как пёрышко»?",
+    correct: "Сравнение",
+    wrong1: "Метафора",
+    wrong2: "Эпитет",
+    explanation: "Сравнительный оборот сопоставляет предметы с помощью союзов как, словно, будто."
+},
+{
+    keyword: "Метафорический эпитет",
+    question: "Какое средство выразительности использовано в словосочетании: «золотые руки»?",
+    correct: "Метафорический эпитет",
+    wrong1: "Простой эпитет",
+    wrong2: "Метонимия",
+    explanation: "Метафорический эпитет содержит скрытое сравнение и образное определение признака."
+},
+{
+    keyword: "Ряды однородных членов",
+    question: "Какое средство выразительности использовано: «быстро, точно, профессионально»?",
+    correct: "Ряды однородных членов",
+    wrong1: "Градация",
+    wrong2: "Параллелизм",
+    explanation: "Ряды однородных членов создают ритм и полноту описания действия или признака."
+},
+{
+    keyword: "Аллюзия",
+    question: "Как называется намёк на известный факт, литературное произведение или историческое событие?",
+    correct: "Аллюзия",
+    wrong1: "Цитирование",
+    wrong2: "Аллегория",
+    explanation: "Аллюзия отсылает читателя к общеизвестному образу или событию без прямого упоминания."
+},
+{
+    keyword: "Экспрессивная лексика",
+    question: "Как называется лексика, придающая речи яркую эмоциональную окраску: «втирать очки», «грош цена»?",
+    correct: "Экспрессивная лексика",
+    wrong1: "Разговорная лексика",
+    wrong2: "Жаргонизм",
+    explanation: "Экспрессивная лексика усиливает эмоциональное воздействие на читателя или слушателя."
+},
+{
+    keyword: "Разговорная лексика",
+    question: "Как называется стиль речи, используемый в непринуждённом общении: «болтать», «здорово»?",
+    correct: "Разговорная лексика",
+    wrong1: "Просторечие",
+    wrong2: "Жаргонизм",
+    explanation: "Разговорная лексика характерна для неофициального, повседневного общения."
+}
 ];
 
         let studentName = '', selectedCharacter = null, currentQuestions = [], currentIndex = 0, score = 0;
-        let startTime = null, timerInterval = null, selectedV2 = null, selectedV3 = null, currentPlanetIndex = 0;
+        let startTime = null, timerInterval = null, selectedAnswer = null, currentPlanetIndex = 0;
         let questionsPerPlanet = 5, currentLevel = 1, selectedBonus = null, errorsList = [];
-        const encouragingMessages = ["BRILLIANT!", "KEEP IT UP!", "AMAZING!", "PERFECT!", "GREAT JOB!", "EXCELLENT!", "FANTASTIC!", "SUPERB!", "WONDERFUL!", "OUTSTANDING!"];
+        const encouragingMessages = ["ОТЛИЧНО!", "ТАК ДЕРЖАТЬ!", "ПОТРЯСАЮЩЕ!", "ИДЕАЛЬНО!", "МОЛОДЕЦ!", "БЛЕСТЯЩЕ!", "СУПЕР!", "ВЕРНО!"];
 
         function shuffle(array) { return array.sort(() => Math.random() - 0.5); }
         function showScreen(screenId) {
@@ -1195,7 +902,7 @@
                 nameInput.style.borderColor = 'var(--neon-pink)';
                 nameInput.style.animation = 'shake 0.4s ease';
                 setTimeout(() => { nameInput.style.borderColor = ''; nameInput.style.animation = ''; }, 400);
-                alert('Please enter your name!'); return;
+                alert('Пожалуйста, введите имя!'); return;
             }
             if (audioContext.state === 'suspended') audioContext.resume();
             playSound('click'); showScreen('screen-character');
@@ -1206,15 +913,18 @@
             document.querySelectorAll('.character-card').forEach(c => c.classList.remove('selected'));
             element.classList.add('selected');
             document.getElementById('startGameBtn').disabled = false;
-            document.getElementById('startGameBtn').textContent = 'Initialize Mission';
+            document.getElementById('startGameBtn').textContent = 'Начать миссию';
         }
 
         function startGame() {
             playSound('teleport'); 
             showScreen('screen-game');
             document.getElementById('playerCharacter').innerHTML = heroSVGs[selectedCharacter];
-            // ИЗМЕНЕНИЕ: Берем ровно 20 случайных вопросов из большого банка
-            currentQuestions = shuffle([...verbDatabase]).slice(0, 20);
+            
+            // Берем 20 случайных вопросов (или меньше, если в базе меньше 20)
+            const count = Math.min(20, questionDatabase.length);
+            currentQuestions = shuffle([...questionDatabase]).slice(0, count);
+            
             currentIndex = 0; score = 0; currentPlanetIndex = 0; currentLevel = 1;
             isExerciseActive = true; tabSwitchCount = 0; errorsList = [];
             startTime = Date.now(); timerInterval = setInterval(updateTimer, 1000);
@@ -1235,27 +945,20 @@
 
         function loadQuestion() {
             const q = currentQuestions[currentIndex];
-            // ИЗМЕНЕНИЕ: Переход на 2-й уровень начинается с 10-го вопроса (индекс 10)
-            if (currentIndex >= 10 && currentLevel === 1) {
+            
+            // Переход на 2-й уровень (ввод текста) после половины вопросов
+            if (currentIndex >= Math.ceil(currentQuestions.length / 2) && currentLevel === 1) {
                 currentLevel = 2;
                 document.getElementById('levelBadge').classList.add('show');
                 document.getElementById('level1Content').style.display = 'none';
                 document.getElementById('level2Content').style.display = 'block';
-                showFloatingMessage("LEVEL 2 UNLOCKED!");
+                showFloatingMessage("УРОВЕНЬ 2: ВВОД ОТВЕТА!");
             }
-            document.getElementById('verbV1').textContent = q.v1;
-            document.getElementById('sentence1').textContent = q.sentence1;
-            document.getElementById('sentence2').textContent = q.sentence2;
-            const label = document.getElementById('sentence2Label'), note = document.getElementById('noPassiveNote');
-            if (q.sentence2Type === 'passive') {
-                label.textContent = 'Sentence 2 - Passive Voice'; label.className = 'grammar-label passive'; note.textContent = '';
-            } else if (q.sentence2Type === 'perfect') {
-                label.textContent = 'Sentence 2 - Perfect Passive'; label.className = 'grammar-label perfect';
-                note.textContent = 'Pay attention to the Perfect Passive form!';
-            } else {
-                label.textContent = 'Sentence 2 - Active Voice'; label.className = 'grammar-label active'; note.textContent = '';
-            }
-            selectedV2 = null; selectedV3 = null;
+            
+            document.getElementById('keywordDisplay').textContent = q.keyword;
+            document.getElementById('questionText').textContent = q.question;
+            
+            selectedAnswer = null;
             document.getElementById('nextBtn').style.display = 'none';
             document.getElementById('feedbackMsg').style.display = 'none';
             document.getElementById('portal').classList.remove('repaired');
@@ -1272,17 +975,19 @@
             setTimeout(() => { player.classList.remove('landing'); }, 600);
             
             if (currentLevel === 1) {
-                updateSlots(); document.getElementById('checkBtn').style.display = 'none';
-                let options = q.v2 === q.v3 ? [q.v2, q.v2] : [q.v2, q.v3];
-                let allVerbs = verbDatabase.flatMap(v => [v.v2, v.v3]).filter(v => v !== q.v2 && (q.v2 !== q.v3 || v !== q.v3));
-                let shuffled = shuffle(allVerbs);
-                for (let i = 0; i < 4; i++) options.push(shuffled[i]);
+                document.getElementById('answerSlot').textContent = 'Ваш ответ: ?';
+                document.getElementById('answerSlot').className = 'verb-slot';
+                document.getElementById('checkBtn').style.display = 'none';
+                
+                // Формируем 3 варианта ответа и перемешиваем
+                let options = [q.correct, q.wrong1, q.wrong2];
                 options = shuffle(options);
+                
                 const grid = document.getElementById('optionsGrid'); grid.innerHTML = '';
-                options.forEach((opt, idx) => {
+                options.forEach((opt) => {
                     const btn = document.createElement('button');
                     btn.className = 'option-btn'; btn.textContent = opt;
-                    btn.dataset.value = opt; btn.dataset.index = idx;
+                    btn.dataset.value = opt;
                     btn.onclick = () => selectOption(opt, btn);
                     grid.appendChild(btn);
                 });
@@ -1301,56 +1006,59 @@
         function selectOption(value, btnElement) {
             if (document.getElementById('nextBtn').style.display === 'inline-block') return;
             playSound('select');
-            if (btnElement.classList.contains('selected-v2')) { selectedV2 = null; btnElement.classList.remove('selected-v2'); }
-            else if (btnElement.classList.contains('selected-v3')) { selectedV3 = null; btnElement.classList.remove('selected-v3'); }
-            else if (!selectedV2) { selectedV2 = value; btnElement.classList.add('selected-v2'); }
-            else if (!selectedV3) { selectedV3 = value; btnElement.classList.add('selected-v3'); }
-            updateSlots();
-            if (selectedV2 && selectedV3) setTimeout(() => { checkAnswer(); }, 500);
+            
+            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+            selectedAnswer = value;
+            btnElement.classList.add('selected');
+            
+            document.getElementById('answerSlot').textContent = `Ответ: ${selectedAnswer}`;
+            document.getElementById('answerSlot').className = 'verb-slot filled';
+            
+            setTimeout(() => { checkAnswer(); }, 400);
         }
 
-        function updateSlots() {
-            const slot2 = document.getElementById('slotV2'), slot3 = document.getElementById('slotV3');
-            slot2.textContent = selectedV2 ? `Active: ${selectedV2}` : 'Active: ?';
-            slot2.className = selectedV2 ? 'verb-slot filled' : 'verb-slot';
-            slot3.textContent = selectedV3 ? `Passive: ${selectedV3}` : 'Passive: ?';
-            slot3.className = selectedV3 ? 'verb-slot filled' : 'verb-slot';
-            document.getElementById('checkBtn').disabled = !(selectedV2 && selectedV3);
-        }
-
-        function clearSlot(slot) {
+        function clearAnswer() {
             if (document.getElementById('nextBtn').style.display === 'inline-block') return;
             playSound('click');
-            if (slot === 'v2') selectedV2 = null;
-            else if (slot === 'v3') selectedV3 = null;
-            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected-v2', 'selected-v3'));
-            updateSlots();
+            selectedAnswer = null;
+            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+            document.getElementById('answerSlot').textContent = 'Ваш ответ: ?';
+            document.getElementById('answerSlot').className = 'verb-slot';
         }
 
         function checkAnswer() {
             const q = currentQuestions[currentIndex], feedback = document.getElementById('feedbackMsg');
             let isCorrect = false;
+            
             if (currentLevel === 1) {
-                const slot2 = document.getElementById('slotV2'), slot3 = document.getElementById('slotV3');
-                if (selectedV2 === q.v2 && selectedV3 === q.v3) {
-                    isCorrect = true; slot2.classList.add('correct'); slot3.classList.add('correct');
+                const slot = document.getElementById('answerSlot');
+                if (selectedAnswer === q.correct) {
+                    isCorrect = true; slot.classList.add('correct');
                 } else {
-                    slot2.classList.add('wrong'); slot3.classList.add('wrong');
-                    errorsList.push({ question: q.v1, studentAnswer: `${selectedV2} / ${selectedV3}`, correctAnswer: `${q.v2} / ${q.v3}` });
+                    slot.classList.add('wrong');
+                    errorsList.push({ question: q.keyword, studentAnswer: selectedAnswer, correctAnswer: q.correct });
                 }
             } else {
                 const input = document.getElementById('typeInput');
-                const answer = input.value.trim().toLowerCase(), correctAnswer = `${q.v2} ${q.v3}`.toLowerCase();
+                const answer = input.value.trim().toLowerCase();
+                const correctAnswer = q.correct.toLowerCase();
+                
                 if (answer === correctAnswer) {
-                    isCorrect = true; input.style.borderColor = 'var(--neon-green)'; input.style.boxShadow = '0 0 30px var(--neon-green)';
+                    isCorrect = true; 
+                    input.style.borderColor = 'var(--neon-green)'; 
+                    input.style.boxShadow = '0 0 30px var(--neon-green)';
                 } else {
-                    input.style.borderColor = 'var(--neon-pink)'; input.style.boxShadow = '0 0 30px var(--neon-pink)';
-                    errorsList.push({ question: q.v1, studentAnswer: answer || '(empty)', correctAnswer: `${q.v2} ${q.v3}` });
+                    input.style.borderColor = 'var(--neon-pink)'; 
+                    input.style.boxShadow = '0 0 30px var(--neon-pink)';
+                    errorsList.push({ question: q.keyword, studentAnswer: answer || '(пусто)', correctAnswer: q.correct });
                     const correctDisplay = document.getElementById('correctAnswerDisplay');
-                    correctDisplay.style.display = 'block'; correctDisplay.textContent = `Correct answer: ${q.v2} / ${q.v3}`;
-                    input.value = `${q.v2} ${q.v3}`; input.classList.add('correct-answer');
+                    correctDisplay.style.display = 'block'; 
+                    correctDisplay.textContent = `Правильно: ${q.correct}`;
+                    input.value = q.correct; 
+                    input.classList.add('correct-answer');
                 }
             }
+            
             if (isCorrect) {
                 score++; updateProgress();
                 document.getElementById('portal').classList.add('repaired');
@@ -1362,15 +1070,15 @@
                 showFloatingMessage(encouragingMessages[Math.floor(Math.random() * encouragingMessages.length)]);
                 createStarBurst(rect.left + rect.width / 2, rect.top);
                 feedback.className = 'feedback-msg success';
-                feedback.innerHTML = `PORTAL REPAIRED! Great job, ${studentName}!`;
+                feedback.innerHTML = `ПОРТАЛ АКТИВИРОВАН! Отлично, ${studentName}!<br><small style="text-transform:none; font-weight:400; opacity:0.9">${q.explanation}</small>`;
                 createConfetti(rect.left + rect.width / 2, rect.top);
-                setTimeout(() => { nextQuestion(); }, 2000);
+                setTimeout(() => { nextQuestion(); }, 2500);
             } else {
                 playSound('wrong'); feedback.className = 'feedback-msg hint';
                 if (currentLevel === 2) {
-                    feedback.innerHTML = `PORTAL MALFUNCTION! Correct answer shown above. Press Next to continue.`;
+                    feedback.innerHTML = `СБОЙ ПОРТАЛА! Правильный ответ показан выше.<br><small style="text-transform:none; font-weight:400; opacity:0.9">${q.explanation}</small>`;
                 } else {
-                    feedback.innerHTML = `PORTAL MALFUNCTION! Correct: <b>${q.v2}</b> / <b>${q.v3}</b>`;
+                    feedback.innerHTML = `СБОЙ ПОРТАЛА! Правильно: <b>${q.correct}</b><br><small style="text-transform:none; font-weight:400; opacity:0.9">${q.explanation}</small>`;
                     document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
                 }
                 document.getElementById('checkBtn').style.display = 'none';
@@ -1393,10 +1101,9 @@
             playSound('select');
             document.querySelectorAll('.bonus-option').forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected'); selectedBonus = bonusType;
-            document.getElementById('bonusNote').style.display = bonusType === 'extra_point' ? 'block' : 'none';
             document.getElementById('finishBtn').disabled = false;
-            const bonusNames = { 'hint_irregular': 'Hint on Irregular Verbs Test', 'hint_final': 'Hint on Final Module Test', 'no_homework': 'Ticket: No Homework', 'extra_point': 'Ticket: +1 Extra Point (non-transferable)' };
-            document.getElementById('finishBtn').textContent = `Confirm: ${bonusNames[bonusType]}`;
+            const bonusNames = { 'hint': 'Подсказка на контрольной', 'no_hw': 'Анти-двойка / Без ДЗ', 'extra_point': '+1 доп. балл', 'music': 'Музыка на перемене' };
+            document.getElementById('finishBtn').textContent = `Подтвердить: ${bonusNames[bonusType]}`;
         }
 
         function showResults() {
@@ -1408,51 +1115,52 @@
             }
             const percentage = Math.round((score / currentQuestions.length) * 100);
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            const timeSpent = `${Math.floor(elapsed / 60)}m ${elapsed % 60}s`;
-            let message = percentage === 100 ? 'PERFECT SCORE! You are a Grammar Hero!' : 
-                          percentage >= 80 ? 'Excellent work! Almost perfect!' : 
-                          percentage >= 60 ? 'Good job! Keep practicing!' : 'Keep trying! Practice makes perfect!';
-            document.getElementById('finalScore').innerHTML = `${message}<br><br>You repaired <b>${score} out of ${currentQuestions.length}</b> portals!<br>Accuracy: <b>${percentage}%</b><br>Time: <b>${timeSpent}</b><br>Tab Switches: <b>${tabSwitchCount}</b><br>Level Reached: <b>${currentLevel === 2 ? 'Level 2 (Type Mode)' : 'Level 1'}</b>`;
+            const timeSpent = `${Math.floor(elapsed / 60)}м ${elapsed % 60}с`;
+            let message = percentage === 100 ? 'ИДЕАЛЬНО! Ты настоящий эксперт!' : 
+                          percentage >= 80 ? 'Отличная работа! Почти без ошибок!' : 
+                          percentage >= 60 ? 'Хороший результат! Продолжай тренироваться!' : 'Не сдавайся! Практика — ключ к успеху!';
+            document.getElementById('finalScore').innerHTML = `${message}<br><br>Активировано порталов: <b>${score} из ${currentQuestions.length}</b><br>Точность: <b>${percentage}%</b><br>Время: <b>${timeSpent}</b><br>Смены вкладок: <b>${tabSwitchCount}</b>`;
             selectedBonus = null;
             document.querySelectorAll('.bonus-option').forEach(opt => opt.classList.remove('selected'));
             document.getElementById('finishBtn').disabled = true;
-            document.getElementById('finishBtn').textContent = 'Finish & Send Results';
-            document.getElementById('bonusNote').style.display = 'none';
-            localStorage.setItem('grammar_ex_active-passive', 'true');
+            document.getElementById('finishBtn').textContent = 'Завершить и отправить';
+            localStorage.setItem('cyber_portal_completed', 'true');
         }
 
         async function finishAndSend() {
-            if (!selectedBonus) { alert('Please select a bonus first!'); return; }
+            if (!selectedBonus) { alert('Пожалуйста, выберите бонус!'); return; }
             const statusDiv = document.getElementById('sendingStatus');
-            statusDiv.style.display = 'block'; statusDiv.innerHTML = 'SENDING RESULTS...';
+            statusDiv.style.display = 'block'; statusDiv.innerHTML = 'ОТПРАВКА РЕЗУЛЬТАТОВ...';
             const percentage = Math.round((score / currentQuestions.length) * 100);
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            const timeSpent = `${Math.floor(elapsed / 60)} min ${elapsed % 60} sec`;
-            const bonusNames = { 'hint_irregular': 'Hint on Irregular Verbs Test', 'hint_final': 'Hint on Final Module Test', 'no_homework': 'Ticket: No Homework', 'extra_point': 'Ticket: +1 Extra Point (non-transferable)' };
-            let errorsText = errorsList.length > 0 ? errorsList.map((e, idx) => `${idx + 1}. ${e.question}: student wrote "${e.studentAnswer}", correct is "${e.correctAnswer}"`).join('\n') : 'No errors! Perfect performance!';
+            const timeSpent = `${Math.floor(elapsed / 60)} мин ${elapsed % 60} сек`;
+            const bonusNames = { 'hint': 'Подсказка на контрольной', 'no_hw': 'Анти-двойка / Без ДЗ', 'extra_point': '+1 доп. балл', 'music': 'Музыка на перемене' };
+            let errorsText = errorsList.length > 0 ? errorsList.map((e, idx) => `${idx + 1}. ${e.question}: ответ ученика "${e.studentAnswer}", верно: "${e.correctAnswer}"`).join('\n') : 'Ошибок нет! Идеальная работа!';
+            
             const payload = { 
                 student_name: studentName, score: `${score}/${currentQuestions.length}`, percentage: `${percentage}%`, 
-                time: new Date().toLocaleString(), exercise_name: "Русский Язык Орфоэпические Нормы: Cyber Portal", time_spent: timeSpent, 
-                tab_switches: tabSwitchCount === 0 ? '0 (no switches)' : `${tabSwitchCount} switch(es) detected`,
-                selected_bonus: bonusNames[selectedBonus] || 'No bonus selected', bonus_type: selectedBonus,
-                level_reached: currentLevel === 2 ? 'Level 2 (Type Mode)' : 'Level 1 (Selection Mode)',
-                errors_count: errorsList.length, errors_details: errorsText, errors_summary: errorsText,
-                errors_text: `BONUS: ${bonusNames[selectedBonus]}\n\nERRORS:\n${errorsText}`
+                time: new Date().toLocaleString(), exercise_name: "Универсальная Игра: Кибер-портал", time_spent: timeSpent, 
+                tab_switches: tabSwitchCount === 0 ? '0' : `${tabSwitchCount}`,
+                selected_bonus: bonusNames[selectedBonus] || 'Не выбран',
+                errors_text: `БОНУС: ${bonusNames[selectedBonus]}\n\nОШИБКИ:\n${errorsText}`
             };
-            console.log('Sending payload:', payload);
+            
             const POWER_AUTOMATE_URL = 'https://default50bef10a64ce4efab7ceef7facd9c8.97.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/06/workflows/db051d19d6ad49db826ea17f31de68aa/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IhZ_zFXl2whxWZMOaBP47dSJrL6xkew72NkSvNCTcO0';
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrElX954EmAhDdhbsvfcLDGN0T94X5daFDAM5Ny34sJ7acNMaH8mqNiWk5x0xk_XdI5w/exec';
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrElX954EmAhDdhbsvfcLDGN0T94X5daFDAM5Ny34sJ7acNMaH8mqNiWk5x0xk_XdI5w/exec';
+            
             try {
-                const response = await fetch(POWER_AUTOMATE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                console.log('Teams response status:', response.status);
-                statusDiv.innerHTML += '<br>SENT TO TEAMS!'; statusDiv.style.color = 'var(--neon-green)';
-            } catch (error) { console.error('Teams error:', error); statusDiv.innerHTML += '<br>Teams error: ' + error.message; statusDiv.style.color = 'var(--neon-pink)'; }
+                await fetch(POWER_AUTOMATE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                statusDiv.innerHTML += '<br>✅ ОТПРАВЛЕНО В TEAMS!'; statusDiv.style.color = 'var(--neon-green)';
+            } catch (error) { 
+                statusDiv.innerHTML += '<br>❌ Ошибка Teams'; statusDiv.style.color = 'var(--neon-pink)'; 
+            }
             try {
                 await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                statusDiv.innerHTML += '<br>SENT TO GOOGLE SHEETS!';
+                statusDiv.innerHTML += '<br>✅ ОТПРАВЛЕНО В GOOGLE SHEETS!';
             } catch (e) { console.log('Sheets error:', e); }
+            
             setTimeout(() => {
-                alert(`Mission Complete, ${studentName}!\n\nYour bonus: ${bonusNames[selectedBonus]}\n\nResults sent to teacher.`);
+                alert(`Миссия выполнена, ${studentName}!\n\nТвой бонус: ${bonusNames[selectedBonus]}\n\nРезультаты отправлены учителю.`);
                 window.location.href = '../index.html';
             }, 3000);
         }
@@ -1499,10 +1207,10 @@
             document.addEventListener('touchstart', startMusic);
             document.addEventListener('keydown', startMusic);
             
-            if (localStorage.getItem('grammar_ex_active-passive') === 'true') {
+            if (localStorage.getItem('cyber_portal_completed') === 'true') {
                 const badge = document.createElement('div');
                 badge.style.cssText = 'position: fixed; top: 20px; right: 20px; background: rgba(57, 255, 20, 0.2); color: var(--neon-green); border: 2px solid var(--neon-green); padding: 10px 20px; border-radius: 50px; font-family: Orbitron, monospace; font-weight: 900; z-index: 1000; text-transform: uppercase; letter-spacing: 2px;';
-                badge.innerHTML = 'COMPLETED';
+                badge.innerHTML = 'ВЫПОЛНЕНО';
                 document.body.appendChild(badge);
             }
         });
