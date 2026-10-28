@@ -493,6 +493,30 @@
                 });
             }
         }
+                function playFlySound() {
+            if (audioContext.state === 'suspended') audioContext.resume();
+            
+            // Создаем эффект "whoosh" (пролетающий объект)
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            osc.type = 'sine'; // Мягкая волна для приятного звука
+            
+            // Частота плавно растет (эффект ускорения)
+            osc.frequency.setValueAtTime(150, audioContext.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.6);
+            
+            // Громкость: быстрый взлет и плавное затухание
+            gain.gain.setValueAtTime(0, audioContext.currentTime);
+            gain.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.6);
+            
+            osc.start(audioContext.currentTime);
+            osc.stop(audioContext.currentTime + 0.6);
+        }
 
         function toggleMusic() {
             const bg = document.getElementById('bgMusic'), btn = document.getElementById('musicToggle');
@@ -930,15 +954,14 @@ const questionDatabase = [
             document.getElementById('nextBtnLevel1').style.display = 'none';
             document.getElementById('nextBtnLevel2').style.display = 'none';
             
-                      const player = document.getElementById('playerCharacter');
-            player.classList.remove('flying'); 
-            player.classList.add('landing');
+                            const player = document.getElementById('playerCharacter');
             
             // Вызываем новую функцию равномерного движения
             updateCharacterPosition();
             
-            setTimeout(() => { player.classList.remove('landing'); }, 600);
-            setTimeout(() => { player.classList.remove('landing'); }, 600);
+            // Персонаж продолжает лететь, не приземляясь
+            player.classList.remove('landing');
+            player.classList.add('flying');
             
             if (currentLevel === 1) {
                 document.getElementById('answerSlot').textContent = 'Ваш ответ: ?';
@@ -1082,14 +1105,16 @@ const questionDatabase = [
             }
         }
 
-               function nextQuestion() {
+                    function nextQuestion() {
             playSound('click'); 
             currentIndex++;
             updateProgress();
             
-            // Старая логика планет удалена, теперь работает плавный прогресс
-            
             if (currentIndex < currentQuestions.length) {
+                // Проигрываем звук полета только если это не самый первый старт
+                if (currentIndex > 0) {
+                    playFlySound();
+                }
                 loadQuestion();
             } else {
                 showResults();
