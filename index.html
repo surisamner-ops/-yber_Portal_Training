@@ -832,7 +832,28 @@ const questionDatabase = [
         let startTime = null, timerInterval = null, selectedAnswer = null, currentPlanetIndex = 0;
         let questionsPerPlanet = 5, currentLevel = 1, selectedBonus = null, errorsList = [];
         const encouragingMessages = ["ОТЛИЧНО!", "ТАК ДЕРЖАТЬ!", "ПОТРЯСАЮЩЕ!", "ИДЕАЛЬНО!", "МОЛОДЕЦ!", "БЛЕСТЯЩЕ!", "СУПЕР!", "ВЕРНО!"];
-
+        // === НОВАЯ ФУНКЦИЯ: Равномерное движение к порталу ===
+        function updateCharacterPosition() {
+            const player = document.getElementById('playerCharacter');
+            const totalQ = currentQuestions.length;
+            
+            // Рассчитываем прогресс от 0.0 до 1.0
+            const progress = totalQ > 1 ? (currentIndex / (totalQ - 1)) : 1;
+            
+            // Начальная позиция 5%, конечная 88% (где находится портал)
+            const startLeft = 5;
+            const endLeft = 88;
+            const newLeft = startLeft + (progress * (endLeft - startLeft));
+            
+            player.style.left = newLeft + '%';
+            
+            // Фиксируем высоту, чтобы персонаж не прыгал
+            if (window.innerWidth <= 768) {
+                player.style.bottom = '20px';
+            } else {
+                player.style.bottom = '80px';
+            }
+        }
         function shuffle(array) { return array.sort(() => Math.random() - 0.5); }
         function showScreen(screenId) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -909,14 +930,14 @@ const questionDatabase = [
             document.getElementById('nextBtnLevel1').style.display = 'none';
             document.getElementById('nextBtnLevel2').style.display = 'none';
             
-            const planet = planetPositions[currentPlanetIndex], player = document.getElementById('playerCharacter');
-            player.classList.remove('flying'); player.classList.add('landing');
-            player.style.left = planet.left + '%'; 
-            if (window.innerWidth <= 768) {
-                player.style.bottom = '20px';
-            } else {
-                player.style.bottom = (planet.bottom + 20) + 'px';
-            }
+                      const player = document.getElementById('playerCharacter');
+            player.classList.remove('flying'); 
+            player.classList.add('landing');
+            
+            // Вызываем новую функцию равномерного движения
+            updateCharacterPosition();
+            
+            setTimeout(() => { player.classList.remove('landing'); }, 600);
             setTimeout(() => { player.classList.remove('landing'); }, 600);
             
             if (currentLevel === 1) {
@@ -1061,17 +1082,19 @@ const questionDatabase = [
             }
         }
 
-        function nextQuestion() {
+               function nextQuestion() {
             playSound('click'); 
             currentIndex++;
             updateProgress();
-            if (currentIndex % questionsPerPlanet === 0 && currentIndex < currentQuestions.length) {
-                currentPlanetIndex = (currentPlanetIndex + 1) % 8;
+            
+            // Старая логика планет удалена, теперь работает плавный прогресс
+            
+            if (currentIndex < currentQuestions.length) {
+                loadQuestion();
+            } else {
+                showResults();
             }
-            if (currentIndex < currentQuestions.length) loadQuestion();
-            else showResults();
         }
-
         function selectBonus(element, bonusType) {
             playSound('select');
             document.querySelectorAll('.bonus-option').forEach(opt => opt.classList.remove('selected'));
