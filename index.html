@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Средства выразительности речи: Кибер-портал</title>
+    <title>Универсальная Игра: Кибер-портал</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -60,12 +60,13 @@
         .btn { padding: 12px 35px; background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%); color: white; border: none; border-radius: 50px; font-family: 'Orbitron', monospace; font-size: 0.95em; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 0 25px rgba(176, 38, 255, 0.5); margin: 8px; text-transform: uppercase; letter-spacing: 2px; }
         .btn:hover:not(:disabled) { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 40px rgba(176, 38, 255, 0.8); }
         .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-next-small { padding: 10px 20px; font-size: 0.85em; width: 100%; margin: 8px 0 0 0; }
 
         .character-select { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 15px 0; }
         .character-card { background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 16px; padding: 10px; cursor: pointer; transition: all 0.3s; }
         .character-card:hover { background: rgba(176, 38, 255, 0.2); border-color: var(--neon-blue); transform: scale(1.05); box-shadow: 0 0 30px rgba(176, 38, 255, 0.4); }
         .character-card.selected { background: rgba(57, 255, 20, 0.2); border-color: var(--neon-green); box-shadow: 0 0 40px rgba(57, 255, 20, 0.6); }
-        .character-card svg { width: 80px; height: 80px; margin: 0 auto 8px; display: block; animation: bounce 2s ease-in-out infinite; }
+        .character-card svg { width: 70px; height: 70px; margin: 0 auto 8px; display: block; animation: bounce 2s ease-in-out infinite; }
         .character-card h3 { font-family: 'Orbitron', monospace; color: var(--neon-blue); font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; }
 
         .game-scene { position: relative; height: 350px; margin-bottom: 10px; overflow: visible; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.1) 0%, transparent 70%); border: 2px solid rgba(176, 38, 255, 0.3); border-radius: 20px; }
@@ -83,7 +84,7 @@
         .portal::before { content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px; border-radius: 37px; background: radial-gradient(ellipse at center, rgba(176, 38, 255, 0.9) 0%, transparent 70%); animation: portalSpin 3s linear infinite; }
         .portal.repaired { background: radial-gradient(ellipse at center, rgba(57, 255, 20, 0.8) 0%, rgba(0, 243, 255, 0.6) 50%, transparent 70%); border-color: var(--neon-green); }
 
-        .player-character { position: absolute; bottom: 80px; left: 5%; width: 200px; height: 200px; z-index: 3; transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1), bottom 1.2s cubic-bezier(0.4, 0, 0.2, 1); overflow: visible !important; }
+        .player-character { position: absolute; bottom: 80px; left: 5%; width: 150px; height: 150px; z-index: 3; transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1), bottom 1.2s cubic-bezier(0.4, 0, 0.2, 1); overflow: visible !important; }
         .player-character svg { width: 100%; height: 100%; overflow: visible !important; animation: glow 2s ease-in-out infinite, breathe 3s ease-in-out infinite; }
         .player-character.flying { animation: characterFly 1s ease-in-out infinite; }
         .player-character.landing { animation: characterLand 0.6s ease-out; }
@@ -93,18 +94,61 @@
         .floating-message { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, rgba(176, 38, 255, 0.95), rgba(0, 243, 255, 0.95)); border: 3px solid var(--neon-blue); border-radius: 20px; padding: 20px 40px; font-family: 'Orbitron', monospace; font-size: 1.8em; font-weight: 900; color: white; text-shadow: 0 0 30px rgba(0, 243, 255, 1); box-shadow: 0 0 60px rgba(176, 38, 255, 1); z-index: 1000; animation: floatMessage 2s ease-out forwards; pointer-events: none; text-transform: uppercase; letter-spacing: 3px; }
         .star-burst { position: fixed; width: 30px; height: 30px; background: radial-gradient(circle, var(--neon-blue), var(--neon-purple)); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); animation: starBurst 1s ease-out forwards; pointer-events: none; z-index: 999; box-shadow: 0 0 30px var(--neon-blue); }
 
-        .task-card { background: var(--panel-bg); backdrop-filter: blur(20px); border: 2px solid var(--neon-purple); border-radius: 20px; padding: 20px; box-shadow: 0 0 40px rgba(176, 38, 255, 0.3); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .task-card { background: var(--panel-bg); backdrop-filter: blur(20px); border: 2px solid var(--neon-purple); border-radius: 20px; padding: 20px; box-shadow: 0 0 40px rgba(176, 38, 255, 0.3); display: grid; grid-template-columns: 420px 1fr; gap: 20px; }
         .task-left { display: flex; flex-direction: column; gap: 12px; }
-        .task-right { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .task-right { display: flex; flex-direction: column; gap: 12px; }
+        .answers-and-explanation { display: flex; gap: 15px; align-items: flex-start; }
+        .answers-block { flex: 0 0 380px; display: flex; flex-direction: column; gap: 12px; }
+        .explanation-column { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px;
+            flex: 1;
+            min-width: 180px;
+        }
+        .explanation-block { 
+            background: rgba(0, 0, 0, 0.4); 
+            border: 2px solid var(--neon-purple); 
+            border-radius: 12px; 
+            padding: 12px; 
+            display: none;
+            animation: pop 0.4s ease-out;
+            min-height: 80px;
+            flex: 1;
+        }
+        .explanation-block.show { display: block; }
+        .explanation-block.correct { border-color: var(--neon-green); background: rgba(57, 255, 20, 0.1); }
+        .explanation-block.wrong { border-color: var(--neon-pink); background: rgba(255, 0, 255, 0.1); }
+        .explanation-text { 
+            font-family: 'Rajdhani', sans-serif; 
+            font-size: 0.95em; 
+            color: #e2e8f0; 
+            line-height: 1.4; 
+            text-align: left;
+            text-transform: none;
+            font-weight: 600;
+        }
+        .explanation-label {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.7em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .explanation-label.correct { color: var(--neon-green); background: rgba(57, 255, 20, 0.2); }
+        .explanation-label.wrong { color: var(--neon-pink); background: rgba(255, 0, 255, 0.2); }
 
         .verb-display { text-align: center; margin: 8px 0; }
-        .verb-v1 { font-family: 'Orbitron', monospace; font-size: 1.8em; color: var(--neon-pink); font-weight: 900; text-shadow: 0 0 30px var(--neon-pink); letter-spacing: 2px; }
+        .verb-v1 { font-family: 'Orbitron', monospace; font-size: 1.6em; color: var(--neon-pink); font-weight: 900; text-shadow: 0 0 30px var(--neon-pink); letter-spacing: 2px; }
         .sentence-box { background: rgba(0, 0, 0, 0.6); border: 2px solid var(--neon-blue); border-radius: 12px; padding: 15px; text-align: left; transition: all 0.3s; min-height: 80px; display: flex; flex-direction: column; justify-content: center; }
         .sentence-box:hover { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); }
-        .sentence-context { font-size: 1.1em; color: #e2e8f0; font-family: 'Rajdhani', sans-serif; font-weight: 600; line-height: 1.4; }
+        .sentence-context { font-size: 1.05em; color: #e2e8f0; font-family: 'Rajdhani', sans-serif; font-weight: 600; line-height: 1.4; }
         .grammar-label { font-family: 'Orbitron', monospace; font-size: 0.75em; font-weight: 700; margin-bottom: 8px; display: inline-block; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .grammar-label.active { color: var(--neon-blue); background: rgba(0, 243, 255, 0.15); border: 1px solid var(--neon-blue); box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); }
-        .grammar-label.explanation { color: var(--neon-green); background: rgba(57, 255, 20, 0.15); border: 1px solid var(--neon-green); box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); }
 
         .slots-container { display: flex; justify-content: center; gap: 15px; margin: 12px 0; }
         .verb-slot { min-width: 160px; height: 45px; background: rgba(0, 0, 0, 0.6); border: 2px dashed var(--neon-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Orbitron', monospace; font-weight: 700; color: var(--neon-blue); font-size: 0.9em; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
@@ -112,9 +156,12 @@
         .verb-slot.correct { border-color: var(--neon-green); background: rgba(57, 255, 20, 0.2); color: var(--neon-green); animation: pulse 0.5s ease; box-shadow: 0 0 30px rgba(57, 255, 20, 0.6); }
         .verb-slot.wrong { border-color: var(--neon-pink); background: rgba(255, 0, 255, 0.2); color: var(--neon-pink); animation: shake 0.4s ease; box-shadow: 0 0 30px rgba(255, 0, 255, 0.6); }
 
-        .options-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 12px 0; width: 100%; }
-        .option-btn { background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 12px; padding: 14px; color: var(--neon-blue); font-family: 'Rajdhani', sans-serif; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: all 0.2s; text-align: left; }
-        .option-btn:hover:not(:disabled) { background: rgba(176, 38, 255, 0.3); border-color: var(--neon-blue); transform: translateX(5px); box-shadow: 0 0 25px rgba(176, 38, 255, 0.6); }
+        .options-grid { display: grid; gap: 8px; width: 100%; }
+        .options-grid.three-options { grid-template-columns: repeat(3, 1fr); }
+        .options-grid.four-options { grid-template-columns: repeat(2, 1fr); }
+        
+        .option-btn { background: rgba(176, 38, 255, 0.1); border: 2px solid var(--neon-purple); border-radius: 10px; padding: 10px 8px; color: var(--neon-blue); font-family: 'Rajdhani', sans-serif; font-size: 0.95em; font-weight: 700; cursor: pointer; transition: all 0.2s; text-align: center; line-height: 1.3; }
+        .option-btn:hover:not(:disabled) { background: rgba(176, 38, 255, 0.3); border-color: var(--neon-blue); transform: translateY(-2px); box-shadow: 0 0 25px rgba(176, 38, 255, 0.6); }
         .option-btn.selected { background: var(--neon-blue); color: var(--dark-bg); border-color: var(--neon-blue); box-shadow: 0 0 30px var(--neon-blue); }
         .option-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
@@ -122,10 +169,6 @@
         .type-input:focus { outline: none; border-color: var(--neon-purple); box-shadow: 0 0 30px rgba(176, 38, 255, 0.6); }
         .type-input::placeholder { color: rgba(0, 243, 255, 0.5); text-transform: none; letter-spacing: 1px; font-size: 0.9em; }
         .type-input.correct-answer { border-color: var(--neon-green) !important; color: var(--neon-green) !important; box-shadow: 0 0 30px var(--neon-green) !important; }
-
-        .feedback-msg { margin-top: 12px; padding: 12px; border-radius: 12px; font-size: 1em; display: none; animation: pop 0.4s ease-out; font-family: 'Rajdhani', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
-        .feedback-msg.success { background: rgba(57, 255, 20, 0.2); border: 2px solid var(--neon-green); color: var(--neon-green); display: block; box-shadow: 0 0 30px rgba(57, 255, 20, 0.4); }
-        .feedback-msg.hint { background: rgba(255, 0, 255, 0.2); border: 2px solid var(--neon-pink); color: var(--neon-pink); display: block; box-shadow: 0 0 30px rgba(255, 0, 255, 0.4); }
 
         .timer-bar { position: sticky; top: 10px; z-index: 100; background: rgba(10, 10, 20, 0.95); border: 2px solid var(--neon-blue); border-radius: 50px; padding: 8px 20px; text-align: center; margin-bottom: 10px; font-family: 'Orbitron', monospace; color: var(--neon-blue); backdrop-filter: blur(12px); display: none; align-items: center; justify-content: center; gap: 12px; font-size: 1em; box-shadow: 0 0 30px rgba(0, 243, 255, 0.4); text-transform: uppercase; letter-spacing: 2px; }
         .timer-bar.show { display: flex; }
@@ -156,14 +199,34 @@
         .bonus-option.selected { background: rgba(57, 255, 20, 0.2); border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.5); }
         .bonus-emoji { font-size: 1.3em; display: block; margin-bottom: 4px; }
 
+        /* === НОВОЕ: Уменьшение персонажа на финальном экране === */
+        #resultCharacter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        #resultCharacter svg {
+            width: 150px !important;
+            height: 150px !important;
+            max-width: 150px;
+            max-height: 150px;
+        }
+
+        @media (max-width: 900px) {
+            .task-card { grid-template-columns: 1fr; }
+            .answers-and-explanation { flex-direction: column; }
+            .answers-block { flex: 1; width: 100%; max-width: none; }
+            .explanation-column { max-width: 100%; min-width: auto; }
+        }
+
         @media (max-width: 768px) {
             .main-wrapper { padding: 5px; }
             .main-title { font-size: 1.3em; margin-bottom: 3px; }
             .header p { font-size: 0.8em; margin-bottom: 8px; }
             .character-select { grid-template-columns: repeat(2, 1fr); }
-            .character-card svg { width: 60px; height: 60px; }
+            .character-card svg { width: 50px; height: 50px; }
             .game-scene { height: 220px; margin-bottom: 8px; }
-            .player-character { width: 120px; height: 120px; bottom: 20px; left: 3%; z-index: 10; overflow: visible !important; }
+            .player-character { width: 100px; height: 100px; bottom: 20px; left: 3%; z-index: 10; overflow: visible !important; }
             .player-character svg { width: 100%; height: 100%; overflow: visible !important; }
             .planet-mercury { width: 30px; height: 30px; bottom: 100px; }
             .planet-venus { width: 40px; height: 40px; bottom: 120px; }
@@ -174,7 +237,6 @@
             .planet-uranus { width: 45px; height: 45px; bottom: 140px; }
             .planet-neptune { width: 40px; height: 40px; bottom: 90px; }
             .portal { width: 40px; height: 65px; bottom: 70px; }
-            .task-card { grid-template-columns: 1fr; padding: 12px; gap: 10px; }
             .verb-v1 { font-size: 1.4em; }
             .sentence-box { padding: 10px; min-height: 60px; }
             .sentence-context { font-size: 1em; }
@@ -186,19 +248,20 @@
             .btn { padding: 8px 20px; font-size: 0.8em; margin: 5px; }
             .verb-slot { min-width: 140px; height: 40px; font-size: 0.85em; }
             .type-input { font-size: 1em; padding: 10px; }
-            .option-btn { padding: 12px; font-size: 1em; }
-            .feedback-msg { font-size: 0.9em; padding: 10px; }
+            .option-btn { padding: 8px 6px; font-size: 0.85em; }
             .back-to-main { width: 40px; height: 40px; top: 10px; left: 10px; font-size: 1.1em; }
             .music-control { bottom: 10px; right: 10px; padding: 6px 12px; }
             .level-badge { top: 60px; right: 10px; font-size: 0.8em; padding: 6px 15px; }
             .tab-switch-warning { top: 60px; right: 10px; font-size: 0.75em; padding: 6px 12px; }
+            .options-grid.three-options { grid-template-columns: 1fr; }
+            #resultCharacter svg { width: 120px !important; height: 120px !important; }
         }
 
         @media (max-width: 480px) {
             .main-title { font-size: 1.1em; }
             .header p { font-size: 0.7em; }
             .game-scene { height: 180px; }
-            .player-character { width: 90px; height: 90px; bottom: 15px; left: 3%; z-index: 10; overflow: visible !important; }
+            .player-character { width: 80px; height: 80px; bottom: 15px; left: 3%; z-index: 10; overflow: visible !important; }
             .planet-mercury { width: 25px; height: 25px; bottom: 80px; }
             .planet-venus { width: 35px; height: 35px; bottom: 100px; }
             .planet-earth { width: 38px; height: 38px; bottom: 70px; }
@@ -211,8 +274,9 @@
             .verb-v1 { font-size: 1.2em; }
             .verb-slot { min-width: 120px; height: 36px; font-size: 0.8em; }
             .type-input { font-size: 0.9em; padding: 8px; }
-            .option-btn { padding: 10px; font-size: 0.95em; }
+            .option-btn { padding: 6px 4px; font-size: 0.8em; }
             .sentence-context { font-size: 0.95em; }
+            #resultCharacter svg { width: 100px !important; height: 100px !important; }
         }
     </style>
 </head>
@@ -232,7 +296,7 @@
     <div class="main-wrapper">
         <div class="header">
             <h1 class="main-title">Кибер-портал</h1>
-            <p>Средства выразительности речи</p>
+            <p>Универсальная игра для подготовки к экзаменам</p>
         </div>
 
         <div class="screen active" id="screen-name">
@@ -330,15 +394,31 @@
                         <div class="slots-container">
                             <div class="verb-slot" id="answerSlot" onclick="clearAnswer()">Ваш ответ: ?</div>
                         </div>
-                        <div class="options-grid" id="optionsGrid"></div>
+                        <div class="answers-and-explanation">
+                            <div class="answers-block">
+                                <div class="options-grid" id="optionsGrid"></div>
+                            </div>
+                            <div class="explanation-column">
+                                <div class="explanation-block" id="explanationBlock">
+                                    <div class="explanation-label" id="explanationLabel">💡 Объяснение</div>
+                                    <div class="explanation-text" id="explanationText"></div>
+                                </div>
+                                <button class="btn btn-next-small" id="nextBtnLevel1" onclick="nextQuestion()" style="display: none;">Далее</button>
+                            </div>
+                        </div>
                     </div>
                     <div id="level2Content" style="display: none; width: 100%;">
                         <input type="text" class="type-input" id="typeInput" placeholder="Введите ответ..." autocomplete="off">
                         <div id="correctAnswerDisplay" style="display: none; margin-top: 8px; padding: 8px; background: rgba(57, 255, 20, 0.1); border: 2px solid var(--neon-green); border-radius: 10px; color: var(--neon-green); font-family: 'Orbitron', monospace; font-weight: 700; font-size: 0.9em;"></div>
+                        <div style="display: flex; gap: 10px; margin-top: 12px; align-items: flex-start;">
+                            <div class="explanation-block" id="explanationBlock2" style="flex: 1; margin-top: 0;">
+                                <div class="explanation-label" id="explanationLabel2">💡 Объяснение</div>
+                                <div class="explanation-text" id="explanationText2"></div>
+                            </div>
+                            <button class="btn" id="nextBtnLevel2" onclick="nextQuestion()" style="display: none; margin: 0; white-space: nowrap;">Далее</button>
+                        </div>
+                        <button class="btn" id="checkBtn" onclick="checkAnswer()" style="display: none; width: 100%; margin-top: 12px;">Проверить</button>
                     </div>
-                    <button class="btn" id="checkBtn" onclick="checkAnswer()" style="display: none;">Проверить</button>
-                    <button class="btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">Далее</button>
-                    <div class="feedback-msg" id="feedbackMsg"></div>
                 </div>
             </div>
         </div>
@@ -352,7 +432,7 @@
                     <div class="bonus-title">Выберите бонус</div>
                     <p style="color: #94a3b8; margin-bottom: 8px; font-size: 0.9em;">Один бонус на следующую проверку:</p>
                     <div class="bonus-options">
-                        <div class="bonus-option" onclick="selectBonus(this, 'hint')"><span class="bonus-emoji">💡</span>Подсказка на контрольной</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'hint')"><span class="bonus-emoji"></span>Подсказка на контрольной</div>
                         <div class="bonus-option" onclick="selectBonus(this, 'no_hw')"><span class="bonus-emoji">🎫</span>Анти-двойка / Без ДЗ</div>
                         <div class="bonus-option" onclick="selectBonus(this, 'extra_point')"><span class="bonus-emoji">⭐</span>+1 доп. балл</div>
                         <div class="bonus-option" onclick="selectBonus(this, 'music')"><span class="bonus-emoji">🎵</span>Музыка на перемене</div>
@@ -416,7 +496,7 @@
 
         function toggleMusic() {
             const bg = document.getElementById('bgMusic'), btn = document.getElementById('musicToggle');
-            if (musicPlaying) { bg.pause(); btn.textContent = '🔇'; musicPlaying = false; } 
+            if (musicPlaying) { bg.pause(); btn.textContent = ''; musicPlaying = false; } 
             else { bg.play(); btn.textContent = '🔊'; musicPlaying = true; }
         }
 
@@ -453,7 +533,6 @@
             }
         }
 
-        // === ВСЕ 8 ПЕРСОНАЖЕЙ НА МЕСТЕ! ===
         const heroSVGs = {
             astronaut: `<svg viewBox="0 0 200 200"><circle cx="100" cy="80" r="45" fill="#e9d5ff"/><circle cx="85" cy="70" r="8" fill="#1e293b"/><circle cx="115" cy="70" r="8" fill="#1e293b"/><circle cx="87" cy="68" r="3" fill="#fff"/><circle cx="117" cy="68" r="3" fill="#fff"/><path d="M 92 90 Q 100 96 108 90" stroke="#1e293b" stroke-width="2" fill="none"/><ellipse cx="100" cy="130" rx="35" ry="40" fill="#c084fc"/><circle cx="100" cy="50" r="8" fill="#fbbf24"/><line x1="100" y1="50" x2="100" y2="35" stroke="#c084fc" stroke-width="3"/><ellipse cx="70" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(-20 70 120)"/><ellipse cx="130" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(20 130 120)"/><ellipse cx="85" cy="170" rx="12" ry="8" fill="#a855f7"/><ellipse cx="115" cy="170" rx="12" ry="8" fill="#a855f7"/></svg>`,
             robot: `<svg viewBox="0 0 200 200"><rect x="70" y="50" width="60" height="50" rx="10" fill="#bfdbfe"/><rect x="75" y="55" width="50" height="30" rx="8" fill="#0f172a"/><circle cx="88" cy="70" r="6" fill="#4ade80"/><circle cx="112" cy="70" r="6" fill="#4ade80"/><rect x="85" y="90" width="30" height="4" rx="2" fill="#4ade80"/><line x1="100" y1="50" x2="100" y2="35" stroke="#60a5fa" stroke-width="3"/><circle cx="100" cy="30" r="5" fill="#f87171"/><rect x="75" y="110" width="50" height="55" rx="8" fill="#60a5fa"/><rect x="55" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="130" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="80" y="165" width="15" height="15" rx="5" fill="#3b82f6"/><rect x="105" y="165" width="15" height="15" rx="5" fill="#3b82f6"/></svg>`,
@@ -478,410 +557,278 @@
         function getPlanetPositions() { return window.innerWidth <= 768 ? planetPositionsMobile : planetPositionsDesktop; }
         const planetPositions = getPlanetPositions();
 
-        // ========================================================================
-        // === УНИВЕРСАЛЬНАЯ БАЗА ВОПРОСОВ (КОЛЛЕГИ МЕНЯЮТ ТОЛЬКО ЭТОТ БЛОК) ===
-        // ========================================================================
-       const questionDatabase = [
-    {
-        keyword: "Троп",
-        question: "Как называется скрытое сравнение, перенос значения по сходству?",
-        correct: "Метафора",
-        wrong1: "Метонимия",
-        wrong2: "Эпитет",
-        explanation: "Метафора — это переносное значение, основанное на сходстве предметов."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется разновидность метафоры, при которой неодушевлённым предметам приписываются свойства живых существ?",
-        correct: "Олицетворение",
-        wrong1: "Аллегория",
-        wrong2: "Синекдоха",
-        explanation: "Олицетворение — это оживление неживого, наделение его человеческими чертами."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется образное определение, выделяющее характерную черту предмета?",
-        correct: "Эпитет",
-        wrong1: "Сравнение",
-        wrong2: "Перифраз",
-        explanation: "Эпитет — это красочное, образное, часто переносное определение."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется стилистическая фигура явного и намеренного преувеличения?",
-        correct: "Гипербола",
-        wrong1: "Литота",
-        wrong2: "Ирония",
-        explanation: "Гипербола — это художественное преувеличение размера или значения."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется намеренное преуменьшение размера, значения или силы чего-либо?",
-        correct: "Литота",
-        wrong1: "Гипербола",
-        wrong2: "Сарказм",
-        explanation: "Литота — это художественное преуменьшение, противоположное гиперболе."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется сопоставление одного предмета с другим при помощи союзов «как», «словно», «будто»?",
-        correct: "Сравнение",
-        wrong1: "Метафора",
-        wrong2: "Аллегория",
-        explanation: "Сравнение — это прямое сопоставление двух явлений или предметов."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется иносказательное изображение абстрактного понятия через конкретный образ?",
-        correct: "Аллегория",
-        wrong1: "Метафора",
-        wrong2: "Перифраз",
-        explanation: "Аллегория — это выражение отвлечённой мысли через конкретный образ (басня)."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется употребление слова в смысле, прямо противоположном его буквальному значению, с целью насмешки?",
-        correct: "Ирония",
-        wrong1: "Сарказм",
-        wrong2: "Гротеск",
-        explanation: "Ирония — это скрытая насмешка, когда говорится противоположное тому, что имеется в виду."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется язвительная, беспощадная насмешка, высшая степень иронии?",
-        correct: "Сарказм",
-        wrong1: "Ирония",
-        wrong2: "Гротеск",
-        explanation: "Сарказм — это наиболее едкая, обличающая и циничная форма иронии."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется перенос названия с одного предмета на другой на основе их смежности, взаимосвязи?",
-        correct: "Метонимия",
-        wrong1: "Метафора",
-        wrong2: "Синекдоха",
-        explanation: "Метонимия основана на смежности понятий, а не на их сходстве."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется разновидность метонимии, основанная на замене целого частью или части целым?",
-        correct: "Синекдоха",
-        wrong1: "Метонимия",
-        wrong2: "Метафора",
-        explanation: "Синекдоха — это частный случай метонимии (целое вместо части или наоборот)."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется перефразировка, замена названия предмета его описанием?",
-        correct: "Перифраз",
-        wrong1: "Эпитет",
-        wrong2: "Аллегория",
-        explanation: "Перифраз — это описательное выражение вместо одного слова (царь зверей — лев)."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется стилистическая фигура резкого противопоставления понятий или образов?",
-        correct: "Антитеза",
-        wrong1: "Параллелизм",
-        wrong2: "Градация",
-        explanation: "Антитеза — это контрастное противопоставление для усиления выразительности."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется расположение слов по нарастанию их значения и эмоционального напряжения?",
-        correct: "Восходящая градация",
-        wrong1: "Нисходящая градация",
-        wrong2: "Антитеза",
-        explanation: "Восходящая градация усиливает значение с каждым следующим словом."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется расположение слов по убыванию их значения и эмоционального напряжения?",
-        correct: "Нисходящая градация",
-        wrong1: "Восходящая градация",
-        wrong2: "Инверсия",
-        explanation: "Нисходящая градация ослабляет значение, идя от сильного к слабому."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется изменение прямого порядка слов в предложении для логического или эмоционального выделения?",
-        correct: "Инверсия",
-        wrong1: "Парцелляция",
-        wrong2: "Эллипсис",
-        explanation: "Инверсия — это нарушение привычного синтаксического порядка слов."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется намеренное разделение единого по смыслу и интонации предложения на несколько самостоятельных частей точками?",
-        correct: "Парцелляция",
-        wrong1: "Эллипсис",
-        wrong2: "Бессоюзие",
-        explanation: "Парцелляция дробит предложение, создавая эффект отрывистости и эмоциональности."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется пропуск какого-либо члена предложения, легко восстанавливаемого из контекста?",
-        correct: "Эллипсис",
-        wrong1: "Парцелляция",
-        wrong2: "Усечение",
-        explanation: "Эллипсис делает речь динамичной, лаконичной и разговорной."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется намеренный пропуск союзов между однородными членами предложения для придания речи динамичности?",
-        correct: "Бессоюзие",
-        wrong1: "Многосоюзие",
-        wrong2: "Парцелляция",
-        explanation: "Бессоюзие ускоряет темп речи и создаёт эффект стремительного перечисления."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется намеренное повторение союзов для замедления темпа речи и подчёркивания каждого элемента?",
-        correct: "Многосоюзие",
-        wrong1: "Бессоюзие",
-        wrong2: "Анафора",
-        explanation: "Многосоюзие создаёт эффект неторопливого, подробного и весомого перечисления."
-    },
-    {
-        keyword: "Звуковая и синтаксическая фигура",
-        question: "Как называется повторение одних и тех же слов или звуковых комплексов в начале нескольких строк или предложений?",
-        correct: "Анафора",
-        wrong1: "Эпифора",
-        wrong2: "Симплока",
-        explanation: "Анафора — это единачальное повторение, задающее ритм."
-    },
-    {
-        keyword: "Звуковая и синтаксическая фигура",
-        question: "Как называется повторение одних и тех же слов или звуковых комплексов в конце нескольких строк или предложений?",
-        correct: "Эпифора",
-        wrong1: "Анафора",
-        wrong2: "Лейтмотив",
-        explanation: "Эпифора — это конечное повторение, акцентирующее внимание на финале."
-    },
-    {
-        keyword: "Риторическая фигура",
-        question: "Как называется вопрос, не требующий ответа, а лишь привлекающий внимание к мысли автора?",
-        correct: "Риторический вопрос",
-        wrong1: "Риторическое обращение",
-        wrong2: "Риторическое восклицание",
-        explanation: "Риторический вопрос усиливает эмоциональность и вовлекает читателя."
-    },
-    {
-        keyword: "Риторическая фигура",
-        question: "Как называется обращение к отсутствующему лицу или неодушевлённому предмету?",
-        correct: "Риторическое обращение",
-        wrong1: "Риторический вопрос",
-        wrong2: "Апострофа",
-        explanation: "Риторическое обращение одушевляет предметы или выражает сильные чувства."
-    },
-    {
-        keyword: "Риторическая фигура",
-        question: "Как называется восклицание, выражающее сильные чувства и не предполагающее ответа собеседника?",
-        correct: "Риторическое восклицание",
-        wrong1: "Риторический вопрос",
-        wrong2: "Эмоциональный окрик",
-        explanation: "Риторическое восклицание передаёт предельную эмоциональность и восторженность."
-    },
-    {
-        keyword: "Звукопись",
-        question: "Как называется повторение одинаковых или сходных согласных звуков для создания определённого звукового эффекта?",
-        correct: "Аллитерация",
-        wrong1: "Ассонанс",
-        wrong2: "Анафора",
-        explanation: "Аллитерация — это повторение согласных звуков, имитирующее шум, стук и т.д."
-    },
-    {
-        keyword: "Звукопись",
-        question: "Как называется повторение одинаковых гласных звуков в стихотворной строке?",
-        correct: "Ассонанс",
-        wrong1: "Аллитерация",
-        wrong2: "Акцент",
-        explanation: "Ассонанс — это повторение гласных звуков, создающее певучесть или тягучесть."
-    },
-    {
-        keyword: "Троп и приём",
-        question: "Как называется художественный приём, основанный на фантастическом преувеличении, сочетании контрастов и причудливом сочетании реального и сказочного?",
-        correct: "Гротеск",
-        wrong1: "Гипербола",
-        wrong2: "Сарказм",
-        explanation: "Гротеск создаёт причудливую, фантасмагорическую и часто пугающую картину мира."
-    },
-    {
-        keyword: "Художественный приём",
-        question: "Как называется мельчайшая подробность, которая в художественном произведении несёт огромную смысловую и образную нагрузку?",
-        correct: "Деталь",
-        wrong1: "Эпизод",
-        wrong2: "Штрих",
-        explanation: "Деталь помогает раскрыть характер или обстановку через выразительную мелочь."
-    },
-    {
-        keyword: "Лексическое средство",
-        question: "Как называются слова с противоположным лексическим значением, часто используемые для создания антитезы?",
-        correct: "Антонимы",
-        wrong1: "Синонимы",
-        wrong2: "Омонимы",
-        explanation: "Антонимы подчёркивают контрастность явлений и усиливают выразительность."
-    },
-    {
-        keyword: "Лексическое средство",
-        question: "Как называется устойчивое выражение, обладающее целостным, часто образным значением?",
-        correct: "Фразеологизм",
-        wrong1: "Термин",
-        wrong2: "Диалектизм",
-        explanation: "Фразеологизмы делают речь яркой, образной, эмоциональной и народной."
-    },
-    {
-        keyword: "Лексическое средство",
-        question: "Как называются устаревшие слова, вышедшие из активного употребления из-за появления новых названий для старых предметов?",
-        correct: "Архаизмы",
-        wrong1: "Историзмы",
-        wrong2: "Неологизмы",
-        explanation: "Архаизмы — это старые названия для предметов, существующих и сейчас (очи — глаза)."
-    },
-    {
-        keyword: "Лексическое средство",
-        question: "Как называются слова, обозначающие предметы и явления, ушедшие из жизни современного общества?",
-        correct: "Историзмы",
-        wrong1: "Архаизмы",
-        wrong2: "Диалектизмы",
-        explanation: "Историзмы связаны с исчезнувшими реалиями прошлого (боярин, кольчуга)."
-    },
-    {
-        keyword: "Лексическое средство",
-        question: "Как называются слова, созданные самим автором или появившиеся в языке недавно для обозначения новых понятий?",
-        correct: "Неологизмы",
-        wrong1: "Архаизмы",
-        wrong2: "Варваризмы",
-        explanation: "Неологизмы привлекают внимание к новизне явления или авторскому слову."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется стилистическая фигура, сочетающая противоположные по смыслу понятия, например, «живой труп» или «горячий снег»?",
-        correct: "Оксюморон",
-        wrong1: "Парадокс",
-        wrong2: "Антитеза",
-        explanation: "Оксюморон создаёт неожиданный и парадоксальный образ на стыке несовместимого."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется одинаковое синтаксическое построение нескольких предложений или частей сложного предложения?",
-        correct: "Параллелизм",
-        wrong1: "Антитеза",
-        wrong2: "Инверсия",
-        explanation: "Параллелизм создаёт ритмичность и подчёркивает равноправие или противопоставление явлений."
-    },
-    {
-        keyword: "Синтаксическая фигура",
-        question: "Как называется стилистическая фигура, при которой мысль не договаривается до конца, предоставляя читателю домыслить её?",
-        correct: "Умолчание",
-        wrong1: "Эллипсис",
-        wrong2: "Парцелляция",
-        explanation: "Умолчание (часто оформляется многоточием) создаёт эффект недосказанности и тайны."
-    },
-    {
-        keyword: "Лексико-синтаксическая фигура",
-        question: "Как называется многократное повторение одного и того же слова или выражения для усиления выразительности?",
-        correct: "Лексический повтор",
-        wrong1: "Анафора",
-        wrong2: "Тавтология",
-        explanation: "Лексический повтор акцентирует внимание на ключевой мысли и создаёт ритм."
-    },
-    {
-        keyword: "Общее понятие",
-        question: "Как называются приёмы, усиливающие выразительность речи, не связанные с переносным значением слов (в отличие от тропов)?",
-        correct: "Стилистические фигуры",
-        wrong1: "Тропы",
-        wrong2: "Синтаксические ошибки",
-        explanation: "Фигуры — это приёмы расположения слов, а тропы — приёмы употребления слов в переносном смысле."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется литературный приём, являющийся синонимом олицетворения, но чаще применяемый к абстрактным понятиям или явлениям природы?",
-        correct: "Персонификация",
-        wrong1: "Аллегория",
-        wrong2: "Антропоморфизм",
-        explanation: "Персонификация наделяет неживое или абстрактное человеческими чертами и действиями."
-    },
-    {
-        keyword: "Троп",
-        question: "Как называется уподобление природных явлений или животных человеку, наделение их человеческими качествами?",
-        correct: "Антропоморфизм",
-        wrong1: "Персонификация",
-        wrong2: "Олицетворение",
-        explanation: "Антропоморфизм часто встречается в фольклоре, мифах и баснях."
-    },
-    {
-        keyword: "Лексическое средство",
-        question: "Как называется образование слов, воспроизводящих звуки природы, животных или предметов?",
-        correct: "Звукоподражание",
-        wrong1: "Аллитерация",
-        wrong2: "Аффиксация",
-        explanation: "Звукоподражание делает описание предельно реалистичным и объёмным."
-    },
-    {
-        keyword: "Звукопись",
-        question: "Как называется стилистический приём, имитирующий естественные звуки с помощью подбора определённых гласных и согласных?",
-        correct: "Ономатопея",
-        wrong1: "Аллитерация",
-        wrong2: "Рифма",
-        explanation: "Ономатопея создаёт звуковой образ явления через фонетику (шелест, звон, шёпот)."
-    },
-    {
-        keyword: "Пример тропа",
-        question: "В примере «Эй, борода! Куда едешь?» какое средство выразительности использовано?",
-        correct: "Синекдоха",
-        wrong1: "Метонимия",
-        wrong2: "Метафора",
-        explanation: "Здесь часть (борода) заменяет целое (человека с бородой)."
-    },
-    {
-        keyword: "Пример тропа",
-        question: "В примере «Золотая осень» какое средство выразительности использовано?",
-        correct: "Метафора",
-        wrong1: "Эпитет",
-        wrong2: "Сравнение",
-        explanation: "Осень сравнивается с золотом по цвету и ценности, но без использования союзов."
-    },
-    {
-        keyword: "Пример тропа",
-        question: "В примере «Царь зверей» какое средство выразительности использовано для обозначения льва?",
-        correct: "Перифраз",
-        wrong1: "Эпитет",
-        wrong2: "Аллегория",
-        explanation: "Перифраз описывает предмет через его характерные признаки и статус."
-    },
-    {
-        keyword: "Пример тропа",
-        question: "В примере «Я сказал это тысячу раз» какое средство выразительности использовано?",
-        correct: "Гипербола",
-        wrong1: "Литота",
-        wrong2: "Метафора",
-        explanation: "Тысяча раз — явное художественное преувеличение количества повторений."
-    },
-    {
-        keyword: "Пример тропа",
-        question: "В примере «Ветер выл в трубе» какое средство выразительности использовано?",
-        correct: "Олицетворение",
-        wrong1: "Метафора",
-        wrong2: "Сравнение",
-        explanation: "Ветру приписывается свойство живого существа — выть от боли или тоски."
-    },
-    {
-        keyword: "Пример фигуры",
-        question: "В примере «Волос долог, да ум короток» какое средство выразительности использовано?",
-        correct: "Антитеза",
-        wrong1: "Параллелизм",
-        wrong2: "Градация",
-        explanation: "Здесь резко противопоставляются понятия «долог» и «короток»."
-    },
-    {
-        keyword: "Пример фигуры",
-        question: "В примере «Гром гремит» порядок слов изменён на «Гремит гром». Как называется этот приём?",
-        correct: "Инверсия",
-        wrong1: "Парцелляция",
-        wrong2: "Эллипсис",
-        explanation: "Нарушен прямой порядок слов для выделения действия и создания ритма."
-    }
+       ```javascript
+const questionDatabase = [
+  {
+    keyword: "Метафора",
+    question: "Определите средство выразительности в словосочетании «золото осени».",
+    correct: "метафора",
+    wrong1: "метонимия",
+    wrong2: "эпитет",
+    wrong3: "сравнение",
+    explanation: "Метафора — это перенос названия по сходству признаков. Осень сравнивается с золотом по цвету."
+  },
+  {
+    keyword: "Метонимия",
+    question: "Какое средство выразительности использовано: «Я три тарелки съел»?",
+    correct: "метонимия",
+    wrong1: "метафора",
+    wrong2: "синекдоха",
+    wrong3: "гипербола",
+    explanation: "Метонимия — замена одного слова другим на основе смежности. Съедено не блюдо, а содержимое тарелок."
+  },
+  {
+    keyword: "Синекдоха",
+    question: "«И слышно было до рассвета, как ликовал француз» — какое средство здесь использовано?",
+    correct: "синекдоха",
+    wrong1: "метонимия",
+    wrong2: "метафора",
+    wrong3: "олицетворение",
+    explanation: "Синекдоха — вид метонимии, замена целого частью или наоборот. Француз означает всю французскую армию."
+  },
+  {
+    keyword: "Эпитет",
+    question: "Определите средство выразительности: «свинцовые тучи».",
+    correct: "эпитет",
+    wrong1: "метафора",
+    wrong2: "сравнение",
+    wrong3: "олицетворение",
+    explanation: "Эпитет — образное определение, выраженное чаще всего прилагательным. «Свинцовые» придаёт тучам мрачный образ."
+  },
+  {
+    keyword: "Олицетворение",
+    question: "«Ветер по морю гуляет» — какое средство выразительности использовано?",
+    correct: "олицетворение",
+    wrong1: "метафора",
+    wrong2: "эпитет",
+    wrong3: "гипербола",
+    explanation: "Олицетворение — наделение неживого предмета свойствами живого. Ветер «гуляет», как человек."
+  },
+  {
+    keyword: "Гипербола",
+    question: "Определите средство: «море слёз».",
+    correct: "гипербола",
+    wrong1: "литота",
+    wrong2: "метафора",
+    wrong3: "сравнение",
+    explanation: "Гипербола — художественное преувеличение. Слёз не может быть столько, как в море."
+  },
+  {
+    keyword: "Литота",
+    question: "«Мужичок с ноготок» — какое средство выразительности?",
+    correct: "литота",
+    wrong1: "гипербола",
+    wrong2: "метафора",
+    wrong3: "сравнение",
+    explanation: "Литота — художественное преуменьшение. Размер человека преуменьшен до размера ногтя."
+  },
+  {
+    keyword: "Сравнение",
+    question: "Определите средство: «Глаза, как два уголька».",
+    correct: "сравнение",
+    wrong1: "метафора",
+    wrong2: "эпитет",
+    wrong3: "олицетворение",
+    explanation: "Сравнение сопоставляет два предмета с помощью союзов как, словно, будто."
+  },
+  {
+    keyword: "Аллегория",
+    question: "Лиса в баснях Крылова символизирует хитрость. Как называется это средство?",
+    correct: "аллегория",
+    wrong1: "метафора",
+    wrong2: "олицетворение",
+    wrong3: "символ",
+    explanation: "Аллегория — иносказание, выражение абстрактного понятия через конкретный образ."
+  },
+  {
+    keyword: "Ирония",
+    question: "«Откуда, умная, бредёшь ты, голова?» — какое средство?",
+    correct: "ирония",
+    wrong1: "сарказм",
+    wrong2: "метафора",
+    wrong3: "гипербола",
+    explanation: "Ирония — употребление слова в смысле, обратном буквальному, с насмешкой."
+  },
+  {
+    keyword: "Перифраз",
+    question: "«Царь зверей» вместо «лев» — это...",
+    correct: "перифраз",
+    wrong1: "синоним",
+    wrong2: "метафора",
+    wrong3: "эпитет",
+    explanation: "Перифраз — замена названия описательным выражением, указывающим на характерные признаки."
+  },
+  {
+    keyword: "Риторический вопрос",
+    question: "«Кто не слыхал его имени?» — какое средство выразительности?",
+    correct: "риторический вопрос",
+    wrong1: "риторическое восклицание",
+    wrong2: "риторическое обращение",
+    wrong3: "антитеза",
+    explanation: "Риторический вопрос не требует ответа, утверждается очевидность: имя знал каждый."
+  },
+  {
+    keyword: "Риторическое восклицание",
+    question: "Определите средство: «Какое лето, что за лето!»",
+    correct: "риторическое восклицание",
+    wrong1: "риторический вопрос",
+    wrong2: "риторическое обращение",
+    wrong3: "анафора",
+    explanation: "Риторическое восклицание выражает сильные эмоции без обращения к собеседнику."
+  },
+  {
+    keyword: "Риторическое обращение",
+    question: "«О Волга! после многих лет я вновь пришёл к тебе» — это...",
+    correct: "риторическое обращение",
+    wrong1: "риторический вопрос",
+    wrong2: "олицетворение",
+    wrong3: "анафора",
+    explanation: "Риторическое обращение — условное обращение к неодушевлённому предмету для усиления эмоции."
+  },
+  {
+    keyword: "Анафора",
+    question: "«Жди меня, и я вернусь. Жди, когда наводят грусть...» — какое средство?",
+    correct: "анафора",
+    wrong1: "эпифора",
+    wrong2: "параллелизм",
+    wrong3: "анафора",
+    explanation: "Анафора — единоначатие, повторение слов в начале смежных строк или предложений."
+  },
+  {
+    keyword: "Эпифора",
+    question: "Определите средство: «Мне бы хотелось знать, отчего я титулярный советник? Почему именно титулярный советник?»",
+    correct: "эпифора",
+    wrong1: "анафора",
+    wrong2: "параллелизм",
+    wrong3: "антитеза",
+    explanation: "Эпифора — повторение слов в конце смежных предложений."
+  },
+  {
+    keyword: "Антитеза",
+    question: "«Ты богат, я очень беден» — какое средство?",
+    correct: "антитеза",
+    wrong1: "оксюморон",
+    wrong2: "параллелизм",
+    wrong3: "градация",
+    explanation: "Антитеза — резкое противопоставление понятий, образов, состояний."
+  },
+  {
+    keyword: "Градация",
+    question: "Определите средство: «Я вас прошу, я вас молю, я требую!»",
+    correct: "градация",
+    wrong1: "анафора",
+    wrong2: "параллелизм",
+    wrong3: "антитеза",
+    explanation: "Градация — расположение слов по нарастанию или убыванию их эмоционально-смысловой значимости."
+  },
+  {
+    keyword: "Инверсия",
+    question: "«Белеет парус одинокий» — какое синтаксическое средство?",
+    correct: "инверсия",
+    wrong1: "параллелизм",
+    wrong2: "анафора",
+    wrong3: "эллипсис",
+    explanation: "Инверсия — нарушение обычного порядка слов для выделения главного члена предложения."
+  },
+  {
+    keyword: "Параллелизм",
+    question: "«То грустит она, то смеётся она» — какое средство?",
+    correct: "параллелизм",
+    wrong1: "анафора",
+    wrong2: "эпифора",
+    wrong3: "антитеза",
+    explanation: "Параллелизм — одинаковое синтаксическое построение соседних предложений."
+  },
+  {
+    keyword: "Многосоюзие",
+    question: "Определите средство: «И скучно, и грустно, и некому руку подать».",
+    correct: "многосоюзие",
+    wrong1: "бессоюзие",
+    wrong2: "анафора",
+    wrong3: "параллелизм",
+    explanation: "Многосоюзие — намеренное повторение союзов для замедления речи и усиления эмоций."
+  },
+  {
+    keyword: "Бессоюзие",
+    question: "«Швед, русский — колет, рубит, режет» — какое средство?",
+    correct: "бессоюзие",
+    wrong1: "многосоюзие",
+    wrong2: "парцелляция",
+    wrong3: "анафора",
+    explanation: "Бессоюзие — намеренный пропуск союзов для динамичности и стремительности речи."
+  },
+  {
+    keyword: "Оксюморон",
+    question: "Определите средство: «живой труп».",
+    correct: "оксюморон",
+    wrong1: "антитеза",
+    wrong2: "парадокс",
+    wrong3: "метафора",
+    explanation: "Оксюморон — сочетание несочетаемых по смыслу слов, создающее новое понятие."
+  },
+  {
+    keyword: "Парцелляция",
+    question: "«Он опоздал. Опять. Как всегда.» — какое средство?",
+    correct: "парцелляция",
+    wrong1: "эллипсис",
+    wrong2: "бессоюзие",
+    wrong3: "анафора",
+    explanation: "Парцелляция — намеренное дробление предложения на части для усиления смысла."
+  },
+  {
+    keyword: "Эллипсис",
+    question: "Определите средство: «Ты — за мной, я — за тобой».",
+    correct: "эллипсис",
+    wrong1: "парцелляция",
+    wrong2: "инверсия",
+    wrong3: "бессоюзие",
+    explanation: "Эллипсис — пропуск члена предложения, обычно сказуемого, для динамичности."
+  },
+  {
+    keyword: "Архаизм",
+    question: "Слово «ланиты» вместо «щёки» — это...",
+    correct: "архаизм",
+    wrong1: "историзм",
+    wrong2: "неологизм",
+    wrong3: "диалектизм",
+    explanation: "Архаизм — устаревшее слово, имеющее современный синоним."
+  },
+  {
+    keyword: "Историзм",
+    question: "Слово «боярин» — это...",
+    correct: "историзм",
+    wrong1: "архаизм",
+    wrong2: "диалектизм",
+    wrong3: "профессионализм",
+    explanation: "Историзм — слово, обозначающее исчезнувший предмет или явление, не имеющее современного синонима."
+  },
+  {
+    keyword: "Неологизм",
+    question: "Слово «смартфон» в момент появления в языке — это...",
+    correct: "неологизм",
+    wrong1: "архаизм",
+    wrong2: "профессионализм",
+    wrong3: "жаргонизм",
+    explanation: "Неологизм — новое слово, недавно появившееся в языке."
+  },
+  {
+    keyword: "Диалектизм",
+    question: "Слово «кочет» вместо «петух» в южных говорах — это...",
+    correct: "диалектизм",
+    wrong1: "профессионализм",
+    wrong2: "жаргонизм",
+    wrong3: "архаизм",
+    explanation: "Диалектизм — слово, употребляемое жителями определённой местности."
+  },
+  {
+    keyword: "Профессионализм",
+    question: "Слово «скальпель» в речи хирурга — это...",
+    correct: "профессионализм",
+    wrong1: "термин",
+    wrong2: "жаргонизм",
+    wrong3: "диалектизм",
+    explanation: "Профессионализм — слово, употребляемое людьми одной профессии в неофициальной речи."
+  }
 ];
 
         let studentName = '', selectedCharacter = null, currentQuestions = [], currentIndex = 0, score = 0;
@@ -921,7 +868,6 @@
             showScreen('screen-game');
             document.getElementById('playerCharacter').innerHTML = heroSVGs[selectedCharacter];
             
-            // Берем 20 случайных вопросов (или меньше, если в базе меньше 20)
             const count = Math.min(20, questionDatabase.length);
             currentQuestions = shuffle([...questionDatabase]).slice(0, count);
             
@@ -946,7 +892,6 @@
         function loadQuestion() {
             const q = currentQuestions[currentIndex];
             
-            // Переход на 2-й уровень (ввод текста) после половины вопросов
             if (currentIndex >= Math.ceil(currentQuestions.length / 2) && currentLevel === 1) {
                 currentLevel = 2;
                 document.getElementById('levelBadge').classList.add('show');
@@ -959,10 +904,13 @@
             document.getElementById('questionText').textContent = q.question;
             
             selectedAnswer = null;
-            document.getElementById('nextBtn').style.display = 'none';
-            document.getElementById('feedbackMsg').style.display = 'none';
             document.getElementById('portal').classList.remove('repaired');
             document.getElementById('correctAnswerDisplay').style.display = 'none';
+            
+            document.getElementById('explanationBlock').classList.remove('show', 'correct', 'wrong');
+            document.getElementById('explanationBlock2').classList.remove('show', 'correct', 'wrong');
+            document.getElementById('nextBtnLevel1').style.display = 'none';
+            document.getElementById('nextBtnLevel2').style.display = 'none';
             
             const planet = planetPositions[currentPlanetIndex], player = document.getElementById('playerCharacter');
             player.classList.remove('flying'); player.classList.add('landing');
@@ -979,11 +927,16 @@
                 document.getElementById('answerSlot').className = 'verb-slot';
                 document.getElementById('checkBtn').style.display = 'none';
                 
-                // Формируем 3 варианта ответа и перемешиваем
                 let options = [q.correct, q.wrong1, q.wrong2];
+                if (q.wrong3) {
+                    options.push(q.wrong3);
+                }
                 options = shuffle(options);
                 
-                const grid = document.getElementById('optionsGrid'); grid.innerHTML = '';
+                const grid = document.getElementById('optionsGrid'); 
+                grid.innerHTML = '';
+                grid.className = 'options-grid ' + (options.length === 4 ? 'four-options' : 'three-options');
+                
                 options.forEach((opt) => {
                     const btn = document.createElement('button');
                     btn.className = 'option-btn'; btn.textContent = opt;
@@ -998,13 +951,12 @@
                 document.getElementById('typeInput').classList.remove('correct-answer');
                 document.getElementById('correctAnswerDisplay').style.display = 'none';
                 document.getElementById('checkBtn').style.display = 'inline-block';
-                document.getElementById('nextBtn').style.display = 'none';
                 setTimeout(() => document.getElementById('typeInput').focus(), 100);
             }
         }
 
         function selectOption(value, btnElement) {
-            if (document.getElementById('nextBtn').style.display === 'inline-block') return;
+            if (document.getElementById('nextBtnLevel1').style.display === 'inline-block') return;
             playSound('select');
             
             document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
@@ -1018,7 +970,7 @@
         }
 
         function clearAnswer() {
-            if (document.getElementById('nextBtn').style.display === 'inline-block') return;
+            if (document.getElementById('nextBtnLevel1').style.display === 'inline-block') return;
             playSound('click');
             selectedAnswer = null;
             document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
@@ -1027,21 +979,38 @@
         }
 
         function checkAnswer() {
-            const q = currentQuestions[currentIndex], feedback = document.getElementById('feedbackMsg');
+            const q = currentQuestions[currentIndex];
             let isCorrect = false;
             
             if (currentLevel === 1) {
                 const slot = document.getElementById('answerSlot');
-                if (selectedAnswer === q.correct) {
-                    isCorrect = true; slot.classList.add('correct');
+                if (selectedAnswer.trim().toLowerCase() === q.correct.trim().toLowerCase()) {
+                    isCorrect = true;
+                    slot.classList.add('correct');
                 } else {
                     slot.classList.add('wrong');
                     errorsList.push({ question: q.keyword, studentAnswer: selectedAnswer, correctAnswer: q.correct });
                 }
+                
+                const explanationBlock = document.getElementById('explanationBlock');
+                const explanationLabel = document.getElementById('explanationLabel');
+                const explanationText = document.getElementById('explanationText');
+                const nextBtn = document.getElementById('nextBtnLevel1');
+                
+                explanationBlock.classList.add('show');
+                explanationBlock.classList.remove('correct', 'wrong');
+                explanationBlock.classList.add(isCorrect ? 'correct' : 'wrong');
+                
+                explanationLabel.textContent = isCorrect ? '✅ Верно!' : '❌ Неверно';
+                explanationLabel.className = 'explanation-label ' + (isCorrect ? 'correct' : 'wrong');
+                explanationText.textContent = q.explanation || 'Объяснение не добавлено';
+                
+                nextBtn.style.display = isCorrect ? 'none' : 'block';
+                
             } else {
                 const input = document.getElementById('typeInput');
                 const answer = input.value.trim().toLowerCase();
-                const correctAnswer = q.correct.toLowerCase();
+                const correctAnswer = q.correct.trim().toLowerCase();
                 
                 if (answer === correctAnswer) {
                     isCorrect = true; 
@@ -1057,32 +1026,41 @@
                     input.value = q.correct; 
                     input.classList.add('correct-answer');
                 }
+                
+                const explanationBlock = document.getElementById('explanationBlock2');
+                const explanationLabel = document.getElementById('explanationLabel2');
+                const explanationText = document.getElementById('explanationText2');
+                const nextBtn = document.getElementById('nextBtnLevel2');
+                
+                explanationBlock.classList.add('show');
+                explanationBlock.classList.remove('correct', 'wrong');
+                explanationBlock.classList.add(isCorrect ? 'correct' : 'wrong');
+                
+                explanationLabel.textContent = isCorrect ? '✅ Верно!' : ' Неверно';
+                explanationLabel.className = 'explanation-label ' + (isCorrect ? 'correct' : 'wrong');
+                explanationText.textContent = q.explanation || 'Объяснение не добавлено';
+                
+                nextBtn.style.display = isCorrect ? 'none' : 'inline-block';
+                document.getElementById('checkBtn').style.display = 'none';
             }
             
             if (isCorrect) {
-                score++; updateProgress();
+                score++;
+                updateProgress();
                 document.getElementById('portal').classList.add('repaired');
                 const player = document.getElementById('playerCharacter');
-                player.classList.remove('landing'); player.classList.add('flying');
+                player.classList.remove('landing');
+                player.classList.add('flying');
                 const rect = player.getBoundingClientRect();
                 createRocketTrail(rect.left + rect.width / 2, rect.top + rect.height);
                 playSound('correct');
                 showFloatingMessage(encouragingMessages[Math.floor(Math.random() * encouragingMessages.length)]);
                 createStarBurst(rect.left + rect.width / 2, rect.top);
-                feedback.className = 'feedback-msg success';
-                feedback.innerHTML = `ПОРТАЛ АКТИВИРОВАН! Отлично, ${studentName}!<br><small style="text-transform:none; font-weight:400; opacity:0.9">${q.explanation}</small>`;
                 createConfetti(rect.left + rect.width / 2, rect.top);
                 setTimeout(() => { nextQuestion(); }, 2500);
             } else {
-                playSound('wrong'); feedback.className = 'feedback-msg hint';
-                if (currentLevel === 2) {
-                    feedback.innerHTML = `СБОЙ ПОРТАЛА! Правильный ответ показан выше.<br><small style="text-transform:none; font-weight:400; opacity:0.9">${q.explanation}</small>`;
-                } else {
-                    feedback.innerHTML = `СБОЙ ПОРТАЛА! Правильно: <b>${q.correct}</b><br><small style="text-transform:none; font-weight:400; opacity:0.9">${q.explanation}</small>`;
-                    document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
-                }
-                document.getElementById('checkBtn').style.display = 'none';
-                document.getElementById('nextBtn').style.display = 'inline-block';
+                playSound('wrong');
+                document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
             }
         }
 
@@ -1196,7 +1174,7 @@
                 if (!musicStarted && bgMusic.paused) {
                     bgMusic.play().then(() => {
                         musicStarted = true;
-                        document.getElementById('musicToggle').textContent = '🔊';
+                        document.getElementById('musicToggle').textContent = '';
                     }).catch(e => console.log('Music start failed:', e));
                     document.removeEventListener('click', startMusic);
                     document.removeEventListener('touchstart', startMusic);
