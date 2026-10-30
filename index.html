@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Универсальная Игра: Кибер-портал</title>
+    <title>Universal Game: Cyber Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -200,7 +200,7 @@
         .bonus-option.selected { background: rgba(57, 255, 20, 0.2); border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.5); }
         .bonus-emoji { font-size: 1.3em; display: block; margin-bottom: 4px; }
 
-        /* === НОВОЕ: Уменьшение персонажа на финальном экране === */
+        /* === NEW: Reduce character size on final screen === */
         #resultCharacter {
             display: flex;
             justify-content: center;
@@ -284,8 +284,8 @@
 <body>
     <div class="stars-bg" id="starsContainer"></div>
     <a href="../index.html" class="back-to-main" title="Back to main page">←</a>
-    <div class="level-badge" id="levelBadge">Уровень 2: Ввод ответа</div>
-    <div class="tab-switch-warning" id="tabWarning">Смены вкладок: <span id="tabSwitchCount">0</span></div>
+    <div class="level-badge" id="levelBadge">Level 2: Type Answer</div>
+    <div class="tab-switch-warning" id="tabWarning">Tab switches: <span id="tabSwitchCount">0</span></div>
 
     <audio id="bgMusic" loop autoplay>
         <source src="background-music.mp3" type="audio/mpeg">
@@ -296,72 +296,72 @@
 
     <div class="main-wrapper">
         <div class="header">
-            <h1 class="main-title">Кибер-портал</h1>
-            <p>Универсальная игра для подготовки к экзаменам</p>
+            <h1 class="main-title">Cyber Portal</h1>
+            <p>Universal game for exam preparation</p>
         </div>
 
         <div class="screen active" id="screen-name">
             <div class="card">
-                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 3px;">Введите имя</h2>
-                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 1em;">Начните свое космическое путешествие</p>
-                <input type="text" class="name-input" id="studentName" placeholder="ИМЯ КОМАНДИРА">
+                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 3px;">Enter Your Name</h2>
+                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 1em;">Begin your cosmic journey</p>
+                <input type="text" class="name-input" id="studentName" placeholder="COMMANDER NAME">
                 <br>
-                <button class="btn" onclick="goToCharacterSelect()">Начать</button>
+                <button class="btn" onclick="goToCharacterSelect()">Start</button>
             </div>
         </div>
 
         <div class="screen" id="screen-character">
             <div class="card">
-                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Выберите героя</h2>
-                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9em;">Ваш космический напарник</p>
+                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Choose Your Hero</h2>
+                <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9em;">Your cosmic companion</p>
                 
                 <div class="character-select">
                     <div class="character-card" onclick="selectCharacter('astronaut', this)">
                         <svg viewBox="0 0 200 200"><circle cx="100" cy="80" r="45" fill="#e9d5ff"/><circle cx="85" cy="70" r="8" fill="#1e293b"/><circle cx="115" cy="70" r="8" fill="#1e293b"/><circle cx="87" cy="68" r="3" fill="#fff"/><circle cx="117" cy="68" r="3" fill="#fff"/><path d="M 92 90 Q 100 96 108 90" stroke="#1e293b" stroke-width="2" fill="none"/><ellipse cx="100" cy="130" rx="35" ry="40" fill="#c084fc"/><circle cx="100" cy="50" r="8" fill="#fbbf24"/><line x1="100" y1="50" x2="100" y2="35" stroke="#c084fc" stroke-width="3"/><ellipse cx="70" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(-20 70 120)"/><ellipse cx="130" cy="120" rx="10" ry="18" fill="#c084fc" transform="rotate(20 130 120)"/><ellipse cx="85" cy="170" rx="12" ry="8" fill="#a855f7"/><ellipse cx="115" cy="170" rx="12" ry="8" fill="#a855f7"/></svg>
-                        <h3>Астро-Кот</h3>
+                        <h3>Astro Cat</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('robot', this)">
                         <svg viewBox="0 0 200 200"><rect x="70" y="50" width="60" height="50" rx="10" fill="#bfdbfe"/><rect x="75" y="55" width="50" height="30" rx="8" fill="#0f172a"/><circle cx="88" cy="70" r="6" fill="#4ade80"/><circle cx="112" cy="70" r="6" fill="#4ade80"/><rect x="85" y="90" width="30" height="4" rx="2" fill="#4ade80"/><line x1="100" y1="50" x2="100" y2="35" stroke="#60a5fa" stroke-width="3"/><circle cx="100" cy="30" r="5" fill="#f87171"/><rect x="75" y="110" width="50" height="55" rx="8" fill="#60a5fa"/><rect x="55" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="130" y="115" width="15" height="35" rx="7" fill="#60a5fa"/><rect x="80" y="165" width="15" height="15" rx="5" fill="#3b82f6"/><rect x="105" y="165" width="15" height="15" rx="5" fill="#3b82f6"/></svg>
-                        <h3>Робо-Друг</h3>
+                        <h3>Robo Friend</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('alien', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="40" ry="50" fill="#4ade80"/><ellipse cx="100" cy="75" rx="50" ry="55" fill="#22c55e"/><ellipse cx="80" cy="70" rx="15" ry="20" fill="#0f172a"/><ellipse cx="120" cy="70" rx="15" ry="20" fill="#0f172a"/><circle cx="82" cy="72" r="8" fill="#fbbf24"/><circle cx="122" cy="72" r="8" fill="#fbbf24"/><circle cx="84" cy="70" r="3" fill="#fff"/><circle cx="124" cy="70" r="3" fill="#fff"/><ellipse cx="100" cy="100" rx="10" ry="6" fill="#0f172a"/><path d="M 60 130 Q 40 140 35 160" stroke="#22c55e" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 140 130 Q 160 140 165 160" stroke="#22c55e" stroke-width="10" fill="none" stroke-linecap="round"/><ellipse cx="80" cy="180" rx="12" ry="8" fill="#16a34a"/><ellipse cx="120" cy="180" rx="12" ry="8" fill="#16a34a"/></svg>
-                        <h3>Инопланетянин</h3>
+                        <h3>Space Alien</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('ninja', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="38" ry="50" fill="#1e293b"/><circle cx="100" cy="75" r="42" fill="#0f172a"/><rect x="58" y="65" width="84" height="14" rx="6" fill="#f87171"/><circle cx="85" cy="72" r="6" fill="#fff"/><circle cx="115" cy="72" r="6" fill="#fff"/><circle cx="85" cy="72" r="3" fill="#0f172a"/><circle cx="115" cy="72" r="3" fill="#0f172a"/><path d="M 142 72 Q 160 65 170 75" stroke="#f87171" stroke-width="5" fill="none"/><ellipse cx="62" cy="130" rx="10" ry="20" fill="#1e293b" transform="rotate(-15 62 130)"/><ellipse cx="138" cy="130" rx="10" ry="20" fill="#1e293b" transform="rotate(15 138 130)"/><line x1="145" y1="125" x2="170" y2="95" stroke="#94a3b8" stroke-width="3"/><ellipse cx="82" cy="180" rx="12" ry="10" fill="#0f172a"/><ellipse cx="118" cy="180" rx="12" ry="10" fill="#0f172a"/></svg>
-                        <h3>Космо-Ниндзя</h3>
+                        <h3>Space Ninja</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('dragon', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="42" ry="50" fill="#dc2626"/><ellipse cx="100" cy="75" rx="48" ry="52" fill="#fecaca"/><path d="M 65 45 Q 55 25 75 35" fill="#f87171"/><path d="M 135 45 Q 145 25 125 35" fill="#f87171"/><circle cx="82" cy="70" r="10" fill="#fbbf24"/><circle cx="118" cy="70" r="10" fill="#fbbf24"/><circle cx="82" cy="70" r="6" fill="#0f172a"/><circle cx="118" cy="70" r="6" fill="#0f172a"/><circle cx="84" cy="68" r="2" fill="#fff"/><circle cx="120" cy="68" r="2" fill="#fff"/><path d="M 92 95 Q 100 102 108 95" stroke="#0f172a" stroke-width="2" fill="none"/><path d="M 55 120 Q 30 110 35 140" stroke="#dc2626" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 145 120 Q 170 110 165 140" stroke="#dc2626" stroke-width="10" fill="none" stroke-linecap="round"/><ellipse cx="80" cy="180" rx="14" ry="10" fill="#b91c1c"/><ellipse cx="120" cy="180" rx="14" ry="10" fill="#b91c1c"/></svg>
-                        <h3>Огненный Дракон</h3>
+                        <h3>Fire Dragon</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('pirate', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="40" ry="50" fill="#92400e"/><circle cx="100" cy="75" r="45" fill="#fbbf24"/><path d="M 55 55 Q 100 35 145 55 L 140 68 Q 100 55 60 68 Z" fill="#0f172a"/><circle cx="82" cy="78" r="8" fill="#fff"/><circle cx="118" cy="78" r="8" fill="#fff"/><circle cx="82" cy="78" r="5" fill="#0f172a"/><circle cx="118" cy="78" r="5" fill="#0f172a"/><path d="M 90 95 Q 100 103 110 95" stroke="#0f172a" stroke-width="2" fill="none"/><path d="M 58 130 Q 35 140 30 160" stroke="#92400e" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 142 130 Q 165 140 170 160" stroke="#92400e" stroke-width="10" fill="none" stroke-linecap="round"/><line x1="165" y1="155" x2="180" y2="135" stroke="#94a3b8" stroke-width="3"/><ellipse cx="82" cy="180" rx="14" ry="10" fill="#78350f"/><ellipse cx="118" cy="180" rx="14" ry="10" fill="#78350f"/></svg>
-                        <h3>Космический Пират</h3>
+                        <h3>Space Pirate</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('phoenix', this)">
                         <svg viewBox="0 0 200 200"><ellipse cx="100" cy="130" rx="40" ry="50" fill="#ea580c"/><ellipse cx="100" cy="75" rx="45" ry="50" fill="#f97316"/><circle cx="82" cy="70" r="10" fill="#fbbf24"/><circle cx="118" cy="70" r="10" fill="#fbbf24"/><circle cx="82" cy="70" r="6" fill="#0f172a"/><circle cx="118" cy="70" r="6" fill="#0f172a"/><circle cx="84" cy="68" r="2" fill="#fff"/><circle cx="120" cy="68" r="2" fill="#fff"/><path d="M 95 92 L 100 100 L 105 92 Z" fill="#f97316"/><path d="M 55 55 Q 30 35 45 25 Q 65 45 75 55" fill="#f97316"/><path d="M 145 55 Q 170 35 155 25 Q 135 45 125 55" fill="#f97316"/><path d="M 50 130 Q 25 140 20 165" stroke="#f97316" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M 150 130 Q 175 140 180 165" stroke="#f97316" stroke-width="10" fill="none" stroke-linecap="round"/><ellipse cx="82" cy="180" rx="12" ry="10" fill="#c2410c"/><ellipse cx="118" cy="180" rx="12" ry="10" fill="#c2410c"/></svg>
-                        <h3>Феникс</h3>
+                        <h3>Phoenix</h3>
                     </div>
                     <div class="character-card" onclick="selectCharacter('hero', this)">
                         <svg viewBox="0 0 200 200"><path d="M 55 85 Q 30 130 40 180 L 65 170 Q 60 130 70 95 Z" fill="#dc2626"/><path d="M 145 85 Q 170 130 160 180 L 135 170 Q 140 130 130 95 Z" fill="#dc2626"/><ellipse cx="100" cy="130" rx="38" ry="50" fill="#2563eb"/><polygon points="100,115 103,125 113,125 105,131 108,141 100,135 92,141 95,131 87,125 97,125" fill="#fbbf24"/><circle cx="100" cy="75" r="45" fill="#dbeafe"/><path d="M 60 60 Q 100 45 140 60 L 140 78 Q 100 68 60 78 Z" fill="#1e293b"/><circle cx="83" cy="70" r="7" fill="#fff"/><circle cx="117" cy="70" r="7" fill="#fff"/><circle cx="83" cy="70" r="4" fill="#0f172a"/><circle cx="117" cy="70" r="4" fill="#0f172a"/><path d="M 90 90 Q 100 97 110 90" stroke="#0f172a" stroke-width="2" fill="none"/><ellipse cx="60" cy="130" rx="10" ry="20" fill="#3b82f6" transform="rotate(-15 60 130)"/><ellipse cx="140" cy="130" rx="10" ry="20" fill="#3b82f6" transform="rotate(15 140 130)"/><ellipse cx="82" cy="180" rx="14" ry="10" fill="#1d4ed8"/><ellipse cx="118" cy="180" rx="14" ry="10" fill="#1d4ed8"/></svg>
-                        <h3>Супергерой</h3>
+                        <h3>Super Hero</h3>
                     </div>
                 </div>
-                <button class="btn" id="startGameBtn" onclick="startGame()" disabled>Начать миссию</button>
+                <button class="btn" id="startGameBtn" onclick="startGame()" disabled>Start Mission</button>
             </div>
         </div>
 
         <div class="screen" id="screen-game">
             <div class="timer-bar show" id="timerBar">
-                <span>ВРЕМЯ</span>
+                <span>TIME</span>
                 <span id="timerDisplay">00:00</span>
             </div>
 
             <div class="progress-container">
                 <div class="progress-info">
-                    <span>Прогресс портала</span>
+                    <span>Portal Progress</span>
                     <span id="progressText">1 / 20</span>
                 </div>
                 <div class="progress-bar-bg">
@@ -384,16 +384,16 @@
 
             <div class="task-card">
                 <div class="task-left">
-                    <div class="verb-display"><div class="verb-v1" id="keywordDisplay">ТЕМА</div></div>
+                    <div class="verb-display"><div class="verb-v1" id="keywordDisplay">TOPIC</div></div>
                     <div class="sentence-box">
-                        <span class="grammar-label active">Вопрос</span>
-                        <div class="sentence-context" id="questionText">Текст вопроса появится здесь...</div>
+                        <span class="grammar-label active">Question</span>
+                        <div class="sentence-context" id="questionText">Question text will appear here...</div>
                     </div>
                 </div>
                 <div class="task-right">
                     <div id="level1Content">
                         <div class="slots-container">
-                            <div class="verb-slot" id="answerSlot" onclick="clearAnswer()">Ваш ответ: ?</div>
+                            <div class="verb-slot" id="answerSlot" onclick="clearAnswer()">Your Answer: ?</div>
                         </div>
                         <div class="answers-and-explanation">
                             <div class="answers-block">
@@ -401,24 +401,24 @@
                             </div>
                             <div class="explanation-column">
                                 <div class="explanation-block" id="explanationBlock">
-                                    <div class="explanation-label" id="explanationLabel">💡 Объяснение</div>
+                                    <div class="explanation-label" id="explanationLabel">💡 Explanation</div>
                                     <div class="explanation-text" id="explanationText"></div>
                                 </div>
-                                <button class="btn btn-next-small" id="nextBtnLevel1" onclick="nextQuestion()" style="display: none;">Далее</button>
+                                <button class="btn btn-next-small" id="nextBtnLevel1" onclick="nextQuestion()" style="display: none;">Next</button>
                             </div>
                         </div>
                     </div>
                     <div id="level2Content" style="display: none; width: 100%;">
-                        <input type="text" class="type-input" id="typeInput" placeholder="Введите ответ..." autocomplete="off">
+                        <input type="text" class="type-input" id="typeInput" placeholder="Type your answer..." autocomplete="off">
                         <div id="correctAnswerDisplay" style="display: none; margin-top: 8px; padding: 8px; background: rgba(57, 255, 20, 0.1); border: 2px solid var(--neon-green); border-radius: 10px; color: var(--neon-green); font-family: 'Orbitron', monospace; font-weight: 700; font-size: 0.9em;"></div>
                         <div style="display: flex; gap: 10px; margin-top: 12px; align-items: flex-start;">
                             <div class="explanation-block" id="explanationBlock2" style="flex: 1; margin-top: 0;">
-                                <div class="explanation-label" id="explanationLabel2">💡 Объяснение</div>
+                                <div class="explanation-label" id="explanationLabel2">💡 Explanation</div>
                                 <div class="explanation-text" id="explanationText2"></div>
                             </div>
-                            <button class="btn" id="nextBtnLevel2" onclick="nextQuestion()" style="display: none; margin: 0; white-space: nowrap;">Далее</button>
+                            <button class="btn" id="nextBtnLevel2" onclick="nextQuestion()" style="display: none; margin: 0; white-space: nowrap;">Next</button>
                         </div>
-                        <button class="btn" id="checkBtn" onclick="checkAnswer()" style="display: none; width: 100%; margin-top: 12px;">Проверить</button>
+                        <button class="btn" id="checkBtn" onclick="checkAnswer()" style="display: none; width: 100%; margin-top: 12px;">Check</button>
                     </div>
                 </div>
             </div>
@@ -427,19 +427,19 @@
         <div class="screen" id="screen-result">
             <div class="card">
                 <div id="resultCharacter" style="margin-bottom: 10px;"></div>
-                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Миссия выполнена!</h2>
+                <h2 style="font-family: 'Orbitron', monospace; color: var(--neon-blue); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px;">Mission Complete!</h2>
                 <p id="finalScore" style="font-size: 1.1em; color: #e2e8f0; margin-bottom: 10px;"></p>
                 <div class="bonus-section" id="bonusSection">
-                    <div class="bonus-title">Выберите бонус</div>
-                    <p style="color: #94a3b8; margin-bottom: 8px; font-size: 0.9em;">Один бонус на следующую проверку:</p>
+                    <div class="bonus-title">Choose Your Bonus</div>
+                    <p style="color: #94a3b8; margin-bottom: 8px; font-size: 0.9em;">One bonus for your next test:</p>
                     <div class="bonus-options">
-                       <div class="bonus-option" onclick="selectBonus(this, 'hint')"><span class="bonus-emoji">💡</span>Подсказка на контрольной</div>
-                        <div class="bonus-option" onclick="selectBonus(this, 'no_hw')"><span class="bonus-emoji">🎫</span>Анти-двойка / Без ДЗ</div>
-                        <div class="bonus-option" onclick="selectBonus(this, 'extra_point')"><span class="bonus-emoji">⭐</span>+1 доп. балл</div>
-                        <div class="bonus-option" onclick="selectBonus(this, 'music')"><span class="bonus-emoji">🎵</span>Музыка во время урока</div>
+                       <div class="bonus-option" onclick="selectBonus(this, 'hint')"><span class="bonus-emoji">💡</span>Hint on the test</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'no_hw')"><span class="bonus-emoji">🎫</span>No Homework Pass</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'extra_point')"><span class="bonus-emoji">⭐</span>+1 Extra Point</div>
+                        <div class="bonus-option" onclick="selectBonus(this, 'music')"><span class="bonus-emoji">🎵</span>Music during the lesson</div>
                     </div>
                 </div>
-                <button class="btn" id="finishBtn" onclick="finishAndSend()" disabled>Завершить и отправить</button>
+                <button class="btn" id="finishBtn" onclick="finishAndSend()" disabled>Finish & Send</button>
                 <div class="feedback-msg" id="sendingStatus" style="margin-top: 8px;"></div>
             </div>
         </div>
@@ -494,38 +494,38 @@
                 });
             }
         }
-              function playFlySound() {
-    if (audioContext.state === 'suspended') audioContext.resume();
-    
-    const osc = audioContext.createOscillator();
-    const gain = audioContext.createGain();
-    
-    osc.connect(gain);
-    gain.connect(audioContext.destination);
-    
-    osc.type = 'sine';
-    
-    osc.frequency.setValueAtTime(150, audioContext.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.6);
-    
-    gain.gain.setValueAtTime(0, audioContext.currentTime);
-    gain.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.1);
-    gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.6);
-    
-    osc.start(audioContext.currentTime);
-    osc.stop(audioContext.currentTime + 0.6);
-    
-    // ✅ ИСПРАВЛЕНИЕ: получаем player внутри функции
-    const player = document.getElementById('playerCharacter');
-    if (player) {
-        const rect = player.getBoundingClientRect();
-        createRocketTrail(rect.left + rect.width / 2, rect.top + rect.height);
-    }
-}
+        
+        function playFlySound() {
+            if (audioContext.state === 'suspended') audioContext.resume();
+            
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            osc.type = 'sine';
+            
+            osc.frequency.setValueAtTime(150, audioContext.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.6);
+            
+            gain.gain.setValueAtTime(0, audioContext.currentTime);
+            gain.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.6);
+            
+            osc.start(audioContext.currentTime);
+            osc.stop(audioContext.currentTime + 0.6);
+            
+            const player = document.getElementById('playerCharacter');
+            if (player) {
+                const rect = player.getBoundingClientRect();
+                createRocketTrail(rect.left + rect.width / 2, rect.top + rect.height);
+            }
+        }
 
         function toggleMusic() {
             const bg = document.getElementById('bgMusic'), btn = document.getElementById('musicToggle');
-            if (musicPlaying) { bg.pause(); btn.textContent = ''; musicPlaying = false; } 
+            if (musicPlaying) { bg.pause(); btn.textContent = '🔇'; musicPlaying = false; } 
             else { bg.play(); btn.textContent = '🔊'; musicPlaying = true; }
         }
 
@@ -585,112 +585,115 @@
         ];
         function getPlanetPositions() { return window.innerWidth <= 768 ? planetPositionsMobile : planetPositionsDesktop; }
         const planetPositions = getPlanetPositions();
+        
+        // === ENGLISH QUESTION DATABASE ===
         const questionDatabase = [
             { 
-                keyword: "Столица Франции", 
-                question: "Какой город является столицей Франции?", 
-                correct: "Париж", 
-                wrong1: "Лион", 
-                wrong2: "Марсель", 
-                wrong3: "Ницца",
-                explanation: "Париж — столица и крупнейший город Франции." 
+                keyword: "Geography", 
+                question: "What is the capital of France?", 
+                correct: "Paris", 
+                wrong1: "Lyon", 
+                wrong2: "Marseille", 
+                wrong3: "Nice",
+                explanation: "Paris is the capital and largest city of France." 
             },
             { 
-                keyword: "Математика", 
-                question: "Чему равен корень из 144?", 
+                keyword: "Math", 
+                question: "What is the square root of 144?", 
                 correct: "12", 
                 wrong1: "14", 
                 wrong2: "11", 
                 wrong3: "13",
                 explanation: "12 × 12 = 144." 
             },
-                       { 
-                keyword: "Орфография", 
-                question: "Какое из слов написано правильно?", 
-                correct: "стеклянный", 
-                wrong1: "оловяный", 
-                wrong2: "ветренный", 
-                wrong3: "песчанныйй",
-                explanation: "'Стеклянный' — исключение, пишется с НН. Остальные варианты содержат ошибки." 
-            },
             { 
-                keyword: "Биология", 
-                question: "Какая органелла отвечает за выработку энергии в клетке?", 
-                correct: "Митохондрия", 
-                wrong1: "Рибосома", 
-                wrong2: "Лизосома", 
-                wrong3: "Ядро",
-                explanation: "Митохондрии называют 'энергетическими станциями' клетки." 
-            },
-            { 
-                keyword: "История", 
-                question: "В каком году началась Великая Отечественная война?", 
-                correct: "1941", 
-                wrong1: "1939", 
-                wrong2: "1945", 
-                wrong3: "1942",
-                explanation: "Война началась 22 июня 1941 года." 
-            },
-            { 
-                keyword: "Английский язык", 
-                question: "Выберите правильный перевод: 'Я никогда не был в Лондоне'", 
+                keyword: "English Grammar", 
+                question: "Choose the correct translation: 'I have never been to London'", 
                 correct: "I have never been to London", 
                 wrong1: "I never was in London", 
                 wrong2: "I have never went to London", 
                 wrong3: "I was never in London",
-                explanation: "Используется Present Perfect с наречием never." 
+                explanation: "Present Perfect is used with the adverb 'never'." 
             },
             { 
-                keyword: "География", 
-                question: "Самый большой океан на Земле?", 
-                correct: "Тихий", 
-                wrong1: "Атлантический", 
-                wrong2: "Индийский", 
-                wrong3: "Северный Ледовитый",
-                explanation: "Тихий океан занимает около 46% водной поверхности Земли." 
+                keyword: "Biology", 
+                question: "Which organelle is responsible for energy production in the cell?", 
+                correct: "Mitochondria", 
+                wrong1: "Ribosome", 
+                wrong2: "Lysosome", 
+                wrong3: "Nucleus",
+                explanation: "Mitochondria are called the 'powerhouses' of the cell." 
             },
             { 
-                keyword: "Физика", 
-                question: "В каких единицах измеряется сила тока?", 
-                correct: "Амперы", 
-                wrong1: "Вольты", 
-                wrong2: "Джоули", 
-                wrong3: "Ватты",
-                explanation: "Сила тока измеряется в Амперах (А)." 
+                keyword: "History", 
+                question: "In what year did World War II end?", 
+                correct: "1945", 
+                wrong1: "1939", 
+                wrong2: "1941", 
+                wrong3: "1942",
+                explanation: "World War II ended in 1945." 
+            },
+            { 
+                keyword: "Geography", 
+                question: "What is the largest ocean on Earth?", 
+                correct: "Pacific", 
+                wrong1: "Atlantic", 
+                wrong2: "Indian", 
+                wrong3: "Arctic",
+                explanation: "The Pacific Ocean covers about 46% of Earth's water surface." 
+            },
+            { 
+                keyword: "Physics", 
+                question: "In what units is electric current measured?", 
+                correct: "Amperes", 
+                wrong1: "Volts", 
+                wrong2: "Joules", 
+                wrong3: "Watts",
+                explanation: "Electric current is measured in Amperes (A)." 
+            },
+            { 
+                keyword: "Chemistry", 
+                question: "What is the chemical symbol for gold?", 
+                correct: "Au", 
+                wrong1: "Ag", 
+                wrong2: "Fe", 
+                wrong3: "Go",
+                explanation: "Au comes from the Latin word 'aurum' meaning gold." 
             }
         ];
 
         let studentName = '', selectedCharacter = null, currentQuestions = [], currentIndex = 0, score = 0;
         let startTime = null, timerInterval = null, selectedAnswer = null, currentPlanetIndex = 0;
         let questionsPerPlanet = 5, currentLevel = 1, selectedBonus = null, errorsList = [];
-        const encouragingMessages = ["ОТЛИЧНО!", "ТАК ДЕРЖАТЬ!", "ПОТРЯСАЮЩЕ!", "ИДЕАЛЬНО!", "МОЛОДЕЦ!", "БЛЕСТЯЩЕ!", "СУПЕР!", "ВЕРНО!"];
-        // === НОВАЯ ФУНКЦИЯ: Равномерное движение к порталу ===
-              // === НОВАЯ ФУНКЦИЯ: Движение от планеты к планете с парением ===
-       function updateCharacterPosition() {
-    const player = document.getElementById('playerCharacter');
-    const totalQ = currentQuestions.length;
-    const totalPlanets = planetPositions.length;
-    
-    // Рассчитываем прогресс от 0 до 1
-    const progress = totalQ > 1 ? (currentIndex / (totalQ - 1)) : 0;
-    
-    // Индекс текущей "виртуальной" планеты (может быть дробным)
-    const virtualPlanetIndex = progress * (totalPlanets - 1);
-    const planetIndex = Math.floor(virtualPlanetIndex);
-    const planetFraction = virtualPlanetIndex - planetIndex;
-    
-    // Получаем позиции текущей и следующей планеты
-    const currentPlanet = planetPositions[Math.min(planetIndex, totalPlanets - 1)];
-    const nextPlanet = planetPositions[Math.min(planetIndex + 1, totalPlanets - 1)];
-    
-    // Интерполируем между планетами (плавное движение по траектории)
-    const left = currentPlanet.left + (nextPlanet.left - currentPlanet.left) * planetFraction;
-    const bottom = currentPlanet.bottom + (nextPlanet.bottom - currentPlanet.bottom) * planetFraction;
-    
-    // Применяем позицию
-    player.style.left = left + '%';
-    player.style.bottom = bottom + 'px';
-}
+        const encouragingMessages = ["EXCELLENT!", "KEEP IT UP!", "AMAZING!", "PERFECT!", "GREAT JOB!", "BRILLIANT!", "SUPER!", "CORRECT!"];
+        
+        // === NEW FUNCTION: Movement from planet to planet with floating ===
+        function updateCharacterPosition() {
+            const player = document.getElementById('playerCharacter');
+            const totalQ = currentQuestions.length;
+            const totalPlanets = planetPositions.length;
+            
+            // Calculate progress from 0 to 1
+            const progress = totalQ > 1 ? (currentIndex / (totalQ - 1)) : 0;
+            
+            // Index of the current "virtual" planet (can be fractional)
+            const virtualPlanetIndex = progress * (totalPlanets - 1);
+            const planetIndex = Math.floor(virtualPlanetIndex);
+            const planetFraction = virtualPlanetIndex - planetIndex;
+            
+            // Get positions of current and next planet
+            const currentPlanet = planetPositions[Math.min(planetIndex, totalPlanets - 1)];
+            const nextPlanet = planetPositions[Math.min(planetIndex + 1, totalPlanets - 1)];
+            
+            // Interpolate between planets (smooth movement along trajectory)
+            const left = currentPlanet.left + (nextPlanet.left - currentPlanet.left) * planetFraction;
+            const bottom = currentPlanet.bottom + (nextPlanet.bottom - currentPlanet.bottom) * planetFraction;
+            
+            // Apply position
+            player.style.left = left + '%';
+            player.style.bottom = bottom + 'px';
+        }
+
         function shuffle(array) { return array.sort(() => Math.random() - 0.5); }
         function showScreen(screenId) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -704,7 +707,7 @@
                 nameInput.style.borderColor = 'var(--neon-pink)';
                 nameInput.style.animation = 'shake 0.4s ease';
                 setTimeout(() => { nameInput.style.borderColor = ''; nameInput.style.animation = ''; }, 400);
-                alert('Пожалуйста, введите имя!'); return;
+                alert('Please enter your name!'); return;
             }
             if (audioContext.state === 'suspended') audioContext.resume();
             playSound('click'); showScreen('screen-character');
@@ -715,7 +718,7 @@
             document.querySelectorAll('.character-card').forEach(c => c.classList.remove('selected'));
             element.classList.add('selected');
             document.getElementById('startGameBtn').disabled = false;
-            document.getElementById('startGameBtn').textContent = 'Начать миссию';
+            document.getElementById('startGameBtn').textContent = 'Start Mission';
         }
 
         function startGame() {
@@ -752,7 +755,7 @@
                 document.getElementById('levelBadge').classList.add('show');
                 document.getElementById('level1Content').style.display = 'none';
                 document.getElementById('level2Content').style.display = 'block';
-                showFloatingMessage("УРОВЕНЬ 2: ВВОД ОТВЕТА!");
+                showFloatingMessage("LEVEL 2: TYPE ANSWER!");
             }
             
             document.getElementById('keywordDisplay').textContent = q.keyword;
@@ -767,17 +770,17 @@
             document.getElementById('nextBtnLevel1').style.display = 'none';
             document.getElementById('nextBtnLevel2').style.display = 'none';
             
-                            const player = document.getElementById('playerCharacter');
+            const player = document.getElementById('playerCharacter');
             
-            // Вызываем новую функцию равномерного движения
+            // Call the new smooth movement function
             updateCharacterPosition();
             
-            // Персонаж продолжает лететь, не приземляясь
+            // Character continues to fly, not landing
             player.classList.remove('landing');
             player.classList.add('flying');
             
             if (currentLevel === 1) {
-                document.getElementById('answerSlot').textContent = 'Ваш ответ: ?';
+                document.getElementById('answerSlot').textContent = 'Your Answer: ?';
                 document.getElementById('answerSlot').className = 'verb-slot';
                 document.getElementById('checkBtn').style.display = 'none';
                 
@@ -817,7 +820,7 @@
             selectedAnswer = value;
             btnElement.classList.add('selected');
             
-            document.getElementById('answerSlot').textContent = `Ответ: ${selectedAnswer}`;
+            document.getElementById('answerSlot').textContent = `Answer: ${selectedAnswer}`;
             document.getElementById('answerSlot').className = 'verb-slot filled';
             
             setTimeout(() => { checkAnswer(); }, 400);
@@ -828,7 +831,7 @@
             playSound('click');
             selectedAnswer = null;
             document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
-            document.getElementById('answerSlot').textContent = 'Ваш ответ: ?';
+            document.getElementById('answerSlot').textContent = 'Your Answer: ?';
             document.getElementById('answerSlot').className = 'verb-slot';
         }
 
@@ -855,9 +858,9 @@
                 explanationBlock.classList.remove('correct', 'wrong');
                 explanationBlock.classList.add(isCorrect ? 'correct' : 'wrong');
                 
-                explanationLabel.textContent = isCorrect ? '✅ Верно!' : '❌ Неверно';
+                explanationLabel.textContent = isCorrect ? '✅ Correct!' : '❌ Incorrect';
                 explanationLabel.className = 'explanation-label ' + (isCorrect ? 'correct' : 'wrong');
-                explanationText.textContent = q.explanation || 'Объяснение не добавлено';
+                explanationText.textContent = q.explanation || 'Explanation not provided';
                 
                 nextBtn.style.display = isCorrect ? 'none' : 'block';
                 
@@ -873,10 +876,10 @@
                 } else {
                     input.style.borderColor = 'var(--neon-pink)'; 
                     input.style.boxShadow = '0 0 30px var(--neon-pink)';
-                    errorsList.push({ question: q.keyword, studentAnswer: answer || '(пусто)', correctAnswer: q.correct });
+                    errorsList.push({ question: q.keyword, studentAnswer: answer || '(empty)', correctAnswer: q.correct });
                     const correctDisplay = document.getElementById('correctAnswerDisplay');
                     correctDisplay.style.display = 'block'; 
-                    correctDisplay.textContent = `Правильно: ${q.correct}`;
+                    correctDisplay.textContent = `Correct: ${q.correct}`;
                     input.value = q.correct; 
                     input.classList.add('correct-answer');
                 }
@@ -890,9 +893,9 @@
                 explanationBlock.classList.remove('correct', 'wrong');
                 explanationBlock.classList.add(isCorrect ? 'correct' : 'wrong');
                 
-                explanationLabel.textContent = isCorrect ? '✅ Верно!' : ' Неверно';
+                explanationLabel.textContent = isCorrect ? '✅ Correct!' : '❌ Incorrect';
                 explanationLabel.className = 'explanation-label ' + (isCorrect ? 'correct' : 'wrong');
-                explanationText.textContent = q.explanation || 'Объяснение не добавлено';
+                explanationText.textContent = q.explanation || 'Explanation not provided';
                 
                 nextBtn.style.display = isCorrect ? 'none' : 'inline-block';
                 document.getElementById('checkBtn').style.display = 'none';
@@ -918,13 +921,13 @@
             }
         }
 
-                    function nextQuestion() {
+        function nextQuestion() {
             playSound('click'); 
             currentIndex++;
             updateProgress();
             
             if (currentIndex < currentQuestions.length) {
-                // Проигрываем звук полета только если это не самый первый старт
+                // Play fly sound only if it's not the very first start
                 if (currentIndex > 0) {
                     playFlySound();
                 }
@@ -933,13 +936,14 @@
                 showResults();
             }
         }
+
         function selectBonus(element, bonusType) {
             playSound('select');
             document.querySelectorAll('.bonus-option').forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected'); selectedBonus = bonusType;
             document.getElementById('finishBtn').disabled = false;
-            const bonusNames = { 'hint': 'Подсказка на контрольной', 'no_hw': 'Анти-двойка / Без ДЗ', 'extra_point': '+1 доп. балл', 'music': 'Музыка на перемене' };
-            document.getElementById('finishBtn').textContent = `Подтвердить: ${bonusNames[bonusType]}`;
+            const bonusNames = { 'hint': 'Hint on the test', 'no_hw': 'No Homework Pass', 'extra_point': '+1 Extra Point', 'music': 'Music during the lesson' };
+            document.getElementById('finishBtn').textContent = `Confirm: ${bonusNames[bonusType]}`;
         }
 
         function showResults() {
@@ -951,34 +955,34 @@
             }
             const percentage = Math.round((score / currentQuestions.length) * 100);
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            const timeSpent = `${Math.floor(elapsed / 60)}м ${elapsed % 60}с`;
-            let message = percentage === 100 ? 'ИДЕАЛЬНО! Ты настоящий эксперт!' : 
-                          percentage >= 80 ? 'Отличная работа! Почти без ошибок!' : 
-                          percentage >= 60 ? 'Хороший результат! Продолжай тренироваться!' : 'Не сдавайся! Практика — ключ к успеху!';
-            document.getElementById('finalScore').innerHTML = `${message}<br><br>Активировано порталов: <b>${score} из ${currentQuestions.length}</b><br>Точность: <b>${percentage}%</b><br>Время: <b>${timeSpent}</b><br>Смены вкладок: <b>${tabSwitchCount}</b>`;
+            const timeSpent = `${Math.floor(elapsed / 60)}m ${elapsed % 60}s`;
+            let message = percentage === 100 ? 'PERFECT! You are a true expert!' : 
+                          percentage >= 80 ? 'Excellent work! Almost perfect!' : 
+                          percentage >= 60 ? 'Good result! Keep practicing!' : 'Don\'t give up! Practice is the key to success!';
+            document.getElementById('finalScore').innerHTML = `${message}<br><br>Portals activated: <b>${score} out of ${currentQuestions.length}</b><br>Accuracy: <b>${percentage}%</b><br>Time: <b>${timeSpent}</b><br>Tab switches: <b>${tabSwitchCount}</b>`;
             selectedBonus = null;
             document.querySelectorAll('.bonus-option').forEach(opt => opt.classList.remove('selected'));
             document.getElementById('finishBtn').disabled = true;
-            document.getElementById('finishBtn').textContent = 'Завершить и отправить';
+            document.getElementById('finishBtn').textContent = 'Finish & Send';
             localStorage.setItem('cyber_portal_completed', 'true');
         }
 
         async function finishAndSend() {
-            if (!selectedBonus) { alert('Пожалуйста, выберите бонус!'); return; }
+            if (!selectedBonus) { alert('Please select a bonus!'); return; }
             const statusDiv = document.getElementById('sendingStatus');
-            statusDiv.style.display = 'block'; statusDiv.innerHTML = 'ОТПРАВКА РЕЗУЛЬТАТОВ...';
+            statusDiv.style.display = 'block'; statusDiv.innerHTML = 'SENDING RESULTS...';
             const percentage = Math.round((score / currentQuestions.length) * 100);
             const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            const timeSpent = `${Math.floor(elapsed / 60)} мин ${elapsed % 60} сек`;
-            const bonusNames = { 'hint': 'Подсказка на контрольной', 'no_hw': 'Анти-двойка / Без ДЗ', 'extra_point': '+1 доп. балл', 'music': 'Музыка на перемене' };
-            let errorsText = errorsList.length > 0 ? errorsList.map((e, idx) => `${idx + 1}. ${e.question}: ответ ученика "${e.studentAnswer}", верно: "${e.correctAnswer}"`).join('\n') : 'Ошибок нет! Идеальная работа!';
+            const timeSpent = `${Math.floor(elapsed / 60)} min ${elapsed % 60} sec`;
+            const bonusNames = { 'hint': 'Hint on the test', 'no_hw': 'No Homework Pass', 'extra_point': '+1 Extra Point', 'music': 'Music during the lesson' };
+            let errorsText = errorsList.length > 0 ? errorsList.map((e, idx) => `${idx + 1}. ${e.question}: student answer "${e.studentAnswer}", correct: "${e.correctAnswer}"`).join('\n') : 'No errors! Perfect performance!';
             
             const payload = { 
                 student_name: studentName, score: `${score}/${currentQuestions.length}`, percentage: `${percentage}%`, 
-                time: new Date().toLocaleString(), exercise_name: "Универсальная Игра: Кибер-портал", time_spent: timeSpent, 
+                time: new Date().toLocaleString(), exercise_name: "Universal Game: Cyber Portal", time_spent: timeSpent, 
                 tab_switches: tabSwitchCount === 0 ? '0' : `${tabSwitchCount}`,
-                selected_bonus: bonusNames[selectedBonus] || 'Не выбран',
-                errors_text: `БОНУС: ${bonusNames[selectedBonus]}\n\nОШИБКИ:\n${errorsText}`
+                selected_bonus: bonusNames[selectedBonus] || 'Not selected',
+                errors_text: `BONUS: ${bonusNames[selectedBonus]}\n\nERRORS:\n${errorsText}`
             };
             
             const POWER_AUTOMATE_URL = 'https://default50bef10a64ce4efab7ceef7facd9c8.97.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/06/workflows/db051d19d6ad49db826ea17f31de68aa/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IhZ_zFXl2whxWZMOaBP47dSJrL6xkew72NkSvNCTcO0';
@@ -986,17 +990,17 @@
             
             try {
                 await fetch(POWER_AUTOMATE_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                statusDiv.innerHTML += '<br>✅ ОТПРАВЛЕНО В TEAMS!'; statusDiv.style.color = 'var(--neon-green)';
+                statusDiv.innerHTML += '<br>✅ SENT TO TEAMS!'; statusDiv.style.color = 'var(--neon-green)';
             } catch (error) { 
-                statusDiv.innerHTML += '<br>❌ Ошибка Teams'; statusDiv.style.color = 'var(--neon-pink)'; 
+                statusDiv.innerHTML += '<br>❌ Teams error'; statusDiv.style.color = 'var(--neon-pink)'; 
             }
             try {
                 await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                statusDiv.innerHTML += '<br>✅ ОТПРАВЛЕНО В GOOGLE SHEETS!';
+                statusDiv.innerHTML += '<br>✅ SENT TO GOOGLE SHEETS!';
             } catch (e) { console.log('Sheets error:', e); }
             
             setTimeout(() => {
-                alert(`Миссия выполнена, ${studentName}!\n\nТвой бонус: ${bonusNames[selectedBonus]}\n\nРезультаты отправлены учителю.`);
+                alert(`Mission Complete, ${studentName}!\n\nYour bonus: ${bonusNames[selectedBonus]}\n\nResults sent to the teacher.`);
                 window.location.href = '../index.html';
             }, 3000);
         }
@@ -1032,7 +1036,7 @@
                 if (!musicStarted && bgMusic.paused) {
                     bgMusic.play().then(() => {
                         musicStarted = true;
-                        document.getElementById('musicToggle').textContent = '';
+                        document.getElementById('musicToggle').textContent = '🔊';
                     }).catch(e => console.log('Music start failed:', e));
                     document.removeEventListener('click', startMusic);
                     document.removeEventListener('touchstart', startMusic);
@@ -1046,7 +1050,7 @@
             if (localStorage.getItem('cyber_portal_completed') === 'true') {
                 const badge = document.createElement('div');
                 badge.style.cssText = 'position: fixed; top: 20px; right: 20px; background: rgba(57, 255, 20, 0.2); color: var(--neon-green); border: 2px solid var(--neon-green); padding: 10px 20px; border-radius: 50px; font-family: Orbitron, monospace; font-weight: 900; z-index: 1000; text-transform: uppercase; letter-spacing: 2px;';
-                badge.innerHTML = 'ВЫПОЛНЕНО';
+                badge.innerHTML = 'COMPLETED';
                 document.body.appendChild(badge);
             }
         });
